@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="8dp">
+
+        <ImageView
+            android:id="@+id/item_hotel_list_img"
+            android:layout_width="73dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="11dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/hotel_list_imgdefault" />
+
+        <TextView
+            android:id="@+id/item_hotel_list_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/shape_hotel_list_mark"
+            android:text="协议酒店"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_hotel_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="北京福地凤凰城酒店"
+            android:ellipsize="end"
+            android:textColor="@color/color_222"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_hotel_list_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.3分"
+                android:textColor="@color/appTheme1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_hotel_list_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="12165条点评"
+                android:textColor="@color/color_999"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_hotel_list_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="高档型"
+            android:textColor="@color/color_999"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_list_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="天安门/王府井商业区|靠近地铁站"
+            android:textColor="@color/color_999"
+            android:textSize="11sp" />
+
+        <LinearLayout
+            android:id="@+id/item_hotel_list_other_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/hotel_list_promotion" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/hotel_list_bonus" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_hotel_list_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="据您123m"
+            android:textColor="@color/color_999"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textColor="@color/appTheme2"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_list_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="920"
+            android:textColor="@color/appTheme2"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="起"
+            android:textColor="@color/color_999"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

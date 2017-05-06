@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hotel_sort_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/hotel_sort_price_asc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="selectSortBy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="价格  低→高"
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/picker_checked" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_ddd" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/hotel_sort_price_des"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="selectSortBy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="价格  高→低"
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/picker_checked" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_ddd" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/hotel_sort_star_des"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="selectSortBy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="口碑  高→低"
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/picker_checked" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_ddd" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/hotel_sort_distans_asc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="selectSortBy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="距离  近→远"
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/picker_checked" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_ddd" />
+    </RelativeLayout>
+
+
+</LinearLayout>

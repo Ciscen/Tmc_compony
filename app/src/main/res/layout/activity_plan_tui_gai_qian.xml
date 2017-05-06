@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plan_tui_gai_qian"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlanTuiGaiQianActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="退改签说明"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:id="@+id/close"
+            android:src="@mipmap/close" />
+    </FrameLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="退票规定"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <TextView
+                android:id="@+id/tuipiao_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="起飞前2小时：1"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="改签规定"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <TextView
+                android:id="@+id/gaiqian_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="起飞前2小时：1"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="温馨提示"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="19dp"
+            android:lineSpacingExtra="5dp"
+            android:paddingRight="32dp"
+            android:text="*  以上均为乘客自愿退改签规则，非自愿退改签规则以可试用法律及航空公司规定为准。航空公司规定以各航空公司官方网站的公示为准。\n*  折扣说明：经济舱折扣以标准经济舱全价为基础计算得出。"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

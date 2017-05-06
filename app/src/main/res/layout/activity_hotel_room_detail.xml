@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_room_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelRoomDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/hotel_room_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/arrow_left" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="房型报价"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/hotel_room_img"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/hotel_room_img" />
+
+                <TextView
+                    android:id="@+id/hotel_room_imgnum"
+                    android:layout_width="23dp"
+                    android:layout_height="9dp"
+                    android:layout_alignBottom="@id/hotel_room_img"
+                    android:layout_alignRight="@id/hotel_room_img"
+                    android:background="@color/color_333"
+                    android:gravity="center"
+                    android:text="2张"
+                    android:textColor="@color/color_fff"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/hotel_room_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/hotel_room_img"
+                    android:text="双床房A"
+                    android:textColor="@color/color_333"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/hotel_room_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/hotel_room_name"
+                    android:layout_below="@id/hotel_room_name"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/color_333"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1px"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/window"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/window"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="有窗"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/wifi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/wifi"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="无线"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/louceng"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/louceng"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="12层"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/pingmi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/pingmi"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="33㎡"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/bed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/bed"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="大床"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/renshu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/renshu"
+                        android:drawablePadding="7dp"
+                        android:gravity="center_vertical"
+                        android:text="可住2人"
+                        android:textColor="@color/color_666"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_room_info_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_f2f2"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <com.auvgo.tmc.views.MyGridView
+                    android:id="@+id/hotel_room_gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <include layout="@layout/layout_divider" />
+
+            </LinearLayout>
+
+            <com.auvgo.tmc.views.MyListView
+                android:id="@+id/hotel_room_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

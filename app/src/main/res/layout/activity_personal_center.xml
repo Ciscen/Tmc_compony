@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.personalcenter.activity.PersonalCenterActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="个人中心" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/pc_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="10dp"
+            android:drawableRight="@mipmap/pc_edit"
+            android:gravity="center"
+            android:text="用户名"
+            android:textColor="@color/color_333"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/pc_myPlane"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="11dp"
+            android:paddingTop="11dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_plane" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="我的机票"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_myHotel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="11dp"
+            android:paddingTop="11dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_hotel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="我的酒店"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_myTrain"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="11dp"
+            android:paddingTop="11dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_train" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="我的火车票"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pc_item_myChailvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_itemclick"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/pc_chailvinfo"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="我的差旅信息"
+        android:textColor="@color/black" />
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/pc_item_applyNo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_itemclick"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/apply_no_pc"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="出差申请单"
+        android:textColor="@color/black" />
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/pc_item_myRoute"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_itemclick"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/pc_myroute"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="行走记忆"
+        android:textColor="@color/black" />
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/pc_item_myFlight"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_itemclick"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/pc_myflight"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="我的关注航班"
+        android:textColor="@color/black" />
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/pc_item_myCheckRecord"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_itemclick"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/pc_mycheckrecord"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="我的值机记录"
+        android:textColor="@color/black" />
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/pc_psw"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_psw" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="修改密码"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_update"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_update" />
+
+            <TextView
+                android:id="@+id/pc_update_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="版本更新"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_clean"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_clean" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="清除缓存"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_exit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pc_exit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="退出账号"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pc_about"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/about" />
+
+            <TextView
+                android:id="@+id/pc_about_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="关于我们"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

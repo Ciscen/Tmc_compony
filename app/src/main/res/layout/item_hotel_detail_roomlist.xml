@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="82dp">
+
+        <ImageView
+            android:id="@+id/item_hotel_room_list_icon"
+            android:layout_width="60dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/hotel_room_list_icon_default" />
+
+        <TextView
+            android:id="@+id/item_hotel_room_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@id/item_hotel_room_list_icon"
+            android:text="标准大床房"
+            android:textColor="@color/color_333"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_room_list_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_hotel_room_list_name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/item_hotel_room_list_icon"
+            android:text="14平米|大床1.8米|有窗"
+            android:textColor="@color/color_999"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_room_list_qi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="起"
+            android:textColor="@color/color_666"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/item_hotel_room_list_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/item_hotel_room_list_qi"
+            android:text="￥4099"
+            android:textColor="@color/appTheme2"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/item_hotel_room_list_wei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/item_hotel_room_list_price"
+            android:src="@mipmap/wei" />
+
+        <ImageView
+            android:id="@+id/item_hotel_room_list_fan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/hotel_fan" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/hotel_card_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/color_333"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hotel_card_view_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/color_333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/hotel_card_view_room_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/color_999"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/hotel_card_view_breckfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/hotel_nobreckfast" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hotel_card_view_check_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/color_333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="入住"
+            android:textColor="@color/color_999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hotel_card_view_check_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/color_333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/hotel_card_view_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="离店"
+            android:textColor="@color/color_999"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/hotel_card_view_total_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="共1晚"
+            android:textColor="@color/color_999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_divider"
+        android:layout_width="300dp"
+        android:layout_height="1px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hotel_card_view_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@mipmap/hotel_card_cancel"
+            android:drawablePadding="3dp"
+            android:gravity="center_vertical"
+            android:text="限时取消"
+            android:textColor="@color/appTheme1"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="13dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/color_d7"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/hotel_card_view_hotel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/hotel_card_hotel"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="酒店"
+                android:textColor="@color/appTheme1"
+                android:textSize="13sp" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="13dp"
+            android:background="@color/color_d7" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/hotel_card_view_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/hotel_card_tel"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:text="联系"
+                android:textColor="@color/appTheme1"
+                android:textSize="13sp" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="13dp"
+            android:background="@color/color_d7" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/hotel_card_view_map"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/hotel_card_location"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:text="地图"
+                android:textColor="@color/appTheme1"
+                android:textSize="13sp" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

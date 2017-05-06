@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plane_return"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneReturnApplyActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:id="@+id/plane_alter_return_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="申请退票" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/plane_alter_return_confirm_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableLeft="@mipmap/light_red"
+                android:drawablePadding="10dp"
+                android:paddingBottom="13dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="13dp"
+                android:text="我们尽量帮您申请退票，退票结果以航司为准"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/plane_alter_return_confirm_tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="请选择需要退票的乘客"
+                    android:textColor="@color/color_333"
+                    android:textSize="14sp" />
+
+                <include layout="@layout/layout_divider" />
+
+                <com.auvgo.tmc.views.MyListView
+                    android:id="@+id/plane_alter_return_confirm_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/plane_alter_return_confirm_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/color_f2f2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="需退票的航班"
+                    android:textColor="@color/color_333"
+                    android:textSize="14sp" />
+
+                <com.auvgo.tmc.views.PlaneDetailCardView
+                    android:id="@+id/plane_alter_return_confirm_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:type="3" />
+
+                <LinearLayout
+                    android:id="@+id/plane_alter_return_tuipiao_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <com.auvgo.tmc.views.ItemView
+                        android:id="@+id/plane_alter_return_tuipiao_iv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:hint="请选择退票原因"
+                        app:itemTitle="退票原因"
+                        app:itemTitleColor="#000000" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:src="@mipmap/arrowright" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/plane_alter_return_confirm_tv3"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/selector_button_red_noradius"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="alter"
+        android:text="申请退票"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</LinearLayout>

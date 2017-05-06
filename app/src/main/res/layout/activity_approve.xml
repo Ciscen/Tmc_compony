@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_train_order_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.approve.TrainApproveActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.auvgo.tmc.views.TitleView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="审批管理" />
+
+            <include layout="@layout/layout_divider" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:id="@+id/approve_sv"
+                android:descendantFocusability="blocksDescendants"
+                android:focusableInTouchMode="true"
+                android:background="@color/color_f2f2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="63dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="13dp">
+
+                            <TextView
+                                android:id="@+id/approve_order_ticketNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_orderNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:lines="1"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/approve_order_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="right"
+                                android:textColor="@color/appTheme2"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/approve_order_detail_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/layout_train_detail" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="乘客"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <com.auvgo.tmc.views.MyListView
+                            android:id="@+id/approve_order_psgs_lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:divider="@null" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="联系人"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/approve_order_contact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_tel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginTop="13dp"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/approve_order_approveinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_applyNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white">
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="45dp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="出差单号"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_applyNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:gravity="center_vertical"
+                                android:text="KD156123"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_costCenter"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="45dp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="成本中心"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_costCenter"
+                                android:layout_width="0px"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_project"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="45dp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="项目"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_item"
+                                android:layout_width="0px"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/color_999"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white">
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="45dp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="出差事由"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_reason"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:gravity="center_vertical"
+                                android:text="亟待解决啊"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/color_999"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:id="@+id/approve_order_reason_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp"
+                                android:src="@mipmap/arrowright"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_weiItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white"
+                            android:minHeight="50dp">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="109dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="违背事项"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_weiItem"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_weiReason"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="109dp"
+                                android:layout_height="45dp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="15dp"
+                                android:text="违背原因"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/approve_order_weiReason"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="基督教啊"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/color_999"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/approve_order_item_approveStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|left"
+                                    android:text="审批顺序"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="审批人"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|right"
+                                    android:text="审批状态"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <com.auvgo.tmc.views.MyListView
+                                android:id="@+id/approve_order_approve_lv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/white"
+                                android:clickable="false"
+                                android:focusable="false"
+
+                                android:paddingBottom="10dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/train_order_detail_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="@color/black"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/train_order_detail_click_bottom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="showPriceDetail"
+            android:clickable="true"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="总价"
+                android:textColor="@color/color_666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="¥"
+                android:textColor="@color/appTheme2"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/approve_order_priceall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5.5dp"
+                android:gravity="center"
+                android:text="0.00"
+                android:textColor="@color/appTheme2"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:drawableRight="@mipmap/arrow_down"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/approve_order_commit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_red_noradius"
+            android:gravity="center"
+            android:text="通过"
+            android:onClick="onCommitClick"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/approve_order_cancle"
+            android:layout_width="0dp"
+            android:onClick="onRefuseClick"
+            android:clickable="true"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_cancelclick"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textColor="@color/color_333"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

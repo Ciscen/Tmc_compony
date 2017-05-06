@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f8f8"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.personalcenter.fragment.HotelOrderListFragment">
+
+    <com.auvgo.tmc.views.RefreshListView
+        android:id="@+id/hotel_order_list_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/white" />
+
+    <com.auvgo.tmc.views.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</LinearLayout>

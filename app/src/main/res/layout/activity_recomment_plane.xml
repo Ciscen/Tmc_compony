@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_recomment_plane"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.RecommentPlaneActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:id="@+id/plane_recomment_title"
+        android:layout_height="wrap_content"
+        app:subtitle="共16条"
+        app:title="北京-上海" />
+
+    <ListView
+        android:id="@+id/plane_recomment_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</LinearLayout>

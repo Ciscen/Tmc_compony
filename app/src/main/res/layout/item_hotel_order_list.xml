@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/item_hotel_order_list_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_hotel_order_list_yellow"
+                android:padding="3dp"
+                android:text="等待支付"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_hotel_order_list_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="3dp"
+                android:text="￥454"
+                android:textColor="@color/color_444"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <TextView
+            android:id="@+id/item_hotel_order_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="北京福地凤凰城酒店"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/color_333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_order_list_users"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="李草，梁晨晨"
+            android:textColor="@color/color_666"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_order_list_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="03-15至04-15  1晚/2间"
+            android:textColor="@color/color_666"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/item_hotel_order_list_booktime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="13dp"
+            android:text="预订时间2017-01-12 15：13"
+            android:textColor="@color/color_666"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

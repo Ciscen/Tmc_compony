@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:paddingLeft="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="限时取消"
+            android:layout_centerInParent="true"
+            android:id="@+id/dialog_title_tv"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/dialog_close_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="17dp"
+            android:src="@mipmap/close" />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_divider" />
+    <TextView
+        android:id="@+id/dialog_cancel_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="4dp"
+        android:paddingLeft="27dp"
+        android:paddingRight="27dp"
+        android:text="一线城市不得高于200元\n二线城市不得高于200元\n三线城市不得高于2000元"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+</LinearLayout>

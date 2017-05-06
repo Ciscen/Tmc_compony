@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_train_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.auvgo.tmc.train.activity.TrainListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.auvgo.tmc.views.TitleView
+            android:id="@+id/train_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title=" " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/train_list_before"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_itemclick"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="前一天"
+                android:textColor="@color/color_333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/train_list_calendar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_itemclick"
+                android:clickable="true"
+                android:drawableLeft="@mipmap/calender"
+                android:gravity="center"
+                android:text="20106-10-19"
+                android:textColor="#181c1e"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/train_list_after"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_itemclick"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="后一天"
+                android:textColor="@color/color_333"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <ListView
+            android:id="@+id/train_list_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <com.auvgo.tmc.views.EmptyView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:id="@+id/train_list_ll"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/train_list_rg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_order_price"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="5dp"
+                    android:text="从低到高"
+                    android:textColor="@color/color_666"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_order_offtime"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="5dp"
+                    android:text="从早到晚"
+                    android:textColor="@color/color_666"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_order_time"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="5dp"
+                    android:text="从短到长"
+                    android:textColor="@color/color_666"
+                    android:textSize="12sp" />
+            </RadioGroup>
+
+            <RadioButton
+                android:id="@+id/train_list_filt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_order_filter"
+                android:button="@null"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
+                android:text="筛选"
+                android:textColor="@drawable/selector_order_filter"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/train_list_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/black"
+        android:visibility="gone" />
+</FrameLayout>

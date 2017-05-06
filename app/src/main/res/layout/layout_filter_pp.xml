@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_pp_frame" />
+
+    <LinearLayout
+        android:id="@+id/picker_pop_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="22dp"
+        android:paddingTop="22dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="31dp"
+            android:paddingRight="31dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="车次类型"
+                android:textColor="#d0d0d0"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_type0"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="高铁(G/C)" />
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_type1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="动车(D)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_type2"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="普通(Z/T/K)" />
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_type3"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="其他(L/Y等)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:layout_marginRight="15dp"
+                android:text="出发时间"
+                android:textColor="#d0d0d0"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_offtime0"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="00:00-06:00" />
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_offtime1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="06:00-12:00" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_offtime2"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="12:00-18:00" />
+
+            <com.auvgo.tmc.views.MyCheckbox
+                android:id="@+id/filter_pp_offtime3"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:paddingLeft="31dp"
+                android:paddingRight="31dp"
+                app:text="18:00-24:00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:layout_marginRight="15dp"
+                android:text="出发/到达车站"
+                android:textColor="#d0d0d0"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/color_e5e5" />
+
+        </LinearLayout>
+
+        <com.auvgo.tmc.views.MyGridView
+            android:id="@+id/filter_pp_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_marginTop="20dp"
+            android:numColumns="2" />
+    </LinearLayout>
+</LinearLayout>

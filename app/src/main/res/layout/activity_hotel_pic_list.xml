@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_pic_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelPicListActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="酒店照片" />
+
+    <ListView
+        android:id="@+id/hotel_pic_list_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/hotel_pic_list_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="全部"
+            android:textColor="@color/appTheme1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="外观"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="客房"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="设施"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

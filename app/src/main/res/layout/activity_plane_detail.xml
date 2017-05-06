@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plane_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneDetailActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="舱位详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.auvgo.tmc.views.PlaneDetailCardView
+                android:id="@+id/plane_detail_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:type="0" />
+
+            <com.auvgo.tmc.views.MyListView
+                android:id="@+id/plane_detail_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/plane_filter_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="取消"
+            android:textColor="#6461e2"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/plane_filter_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="筛选"
+            android:textColor="@color/color_333"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/plane_filter_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="确定"
+            android:textColor="#6461e2"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/plane_filter_rg"
+                android:layout_width="match_parent"
+                android:background="@color/color_f8f8"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_filter_rb"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="起飞时间"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_filter_rb"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="舱位类型"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selector_filter_rb"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="航空公司"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/plane_filter_lv"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

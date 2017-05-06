@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/item_mytravalinfo_tv1"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/item_mytravalinfo_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+</LinearLayout>

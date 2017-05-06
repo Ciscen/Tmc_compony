@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_location"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_f8f8"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelLocationActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="位置区域" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f8f8"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/hotel_location_rg"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_district"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="行政区"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_sq"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="商圈"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_station"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="机场车站"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+        </RadioGroup>
+
+        <ListView
+            android:id="@+id/hotel_location_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:dividerHeight="1px"
+            android:paddingLeft="23dp" />
+    </LinearLayout>
+</LinearLayout>

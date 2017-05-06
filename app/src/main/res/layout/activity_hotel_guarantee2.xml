@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_guarantee2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelGuarantee2Activity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="信用卡担保" />
+
+    <com.auvgo.tmc.views.ItemView
+        android:id="@+id/guarantee2_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:content="3568891139699623"
+        app:hint="请输入银行卡号"
+        app:inputable="false"
+        app:itemTitle="信用卡"
+        app:itemTitleColor="#333333" />
+
+    <com.auvgo.tmc.views.ItemView
+        android:id="@+id/guarantee2_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="持卡人姓名"
+        app:inputable="true"
+        app:itemTitle="姓名"
+        app:itemTitleColor="#333333" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/guarantee2_id_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="5dp"
+            android:drawableRight="@mipmap/arrow_down"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="身份证"
+            android:textColor="@color/color_333"
+            android:textSize="15dp" />
+
+
+        <EditText
+            android:id="@+id/guarantee2_id_num"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="114dp"
+            android:background="@null"
+            android:focusable="true"
+            android:hint="请输入证件号码"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColorHint="@color/color_999"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.auvgo.tmc.views.ItemView
+            android:id="@+id/guarantee2_valid_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hint="月/年 如06/18"
+            app:inputable="true"
+            app:itemTitle="卡有效期"
+            app:itemTitleColor="#333333" />
+
+        <ImageView
+            android:id="@+id/guarantee2_valid_wenhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/wenhao" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/guarantee2_cvv_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.auvgo.tmc.views.ItemView
+            android:id="@+id/guarantee2_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hint="请输入cvv"
+            app:inputable="true"
+            app:itemTitle="CVV码"
+            app:itemTitleColor="#333333" />
+
+        <ImageView
+            android:id="@+id/guarantee2_valid_wenhao2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/wenhao" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/guarantee2_commit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+
+        android:background="@drawable/selector_button_red"
+        android:gravity="center"
+        android:text="担保"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</LinearLayout>

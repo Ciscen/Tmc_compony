@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plane_return_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneReturnDetailActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="退票详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/plane_return_detail_orderno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单号：123124112"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/plane_return_detail_tuipiao_reason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="退票原因："
+                        android:textColor="@color/color_666"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/plane_return_detail_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="提交成功"
+                    android:textColor="@color/appTheme2"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <com.auvgo.tmc.views.PlaneDetailCardView
+                android:id="@+id/plane_return_detail_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:type="3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="乘客"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <com.auvgo.tmc.views.MyListView
+                    android:id="@+id/plane_return_detail_psgs_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:divider="@null" />
+            </LinearLayout>
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/plane_return_detail_insurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:content=""
+                app:hasDivider="false"
+                app:itemTitle="保险"
+                app:itemTitleColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="联系人"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/plane_return_detail_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/plane_return_detail_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="13dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/plane_return_detail_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:paddingTop="13dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/plane_return_detail_approveinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_applyNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:content="151654561351535"
+                    app:hasDivider="false"
+                    app:itemTitle="出差单号"
+                    app:itemTitleColor="#000000" />
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_costCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:content="财务部"
+                    app:hasDivider="false"
+                    app:itemTitle="成本中心"
+                    app:itemTitleColor="#000000" />
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_project"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:content="武汉出差"
+                    app:hasDivider="false"
+                    app:itemTitle="项目"
+                    app:itemTitleColor="#000000" />
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:content="就是想出差"
+                    app:hasDivider="false"
+                    app:itemTitle="出差事由"
+                    app:itemTitleColor="#000000" />
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_weiItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:content="不得高于70折"
+                    app:hasDivider="false"
+                    app:itemTitle="违背事项"
+                    app:itemTitleColor="#000000" />
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_return_detail_weiReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:content="航班延误"
+                    app:hasDivider="false"
+                    app:itemTitle="违背原因"
+                    app:itemTitleColor="#000000" />
+
+
+                <LinearLayout
+                    android:id="@+id/plane_return_detail_item_approveStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="审批顺序"
+                            android:textColor="@color/color_333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="审批人"
+                            android:textColor="@color/color_333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text="审批状态"
+                            android:textColor="@color/color_333"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <com.auvgo.tmc.views.MyListView
+                        android:id="@+id/plane_return_detail_approve_lv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="1px"
+                        android:background="@color/white"
+                        android:paddingBottom="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/plane_return_detail_gotoOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/selector_button_red"
+                android:gravity="center"
+                android:text="查看原订单"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/layout_divider" />
+
+    <TextView
+        android:id="@+id/plane_return_detail_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:text=" *实际退票费用以航空公司退改签规定为准"
+        android:textColor="@color/color_999"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/plane_return_detail_pricedetail"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="退票合计："
+            android:textColor="@color/color_666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="¥"
+            android:textColor="@color/appTheme2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/plane_return_detail_priceall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5.5dp"
+            android:gravity="center"
+            android:text="0.00"
+            android:textColor="@color/appTheme2"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+</LinearLayout>

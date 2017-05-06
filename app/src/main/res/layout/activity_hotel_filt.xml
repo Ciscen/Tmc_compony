@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_filt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelFiltActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="筛选" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_f8f8"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/hotel_filt_rg"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_district"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="品牌"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_sq"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="设施"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="1px"
+                android:background="@drawable/selector_hotel_keywords_rb"
+                android:button="@null"
+                android:drawableLeft="@mipmap/hotel_station"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="入住偏好"
+                android:textColor="@color/color_666"
+                android:textSize="15sp" />
+
+        </RadioGroup>
+
+        <ListView
+            android:id="@+id/hotel_filt_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@color/white"
+            android:dividerHeight="1px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/hotel_filt_cancle"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_hotel_filt_clear"
+            android:gravity="center"
+            android:text="清空"
+            android:textColor="@color/color_333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/hotel_filt_sure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/selector_button_red"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

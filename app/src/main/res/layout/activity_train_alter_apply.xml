@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_train_alter_confirm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.train.activity.AlterReturnTrainApplyActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:id="@+id/train_alter_confirm_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="申请改签" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/train_alter_confirm_tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="请选择需要改签的乘客"
+                    android:textColor="@color/color_333"
+                    android:textSize="14sp" />
+
+                <include layout="@layout/layout_divider" />
+
+                <com.auvgo.tmc.views.MyListView
+                    android:id="@+id/train_alter_confirm_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/train_alter_confirm_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/color_f2f2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="需改签的车次"
+                    android:textColor="@color/color_333"
+                    android:textSize="14sp" />
+
+                <com.auvgo.tmc.views.TrainDetailCardView
+                    android:id="@+id/train_alter_confirm_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:timeOrSeattype="1" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/train_alter_confirm_tv3"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/selector_button_red_noradius"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="alter"
+        android:text="申请改签"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</LinearLayout>

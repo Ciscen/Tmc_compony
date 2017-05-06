@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">行旅管家</string>
+    <string name="noticetext" formatted="false">\n1.因受全国各铁路局的不同规定与要求，无法承诺百分之百代购成功，具体出票结果，请用户关注订单最新状态、客户端消息通知或出票结果短信。\n\n2.系统暂不支持学生票，请填写本人有效身份证件信息。\n\n3.购票时可使用的有效身份证件包括：中华人民共和国居民身份证、港澳居民来往内地通行证、台湾居民来往大陆通行证和按规定可使用的有效护照。\n\n4.退票规定：\n\n在线申请退票，不得晚于开车前35分钟；错过时间或者已经取票时，请持相关证件证件到车站办理退票。距离发车时间15天以上提交退票的，无退票手续费。退票扣款比例在开车时间前48小时至15天的按票价5%计，24小时至48小时的按票价10%计，小于24小时的按票价的20%计。根据退票扣款比例计算的手续费，最小单位为0.5元，当计算的手续费尾数小于0.25元（不包含0.25）的舍去、0.25元至0.75元（不含0.75）的计为0.5元，0.75元以上的进为1元。退票费最低按2元计收。\n\n5.改签规定：\n\n改签必须不晚于原票开车前35分钟方可进行，只能对未换取纸质车票的车票进行改签。同一订单中相同日期、车次、发站、到站、席别的车票方可批量改签，批量改签时，选择新票座位席别必须一致，并且不能是卧铺。一张车票只能办理一次改签，改签后若要退票，请到车站办理。开车前48小时以内，可改签从办理改签之时至票面日期当日24:00之间的其他车次。不办理票面日期次日及以后的改签，新车票票价高于原车票的，补收差额，同样对差额部分核收退票费并执行退票费标准。\n\n\n身份核验说明：订单中若有首次乘坐火车的乘客需要尽快本人持二代身份证原件到火车站的售票人工窗口办理实名认证方可预订；\n
+</string>
+    <string name="ordernotice" formatted="false">首次网购火车票的乘客，请先凭有效证件到火车站或者代售点办理核验，否则可能出票失败，敬请谅解！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_hotel_book">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="about_desc">行旅管家是一款移动端的企业差旅管理应用，可以预订机票、火车票和酒店，定制审批规则和流程，帮助企业节省出差成本</string>
+    <string name="order_committing">订单正在提交，您可以去订单列表页面查看订单状态！</string>
+    <string name="alter_success_notice">您的改签申请已提交，请稍候在个人中心查看改签结果</string>
+    <string name="retrun_success_notice">您的退票申请已提交，请稍候在个人中心查看退票结果</string>
+    <string name="title_activity_apply_no_chose">ApplyNoChoseActivity</string>
+    <string name="title_activity_apply_no_detail">ApplyNoDetailActivity</string>
+    <string name="pay_failed_msg">网络出现问题，支付失败</string>
+    <string name="pay_result_callback_msg">微信支付结果：%s</string>
+    <string name="error_msg">网络不给力，请重试！</string>
+    <string name="gqorderNotice">当前订单是改签单，如需再次操作请拨打客服电话400 606 0011</string>
+    <string name="noGqTpNotice">当前订单已操作过改签/退票，如需再次操作请拨打客服电话400 606 0011</string>
+</resources>

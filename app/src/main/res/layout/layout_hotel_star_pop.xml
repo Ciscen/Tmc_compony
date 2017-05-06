@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="23dp"
+        android:paddingTop="23dp"
+        android:text="星级筛选"
+        android:textColor="@color/color_bbb"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/hotel_pop_stars"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#dddddd">
+
+        <TextView
+            style="@style/hotel_starpop"
+            android:layout_marginLeft="1px"
+            android:background="@drawable/shape_border_blue"
+            android:text="全部"
+            android:textSize="14sp"
+            android:textColor="@color/appTheme1" />
+
+        <TextView
+            style="@style/hotel_starpop"
+            android:text="经济" />
+
+        <TextView
+            style="@style/hotel_starpop"
+            android:text="舒适\n三星"
+            android:textSize="12dp" />
+
+        <TextView
+            style="@style/hotel_starpop"
+            android:text="高档\n四星" />
+
+        <TextView
+            style="@style/hotel_starpop"
+            android:text="豪华\n五星" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="26dp"
+        android:text="价格筛选"
+        android:textColor="@color/color_bbb"
+        android:textSize="15sp" />
+    <com.auvgo.tmc.views.RangeSeekBar
+        android:id="@+id/RangeSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="18dp"
+        android:paddingLeft="43dp"
+        android:paddingRight="43dp"
+        app:range="@drawable/hotel_seek_range"
+        app:scaleMax="1000"
+        app:scaleMin="0"
+        app:scaleStep="50"
+        app:textSize="14sp"
+        app:thumb="@mipmap/hotel_seek_thumb"
+        app:thumbHeight="32dp"
+        app:thumbWidth="32dp"
+        app:track_rsb="@drawable/hotel_seek_track"
+        app:trackHeihgt="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/hotel_pop_cancle"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_filter_rb"
+            android:gravity="center"
+            android:text="清空"
+            android:textColor="@color/color_333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/hotel_pop_sure"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_red_noradius"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

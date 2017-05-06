@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.common.PayListActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="支付方式" />
+
+    <TextView
+        android:id="@+id/pay_notice"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_f2f2"
+        android:drawableLeft="@mipmap/light_red"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="为保证正常出票，请您在13:14之前完成支付"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="应付总额"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/pay_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="￥165"
+            android:textColor="@color/appTheme2"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_f2f2"
+        android:orientation="vertical"
+        android:paddingBottom="1px">
+
+        <LinearLayout
+            android:id="@+id/pay_qiankuan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1px"
+            android:background="@drawable/selector_itemclick"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/qiankuan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="协议欠款"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pay_wxpay"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1px"
+            android:background="@drawable/selector_itemclick"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/wx_pay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="微信支付"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pay_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1px"
+            android:background="@drawable/selector_itemclick"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/alipay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="支付宝"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pay_union"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1px"
+            android:background="@drawable/selector_itemclick"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/union" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="银联移动支付"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.auvgo.tmc">
+
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- UNION PAY   PERMISSION -->
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppBaseTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".common.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.Calendar.CalendarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.CldActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.CityListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.PassengerListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.Login12306Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.NoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.PersonalCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.PersonInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.OrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.OrderFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.UpdatePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.CostCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.ProjectAcitivity"
+            android:screenOrientation="portrait" />
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name=".receiver.JpushReceiver"
+            android:enabled="true">
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="675f29a0d3a7f427b21cd006" /> <!-- </>debug的AppKey -->
+        <!-- <meta-data -->
+        <!-- android:name="JPUSH_APPKEY" -->
+        <!-- android:value="fe6e3a5400c768081451b67e" /> &lt;!&ndash; </>release版本的AppKey &ndash;&gt; -->
+
+        <activity
+            android:name=".approve.ApproveOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".approve.TrainApproveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.AlterReturnTrainApplyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.AlterQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainAlterConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainAlterDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.AlterOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.TrainReturnDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".train.activity.WaitingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlanTuiGaiQianActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneSendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneSendDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.RecommentPlaneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.PayListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".approve.PlaneApproveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.MyTravalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneReturnApplyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneReturnDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneAlterQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneAlterConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".plane.activity.PlaneAlterDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelKeywordActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- android:process=":remote" -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="wy92xr5fadAF3LTefPYunXueq5A2XIYf" />
+
+        <activity
+            android:name=".hotel.activity.HotelListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.WaitForOpenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelFiltActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelRoomDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelLittleOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelSendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".approve.HotelApproveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelPicListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelBigPicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelGuaranteeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelCreditCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelBreakActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelGuarantee2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.activity.HotelMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.activity.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".personalcenter.FindPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.ApplyNoChoseActivity"
+            android:label="@string/title_activity_apply_no_chose"
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".personalcenter.activity.ApplyNoListActivity" />
+        <activity
+            android:name=".personalcenter.activity.ApplyNoDetailActivity"
+            android:label="@string/title_activity_apply_no_detail"
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".common.AddLsPsgActivity" />
+        <activity android:name=".common.PeisongListActivity" />
+
+        <!-- ALIPAY   GEGIN -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <!-- ALIPAY   END -->
+
+
+        <!-- WXPAY    BEGIN -->
+        <activity
+            android:name=".debug.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <!-- WXPAY    END -->
+        <!-- Umeng  BEGIN -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58ef2ae49f06fd6931000efb" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <!-- Umeng    END -->
+
+
+        <!-- UnionPay Component BEGIN -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- UNIONPAY    END -->
+        <activity
+            android:name=".TestActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

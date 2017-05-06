@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.auvgo.tmc.personalcenter.activity.AboutActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:id="@+id/about_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="关于我们" />
+
+    <ImageView
+        android:id="@+id/about_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:src="@mipmap/about_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:lineSpacingExtra="10dp"
+        android:text="Copyright©2015-2017\n行旅国际旅行社(北京)有限公司"
+        android:textColor="@color/color_999"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:paddingLeft="49dp"
+        android:paddingRight="49dp"
+        android:text="@string/about_desc"
+        android:textColor="@color/color_666"
+        android:textSize="13sp"
+        android:layout_below="@+id/about_logo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView9" />
+</RelativeLayout>

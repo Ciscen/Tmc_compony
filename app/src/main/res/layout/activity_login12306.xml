@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login12306"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.train.activity.Login12306Activity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="登录12306账号" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="90.5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25.5dp"
+                android:gravity="center_vertical"
+                android:text="用户名"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/login_12306_username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="12306用户名"
+                android:paddingLeft="15dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/color_ddd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25.5dp"
+                android:gravity="center_vertical"
+                android:text="密码"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/login_12306_psw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="12306密码"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:id="@+id/login_12306_commit"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_button_red"
+        android:gravity="center"
+        android:text="登录12306"
+        android:textColor="@color/white"
+        android:textSize="17.5sp" />
+</LinearLayout>

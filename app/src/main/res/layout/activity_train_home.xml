@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_train_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    tools:context="com.auvgo.tmc.train.activity.TrainQueryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.auvgo.tmc.views.TitleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="火车票查询" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/train_home_click_from"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/selector_itemclick"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="出发城市"
+                    android:textColor="@color/color_888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/train_home_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="北京"
+
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/train_home_click_to"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_itemclick"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="16dp"
+                    android:gravity="right"
+                    android:text="到达城市"
+                    android:textColor="@color/color_888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/train_home_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:text="上海"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/train_home_click_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selector_exchange" />
+        </RelativeLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_itemclick"
+
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/train_home_feetype" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:text="差旅类型"
+                android:textColor="@color/color_888"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="因公"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/train_home_handle" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:id="@+id/train_home_click_date"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/train_home_calendar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:text="出发时间"
+                android:textColor="@color/color_888"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/train_home_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:text="11-15 周四"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/train_home_datedesc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="今天"
+                android:textColor="@color/color_888"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:src="@mipmap/arrowright" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/train_home_click_traintype"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/traintype" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:text="车次类型"
+                android:textColor="@color/color_888"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/train_home_traintype"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:lines="1"
+                android:text="不限"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/arrowright" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:id="@+id/train_home_click_person"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_itemclick"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/train_home_persons" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:gravity="center"
+                android:text="出行人员"
+                android:textColor="@color/color_888"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/train_home_persons"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:id="@+id/train_home_click_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/arrowright" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/train_home_policy_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/train_home_notice" />
+
+            <TextView
+                android:id="@+id/train_home_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:lineSpacingExtra="7dp"
+                android:textColor="@color/color_666"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/train_home_click_query"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_red"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/home_search"
+                android:drawablePadding="7dp"
+                android:text="立即查询"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="出行人员" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/color_f7f7"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_psg_list_search"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_login"
+            android:drawableLeft="@mipmap/searchgray"
+            android:drawablePadding="7dp"
+            android:ellipsize="end"
+            android:hint="出行人姓名"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textColorHint="@color/color_888"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/psg_list_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:text="取消"
+            android:textColor="@color/appTheme1"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <com.auvgo.tmc.views.MyGridView
+        android:id="@+id/gv_choosed_passengers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ebebeb" />
+
+
+    <com.auvgo.tmc.views.RefreshListView
+        android:id="@+id/lv_passenger_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@android:color/transparent"
+        android:groupIndicator="@null"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/noresult"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="暂无搜索结果~~"
+            android:textColor="@color/color_noresult"
+            android:textSize="15sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/psg_list_sure"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/selector_button_red_noradius"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <include layout="@layout/city_list_fixed_header" />
+
+    <TextView
+        android:id="@+id/city_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@drawable/white_click_drawable"
+        android:gravity="center_vertical"
+        android:paddingLeft="13dp"
+        android:text="广州"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+    <View
+        android:id="@+id/tv_city_name"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#f0f0f0"
+        android:layout_marginLeft="13dp"
+        />
+</LinearLayout>

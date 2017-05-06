@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="77dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.fragment.HotelDetailReviewFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="好评率"
+                android:textColor="@color/appTheme2"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/hotel_detail_review_goodRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:gravity="center_horizontal"
+                android:text="70%"
+                android:textColor="@color/appTheme2"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="3px"
+            android:layout_height="41dp"
+            android:background="@color/color_f2f2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="点评总数"
+                android:textColor="@color/color_333"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/hotel_detail_review_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_horizontal"
+                android:text="88条"
+                android:textColor="@color/color_999"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="好评"
+                android:textColor="@color/color_333"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/hotel_detail_review_goodCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_horizontal"
+                android:text="444条"
+                android:textColor="@color/color_999"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="差评"
+                android:textColor="@color/color_333"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/hotel_detail_review_badCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_horizontal"
+                android:text="151条"
+                android:textColor="@color/color_999"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_weight="1"-->
+    <!--android:drawablePadding="5dp"-->
+    <!--android:drawableRight="@mipmap/arrow_right_more"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:text="查看556451条住客评价0.000"-->
+    <!--android:textColor="@color/appTheme1"-->
+    <!--android:textSize="10sp" />-->
+
+</LinearLayout>

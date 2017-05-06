@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plane_send_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneSendActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="订单详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/plane_send_detail_ticket_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appTheme2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="|"
+                    android:textColor="@color/appTheme2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/plane_send_detail_approve_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appTheme2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/plane_send_detail_order_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text="订单详情"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/arrowright" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/plane_send_detail_item_applyNo"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<com.auvgo.tmc.views.ItemView-->
+                    <!--android:id="@+id/plane_send_detail_applyNo"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--app:hint="请输入出差单号"-->
+                    <!--app:inputable="false"-->
+                    <!--app:itemTitle="出差单号"-->
+                    <!--app:itemTitleColor="#000000" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:src="@mipmap/arrowright" />-->
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/plane_send_detail_item_costcenter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_send_detail_costcenter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hint="请选择成本中心"
+                    app:itemTitle="成本中心"
+                    app:itemTitleColor="#000000" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/arrowright" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/plane_send_detail_item_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_send_detail_project"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hint="请选择项目"
+                    app:itemTitle="项目"
+                    app:itemTitleColor="#000000" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/arrowright" />
+            </LinearLayout>
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/plane_send_detail_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="请输入出差事由"
+                app:inputable="true"
+                app:itemTitle="出差事由"
+                app:itemTitleColor="#000000" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/plane_send_detail_weiItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemTitle="违背事项"
+                app:itemTitleColor="#000000" />
+
+            <LinearLayout
+                android:id="@+id/plane_send_detail_item_weiReason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/plane_send_detail_weiReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hint="请选择违背原因"
+                    app:itemTitle="违背原因"
+                    app:itemTitleColor="#000000" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/arrowright" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_approve_chose" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:id="@+id/bottom_v"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/plane_send_detail_click_pricedetail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="总价"
+                android:textColor="@color/color_666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="¥"
+                android:textColor="@color/appTheme2"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/plane_send_detail_priceall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5.5dp"
+                android:gravity="center"
+                android:text="0.00"
+                android:textColor="@color/appTheme2"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:drawableRight="@mipmap/arrow_down"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/plane_send_detail_commit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_red_noradius"
+            android:gravity="center"
+            android:text="送审"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/plane_send_detail_cancle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_cancelclick"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/color_333"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

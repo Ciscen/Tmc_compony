@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_approve_chose"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="请选择审批规则"
+        android:textColor="@color/color_333"
+        android:textSize="14sp" />
+
+    <include layout="@layout/layout_divider" />
+
+    <com.auvgo.tmc.views.MyListView
+        android:id="@+id/approve_chose_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/white"
+        android:paddingLeft="15dp" />
+
+</LinearLayout>

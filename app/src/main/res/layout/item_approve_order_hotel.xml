@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="121dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:id="@+id/item_approve_applyNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出差单号:TK153561565125"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_approve_psgs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:drawableLeft="@mipmap/psg"
+            android:drawablePadding="10dp"
+            android:text="梁晨晨，孙悦"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_approve_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@mipmap/time"
+            android:drawablePadding="10dp"
+            android:text="2016-10-10"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_approve_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@mipmap/approve_hotel_logo"
+            android:drawablePadding="10dp"
+            android:text="南山南-北海北"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_approve_type"
+        android:layout_width="50dp"
+        android:layout_height="22dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/shape_button_blue_unpressed"
+        android:gravity="center"
+        android:text="机票"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</LinearLayout>

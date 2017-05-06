@@ -1,0 +1,120 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+android {
+    def APPNAME = "TMC"
+//    def mOutputFile = "C:\\Users\\lc434\\Desktop\\MyFiles\\TmcApks"
+    def mOutputFile = "C:\\Users\\admin\\Desktop\\lc\\TmcApk"
+
+    signingConfigs {
+        mSigningConfig {
+            keyAlias 'xinglv'
+            keyPassword 'xinglv123'
+            storeFile file('E:/develope/Tmc/app/xinglv_release.jks')
+            storePassword 'xinglv123'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "com.auvgo.tmc.debug"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "default_channel"]
+        multiDexEnabled true//突破64k方法数
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.mSigningConfig
+        }
+
+    }
+    sourceSets {
+    }
+    /**
+     * defaultConfig中的配置为公用的，
+     * productFlavors中可以覆盖
+     */
+    productFlavors {
+        _360 {}
+        _91Baidu {}
+        oppo {}
+        huawei {}
+        xiaomi {}
+        vivo {}
+        wandoujia {}
+
+        demo {
+//            minSdkVersion 15
+            targetSdkVersion 25
+            versionCode 1
+            versionName '1.0'
+        }
+
+        yingyongbao {}
+    }
+    /**
+     * 让渠道号为productFlavors的名字
+     */
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    /**
+     * 指定输出路径以及文件名
+     */
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+//            def file = output.outputFile
+            //自定义的输出路径
+            //${variant.productFlavors[0].name}在字符串中进行变量引用
+            output.outputFile = new File(mOutputFile, APPNAME + "_${variant.productFlavors[0].name}" +
+                    "_" + buildTime() + "_" + defaultConfig.versionName + "_" + variant.buildType.name + ".apk")
+        }
+    }
+
+}
+
+def buildTime() {
+    def df = new SimpleDateFormat("yyyyMMdd")
+    df.setTimeZone(TimeZone.getDefault())
+    return df.format(new Date())
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/alipaySdk-20170309.jar')
+    compile files('libs/UPPayAssistEx.jar')
+    compile files('libs/UPPayPluginExPro.jar')
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.2'
+    compile 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/libammsdk.jar')
+}

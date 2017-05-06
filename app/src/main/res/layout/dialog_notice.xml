@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="268dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="温馨提示"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/notice_dialog_close"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="15dp"
+                android:padding="5dp"
+                android:src="@mipmap/close" />
+        </FrameLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:id="@+id/dialog_notice_item_weibei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                android:src="@mipmap/light_red" />
+
+            <TextView
+                android:id="@+id/notice_dialog_weibei"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="您选择的航班违背“不得高于70折”、“全天最低价”的差旅标准。"
+                android:textColor="@color/color_333"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialog_notice_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="您选择的航班还有最低价哦，我们为您推荐最划算的航班，您可以节省￥"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:id="@+id/dialog_notice_continue"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shape_red_rect"
+                    android:gravity="center"
+                    android:text="预订"
+                    android:textColor="@color/appTheme2"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/dialog_notice_goto"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/selector_button_red"
+                    android:gravity="center"
+                    android:text="查看推荐航班"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

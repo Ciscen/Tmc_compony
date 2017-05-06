@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_person_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.personalcenter.activity.PersonInfoActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="个人资料" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="工号" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="姓名" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_enname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="英文名字" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="身份证号" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_depart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:inputable="false"
+                app:itemTitle="所属部门" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_approve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="是否审批" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="权限级别" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_bookRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="代订范围" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_costCenter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="成本中心" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_approveRule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="false"
+                app:itemTitle="审批规则" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:inputable="true"
+                app:itemTitle="手机" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputable="true"
+                app:itemTitle="邮箱" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/person_info_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                app:content="北京市朝阳国五矿大厦606"
+                app:inputable="false"
+                app:itemTitle="联系地址" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/layout_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/person_info_cancle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_cancelclick"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/person_info_sure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_red_noradius"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+    </LinearLayout>
+</LinearLayout>

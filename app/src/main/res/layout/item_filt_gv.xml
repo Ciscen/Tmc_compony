@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_filt_gv_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/shape_fl_normal"
+    android:paddingBottom="7dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="7dp"
+    android:text="七天"
+    android:textColor="@color/black"
+    android:textSize="13sp" />

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/tejiatichet"
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="20dp"
+            android:text="特价机票"
+
+            android:textColor="@color/appTheme2"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/train_list_header_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="北京-包头"
+                android:textColor="@color/color_333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/train_list_header_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.5dp"
+                android:gravity="center"
+                android:text="1时30分"
+                android:textColor="@color/color_666"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/appTheme2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/train_list_header_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="195"
+                android:textColor="@color/appTheme2"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="起"
+                android:textColor="@color/appTheme2"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

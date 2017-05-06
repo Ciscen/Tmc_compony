@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/appTheme1">
+        <bitmap android:gravity="top" android:src="@mipmap/order_price_checked" android:tileMode="disabled" />
+    </item>
+    <item android:state_checked="false" android:color="@color/color_666">
+        <bitmap android:gravity="top" android:src="@mipmap/order_price_unchecked" android:tileMode="disabled" />
+    </item>
+</selector>

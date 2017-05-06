@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <com.auvgo.tmc.views.PinnedHeaderListView
+            android:id="@+id/hotel_city_list_lv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null" />
+
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/noresult"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:text="未查询到结果，换个条件试试吧~~"
+                android:textColor="@color/color_noresult"
+                android:textSize="15sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <com.auvgo.tmc.views.HotelSideBar
+            android:id="@+id/side_bar2"
+            android:layout_width="25dp"
+            android:layout_height="400dp"
+            android:layout_gravity="end|center" />
+
+    </FrameLayout>
+</LinearLayout>

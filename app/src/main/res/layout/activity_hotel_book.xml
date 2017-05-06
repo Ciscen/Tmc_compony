@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_book"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f8f8"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelBookActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:id="@+id/hotel_book_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="填写订单" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/appTheme1"
+                android:paddingBottom="17dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_white_radius"
+                    android:orientation="vertical"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="15dp">
+
+                    <TextView
+                        android:id="@+id/hotel_book_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="城市客栈(北京欢乐谷)"
+                        android:textColor="@color/color_333"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/hotel_book_roominfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="欢乐时光大床房|不含早|预付"
+                        android:textColor="@color/color_999"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/hotel_book_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12月1日-12月4日  共2晚"
+                            android:textColor="@color/color_999"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/hotel_book_room_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="房型详情"
+                            android:textColor="@color/appTheme1"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/hotel_book_cancel_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:maxLines="3"
+                android:paddingBottom="8dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="8dp"
+                android:text="订单可在2016-12-11 23:59前免费取消订单可在2016-12-11 23:订单可在2016-12-11 23:订单可在2016-12-11 23:订单可在2016-12-11 23:订单可在2016"
+                android:textColor="@color/color_yellow2"
+                android:textSize="11sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/hotel_book_room_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemTitle="房间数"
+                    app:itemTitleColor="#333333" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:src="@mipmap/arrowright" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hotel_book_click_addpsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="添加入住人"
+                    android:textColor="@color/appTheme1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/hotel_book_click_addLSpsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:padding="10dp"
+                    android:text="添加临时入住人"
+                    android:textColor="@color/appTheme1"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <com.auvgo.tmc.views.MyListView
+                android:id="@+id/hotel_book_lv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/hotel_book_paytype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="支付方式"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/hotel_book_rg"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/selector_paytype"
+                        android:button="@null"
+                        android:padding="5dp"
+                        android:text="在线支付"
+                        android:textColor="@drawable/selector_paytype"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_paytype"
+                        android:button="@null"
+                        android:padding="5dp"
+                        android:text="企业月结"
+                        android:textColor="@drawable/selector_paytype"
+                        android:textSize="12sp" />
+                </RadioGroup>
+            </LinearLayout>
+            <FrameLayout
+                android:id="@+id/hotel_book_item_applyNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/hotel_book_applyNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hint="请输入出差单号"
+                    app:inputable="true"
+                    app:itemTitle="出差单号"
+                    app:itemTitleColor="#333333" />
+
+                <ImageView
+                    android:id="@+id/hotel_book_applyNo_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    android:src="@mipmap/apply_no_book" />
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/item_hotel_book_room_keep_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <com.auvgo.tmc.views.ItemView
+                    android:id="@+id/hotel_book_room_keep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:content="14：30"
+                    app:itemTitle="最晚到店"
+                    app:itemTitleColor="#333333" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/arrowright" />
+            </LinearLayout>
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/hotel_book_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:inputable="true"
+                app:itemTitle="联系人"
+                app:itemTitleColor="#333333"
+                app:leftpadding="10dp" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/hotel_book_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1px"
+                app:inputable="true"
+                app:itemTitle="联系电话"
+                app:itemTitleColor="#333333"
+                app:leftpadding="10dp" />
+
+            <com.auvgo.tmc.views.ItemView
+                android:id="@+id/hotel_book_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="1px"
+                app:inputable="true"
+                app:itemTitle="邮箱"
+                app:itemTitleColor="#333333"
+                app:leftpadding="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_views"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <LinearLayout
+            android:id="@+id/hotel_book_click_pricedetail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/hotel_book_guarantee_price_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="在线担保"
+                        android:textColor="@color/color_666"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/hotel_book_price_guarantee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="￥0.00"
+                        android:textColor="@color/appTheme2"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hotel_book_price_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="到店付款"
+                        android:textColor="@color/color_666"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/hotel_book_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="￥0.00"
+                        android:textColor="@color/appTheme2"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:src="@mipmap/arrow_down"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hotel_book_commit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button_red_noradius"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="提交订单"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+    </LinearLayout>
+</LinearLayout>

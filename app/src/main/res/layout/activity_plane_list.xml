@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_train_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f8f8"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.auvgo.tmc.views.TitleView
+            android:id="@+id/plane_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title=" " />
+
+        <LinearLayout
+            android:id="@+id/plane_list_go_route_info"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/to" />
+
+            <TextView
+                android:id="@+id/plane_list_route_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="11月21日"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@color/color_666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/plane_list_route_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="国航CA1708"
+                android:textColor="@color/color_666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/plane_list_route_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="22:45-00:55"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/plane_list_before"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_f0click"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="前一天"
+                android:textColor="@color/color_333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/plane_list_calendar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_f0click"
+                android:clickable="true"
+                android:drawableLeft="@mipmap/calender"
+                android:gravity="center"
+                android:text="20106-10-19"
+                android:textColor="#181c1e"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/plane_list_after"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_f0click"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="后一天"
+                android:textColor="@color/color_333"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <include layout="@layout/layout_divider" />
+
+        <ListView
+            android:id="@+id/plane_list_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="visible" />
+
+        <com.auvgo.tmc.views.EmptyView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <include layout="@layout/layout_divider" />
+
+        <LinearLayout
+            android:id="@+id/plane_list_ll"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/plane_list_rg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_order_price"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="5dp"
+                    android:text="从低到高"
+                    android:textColor="@drawable/selector_order_price"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_order_offtime"
+                    android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="5dp"
+                    android:text="从早到晚"
+                    android:textColor="@drawable/selector_order_price"
+                    android:textSize="12sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/plane_list_filt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_order_filter"
+                android:button="@null"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
+                android:text="筛选"
+                android:textColor="@drawable/selector_order_price"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/plane_list_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/black"
+        android:visibility="gone" />
+</FrameLayout>
+

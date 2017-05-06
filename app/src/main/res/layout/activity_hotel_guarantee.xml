@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hotel_guarantee"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.hotel.activity.HotelGuaranteeActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="信用卡担保" />
+
+    <com.auvgo.tmc.views.ItemView
+        android:id="@+id/guarantee_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="请输入银行卡号"
+        app:inputable="true"
+        app:itemTitle="信用卡"
+        app:itemTitleColor="#333333" />
+
+
+    <TextView
+        android:id="@+id/guarantee_next"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/selector_button_red"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</LinearLayout>

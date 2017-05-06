@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.auvgo.tmc.common.fragment.GuideFragment">
+
+    <ImageView
+        android:id="@+id/guide_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:src="@mipmap/guide4" />
+
+    <Button
+        android:id="@+id/guide_button"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:background="#00000000"
+        android:text="" />
+</RelativeLayout>

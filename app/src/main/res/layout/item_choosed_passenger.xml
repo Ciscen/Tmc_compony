@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/chosed_delete" />
+
+        <TextView
+            android:id="@+id/tv_choosed_passenger"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/choosed_passenger_bg"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="4"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:singleLine="true"
+            android:text="耿立刚"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2"
+    android:orientation="vertical"
+    tools:context="com.auvgo.tmc.plane.activity.PlaneQueryActivity">
+
+    <com.auvgo.tmc.views.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="机票查询" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/plane_home_single_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="单程"
+            android:textColor="@color/appTheme1"
+            android:textSize="18sp"
+            tools:layout_conversion_absoluteHeight="50dp"
+            tools:layout_conversion_absoluteWidth="192dp"
+            tools:layout_conversion_absoluteX="192dp"
+            tools:layout_conversion_absoluteY="55dp" />
+
+        <TextView
+            android:id="@+id/plane_home_wf_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="往返"
+            android:textColor="@color/color_333"
+            android:textSize="18sp"
+            tools:layout_conversion_absoluteHeight="50dp"
+            tools:layout_conversion_absoluteWidth="192dp"
+            tools:layout_conversion_absoluteX="192dp"
+            tools:layout_conversion_absoluteY="55dp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/plane_home_indicator"
+        android:layout_width="150dp"
+        android:layout_height="2dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/appTheme1" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/plane_home_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
+
+
+</LinearLayout>

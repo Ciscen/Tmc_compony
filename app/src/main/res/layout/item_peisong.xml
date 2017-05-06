@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/item_peisong_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_peisong_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/item_peisong_name"
+            android:text=""
+            android:textColor="@color/color_333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_peisong_mrdz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:text="默认地址"
+            android:textColor="@color/color_333"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/item_peisong_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/item_peisong_mrdz"
+            android:src="@mipmap/checked_peisong" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/item_peisong_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:text=""
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/color_999"
+        android:textSize="12sp" />
+
+</LinearLayout>
