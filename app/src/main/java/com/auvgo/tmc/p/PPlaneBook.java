@@ -272,57 +272,6 @@ public class PPlaneBook extends BaseP {
 
     private void checkIsWei() {
         int flag1 = MUtils.getWeibeiFlag(firstRoute.getBean(), firstRoute.getCangwei());
-//        if (flag1 != -4 || flag2 != -4) {
-//            isWei1 = flag1 != 0 || flag2 != 0;
-//            create();
-//        } else {
-//            checkNHour(false, firstRoute, new RetrofitUtil.OnResponse() {
-//                @Override
-//                public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
-//                    if (status == 200) {
-//                        Type token = new TypeToken<List<PlaneListBean>>() {
-//                        }.getType();
-//                        List<PlaneListBean> list = new Gson().fromJson(bean.getData(), token);
-//                        int savePrice = checkIsLow(list, firstRoute.getBean().getCangweis().get(firstRoute.getCangwei()).getPrice());
-//                        if (savePrice > 0) {
-//                            isWei1 = true;
-//                            create();
-//                        } else {
-//                            if (secondRoute != null) {
-//                                checkNHour(true, secondRoute, new RetrofitUtil.OnResponse() {
-//                                    @Override
-//                                    public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
-//                                        if (status == 200) {
-//                                            Type token = new TypeToken<List<PlaneListBean>>() {
-//                                            }.getType();
-//                                            List<PlaneListBean> list = new Gson().fromJson(bean.getData(), token);
-//                                            int savePrice = checkIsLow(list, secondRoute.getBean().getCangweis().get(secondRoute.getCangwei()).getPrice());
-//                                            isWei1 = savePrice > 0;
-//                                            create();
-//                                        }
-//                                        return false;
-//                                    }
-//
-//                                    @Override
-//                                    public boolean onFailed(Throwable e) {
-//                                        return false;
-//                                    }
-//                                });
-//                            } else {
-//                                isWei1 = false;
-//                                create();
-//                            }
-//                        }
-//                    }
-//                    return false;
-//                }
-//
-//                @Override
-//                public boolean onFailed(Throwable e) {
-//                    return false;
-//                }
-//            });
-//        }
         if (flag1 != -5) {
             isWei1 = flag1 != 0;
             if (secondRoute == null) {

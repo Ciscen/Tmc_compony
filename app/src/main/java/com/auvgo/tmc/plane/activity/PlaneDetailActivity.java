@@ -190,6 +190,7 @@ public class PlaneDetailActivity extends BaseActivity implements AdapterView.OnI
                     if (!b && !sb.toString().contains("全天")) sb.append("全天最低价、");
                     break;
                 case 2:
+                    if (!b) sb.append("前后").append(mPlanePolicy.getFlighthour()).append("小时最低价、");
                     break;
             }
         }
