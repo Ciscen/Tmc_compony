@@ -39,5 +39,9 @@ public interface IPlaneApprove {
     String getBookPolicyI();
 
     String getWBReasonI();
+
     IRouteBean getRoute();
+
+    String getBxName();
+
 }

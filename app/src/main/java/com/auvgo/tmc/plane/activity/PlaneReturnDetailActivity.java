@@ -151,8 +151,8 @@ public class PlaneReturnDetailActivity extends BaseActivity implements View.OnCl
         cv.setEnd_date(rb.getArridate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname());
-        cv.setArriname(rb.getArriname());
+        cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
+        cv.setArriname(rb.getArriname() + rb.getArriterm());
         cv.setCangwei2(rb.getCodeDes() + "/" + rb.getDisdes());
 //        applyNo_iv.setContent(order.getShenqingno());
 //        costCenter_iv.setContent(order.getCostname());

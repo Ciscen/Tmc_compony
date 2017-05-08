@@ -23,15 +23,34 @@
             android:textColor="@color/color_333"
             android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/item_plane_detail_tuigaiqian"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:padding="5dp"
-            android:text="退改签"
-            android:textColor="@color/appTheme1"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_plane_detail_tuigaiqian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="退改签"
+                android:textColor="@color/appTheme1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_plane_detail_guanwang_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_red_rect_noradius"
+                android:padding="2dp"
+                android:text="官网"
+                android:textColor="@color/appTheme2"
+                android:textSize="10sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

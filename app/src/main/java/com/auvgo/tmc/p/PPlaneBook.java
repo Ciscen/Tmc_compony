@@ -100,7 +100,7 @@ public class PPlaneBook extends BaseP {
         double piaojia = firstRouteBean.getCangweis().get(firstRoute.getCangwei()).getPrice();
         //服务费
         double fuwufei = MyApplication.mComSettingBean.getFuwufei().getGnapp();
-        //机建费、税费
+        //机建燃油
         int jijianfei = firstRouteBean.getAirporttax() + firstRouteBean.getFueltax();
         //保险费
         int baoxianfei = this.baoxian;
@@ -243,6 +243,9 @@ public class PPlaneBook extends BaseP {
         } else if (vm.getPeisong().isEmpty() && ((BaseActivity) context).getPeiSongAddrSettingCode().equals("1")) {
             ToastUtils.showTextToast("请输入配送地址");
             return;
+        } else if (bxCode.isEmpty() && ((BaseActivity) context).getJPBxSetting().equals("1")) {
+            ToastUtils.showTextToast("请选择保险");
+            return;
         }
         getPolicy(psgList);
     }
@@ -363,7 +366,6 @@ public class PPlaneBook extends BaseP {
         rcp.setTotalprice(totalPrice);
         rcp.setBookUserId(MyApplication.mUserInfoBean.getId());
         rcp.setBookUserName(MyApplication.mUserInfoBean.getName());
-        rcp.setBookpolicy(MUtils.getPlanePolicyString(MyApplication.mPlanePolicy));//由于在外层，不能具体到每一程，所以不可以设置为违背的政策
         boolean b;
         if (secondRoute == null) {
             b = isWei1;
@@ -371,6 +373,7 @@ public class PPlaneBook extends BaseP {
             b = isWei1 || isWei2;
         }
 
+        rcp.setBookpolicy(b ? MUtils.getPlanePolicyString(MyApplication.mPlanePolicy) : "");//由于在外层，不能具体到每一程，所以不可以设置为违背的政策
         rcp.setWeibeiflag(b ? 1 : 0);
         rcp.setTickettype(0);
         rcp.setUsers(getUsers());
@@ -570,12 +573,6 @@ public class PPlaneBook extends BaseP {
     private List<RequestCreatePlaneOrder.PsgBean> getUsers() {
         List<RequestCreatePlaneOrder.PsgBean> users = new ArrayList<>();
         for (int i = 0; i < psgList.size(); i++) {
-//            //票价
-//            int price1 = isReturn ? secondRoute.getBean().getCangweis().get(secondRoute.getCode()).getPrice() : 0;
-//            int price2 = firstRoute.getBean().getCangweis().get(firstRoute.getCode()).getPrice();
-//            //机建燃油费
-//            int jijian1 = firstRoute.getBean().getFueltax() + firstRoute.getBean().getAirporttax();
-//            int jijian2 = isReturn ? secondRoute.getBean().getFueltax() + secondRoute.getBean().getAirporttax() : 0;
             //服务费
             double fuwufei = MyApplication.mComSettingBean.getFuwufei().getGnapp();
             UserBean userBean = psgList.get(i);
@@ -594,10 +591,6 @@ public class PPlaneBook extends BaseP {
             bean.setPasstype("AD");
             bean.setPeisongfee(0d);
             bean.setZhiwei(userBean.getZhiwei());
-//            int p = isReturn ? price2 : price1;
-//            int j = isReturn ? jijian1 : jijian2;
-//            bean.setPrice((double) p);
-//            bean.setTotalprice((double) (p + fuwufei + baoxian + j));
             users.add(bean);
         }
         return users;

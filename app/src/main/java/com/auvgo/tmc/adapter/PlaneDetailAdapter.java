@@ -60,6 +60,7 @@ public class PlaneDetailAdapter extends BaseAdapter {
         TextView seatnum = (TextView) view.findViewById(R.id.item_plane_detail_seatnum);
         TextView book = (TextView) view.findViewById(R.id.item_plane_detail_book);
         ImageView wei = (ImageView) view.findViewById(R.id.item_plane_detail_wei);
+        View guanwang = view.findViewById(R.id.item_plane_detail_guanwang_flag);
         View tuigai = view.findViewById(R.id.item_plane_detail_tuigaiqian);
         tuigai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +81,7 @@ public class PlaneDetailAdapter extends BaseAdapter {
         } else {
             seatnum.setTextColor(context.getResources().getColor(R.color.black));
         }
+
         boolean airlineWei = bean.isAirlineWei();
         boolean cangweiWei = isCangweiWei(airlineWei, cb);
         if (airlineWei || cangweiWei) {
@@ -89,6 +91,7 @@ public class PlaneDetailAdapter extends BaseAdapter {
             wei.setVisibility(View.GONE);
             cb.setWei(false);
         }
+        guanwang.setVisibility(cb.getPfrom().equals("W") ? View.VISIBLE : View.GONE);//是否是官网价格
         return view;
     }
 

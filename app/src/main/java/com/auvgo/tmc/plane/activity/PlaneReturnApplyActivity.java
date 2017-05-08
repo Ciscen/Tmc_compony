@@ -116,8 +116,8 @@ public class PlaneReturnApplyActivity extends BaseActivity {
         cv.setEnd_date(routesBean.getArridate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(routesBean.getArridate()));
         cv.setStart_time(routesBean.getDepttime());
         cv.setEnd_time(routesBean.getArritime());
-        cv.setOrgname(routesBean.getOrgname());
-        cv.setArriname(routesBean.getArriname());
+        cv.setOrgname(routesBean.getOrgname()+routesBean.getDeptterm());
+        cv.setArriname(routesBean.getArriname()+routesBean.getArriterm());
         cv.setCangwei2(routesBean.getCodeDes() + "/" + routesBean.getDisdes());
         lv.setAdapter(adapter);
         TextView tuigaiqian = (TextView) cv.findViewById(R.id.plane_detail_costtime);

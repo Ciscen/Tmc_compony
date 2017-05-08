@@ -110,7 +110,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="机建/税费"
+            android:text="机建/燃油"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -315,7 +315,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="机建/税费"
+                android:text="机建/燃油"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 

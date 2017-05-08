@@ -66,9 +66,11 @@ public class PlaneOrderDetailPsgAdapter extends BaseAdapter {
         View view = inflater.inflate(R.layout.item_train_order_detail_psgs, null);
         TextView name = (TextView) view.findViewById(R.id.item_train_order_detail_name);
         TextView no = (TextView) view.findViewById(R.id.item_train_order_detail_no);
+        TextView piaohao = (TextView) view.findViewById(R.id.item_train_order_detail_piaohao);
         ImageView gai = (ImageView) view.findViewById(R.id.item_train_order_detail_gai);
         ImageView tui = (ImageView) view.findViewById(R.id.item_train_order_detail_tui);
-        int id = list.get(position).getIdI();
+        IPassenger iPassenger = list.get(position);
+        int id = iPassenger.getIdI();
         int gaiqianstatus = MUtils.getGaiqianstatusByPsgId(mBean, id);
         int tuipiaostatus = MUtils.getTuipiaostatusByPsgId(mBean, id);
 
@@ -82,8 +84,23 @@ public class PlaneOrderDetailPsgAdapter extends BaseAdapter {
             tui.setVisibility(View.GONE);
             gai.setVisibility(View.GONE);
         }
-        name.setText(list.get(position).getNameI());
-        no.setText(String.valueOf(list.get(position).getCernoI()));
+        name.setText(iPassenger.getNameI());
+        no.setText(String.valueOf(iPassenger.getCernoI()));
+        String piaohaoStr = getPiaohao(iPassenger.getIdI());
+        piaohao.setText(String.format("票号：%s", piaohaoStr == null ? "--" : piaohaoStr));
         return view;
     }
+
+    private String getPiaohao(int idI) {
+        if (mBean != null) {
+            List<PlaneOrderDetailBean.RoutePassBean> routePass = mBean.getRoutePass();
+            for (int i = 0; i < routePass.size(); i++) {
+                if (routePass.get(i).getPassid() == idI) {
+                    return routePass.get(i).getPiaohao();
+                }
+            }
+        }
+        return "--";
+    }
+
 }

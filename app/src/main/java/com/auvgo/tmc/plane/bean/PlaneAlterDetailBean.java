@@ -400,6 +400,11 @@ public class PlaneAlterDetailBean implements IPlaneApprove {
         return routes.get(0);
     }
 
+    @Override
+    public String getBxName() {
+        return "";
+    }
+
     public static class OldroutesBean {
         /**
          * id : 161

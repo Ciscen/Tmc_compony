@@ -39,7 +39,7 @@ public class PlaneSendDetailActivity extends AppCompatActivity {
 
     private void initData() {
         mBean = getIntent().getParcelableExtra("bean");
-        adapter = new PlaneOrderDetailPsgAdapter(this, mBean.getPassengers());
+        adapter = new PlaneOrderDetailPsgAdapter(this, mBean);
     }
 
     private void findViews() {
@@ -62,7 +62,8 @@ public class PlaneSendDetailActivity extends AppCompatActivity {
         } else {
             email.setText(linkEmail);
         }
-        ensurance.setContent(String.valueOf(mBean.getPassengers().get(0).getBxName()));
+        String bxName = mBean.getRoutePass().get(0).getBxName();
+        ensurance.setContent(TextUtils.isEmpty(bxName) ? "--" : bxName);
         psgs_lv.setAdapter(adapter);
         PlaneOrderDetailBean.RoutesBean rb = mBean.getRoutes().get(0);
         cv.setAirline(rb.getCarriername() + rb.getAirline() + "|" + rb.getPlanestyle());
@@ -70,8 +71,8 @@ public class PlaneSendDetailActivity extends AppCompatActivity {
         cv.setEnd_date(rb.getArridate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname());
-        cv.setArriname(rb.getArriname());
+        cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
+        cv.setArriname(rb.getArriname() + rb.getArriterm());
         cv.setBottom2(rb.getCodeDes());
         cv.setGaiStr(rb.getChangerule());
         cv.setTuiStr(rb.getRefundrule());

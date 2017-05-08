@@ -641,6 +641,12 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
         return routes.get(0);
     }
 
+    @Override
+    public String getBxName() {
+        return routePass.get(0).getBxName();
+    }
+
+
     public static class RoutesBean implements Parcelable, IRouteBean {
         /**
          * id : 290
@@ -807,7 +813,7 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
         }
 
         public String getOrgname() {
-            return orgname;
+            return orgname+deptterm;
         }
 
         public void setOrgname(String orgname) {
@@ -823,7 +829,7 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
         }
 
         public String getArriname() {
-            return arriname;
+            return arriname+arriterm;
         }
 
         public void setArriname(String arriname) {

@@ -152,6 +152,11 @@ public class PlaneApproveActivity extends BaseActivity implements View.OnClickLi
             weiItem_iv.setContent(mBean.getBookPolicyI());
             weiReason_iv.setContent(mBean.getWBReasonI());
         }
+        if (mBean.getWBReasonI().isEmpty()) {
+            weiItem_iv.setVisibility(View.GONE);
+            weiReason_iv.setVisibility(View.GONE);
+        }
+
     }
 
     @Override

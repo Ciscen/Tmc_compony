@@ -196,6 +196,22 @@ public abstract class BaseActivity extends FragmentActivity {
         return peisongaddress == null ? "0" : peisongaddress;
     }
 
+    public String getJPBxSetting() {
+        String bxsetting = MyApplication.mComSettingBean.
+                getProductSet().getProconfValue().get("jpinsurance");
+        return bxsetting == null ? "0" : bxsetting;
+    }
+    public String getJDBxSetting() {
+        String bxsetting = MyApplication.mComSettingBean.
+                getProductSet().getProconfValue().get("jdinsurance");
+        return bxsetting == null ? "0" : bxsetting;
+    }
+    public String getHCPBxSetting() {
+        String bxsetting = MyApplication.mComSettingBean.
+                getProductSet().getProconfValue().get("hcpinsurance");
+        return bxsetting == null ? "0" : bxsetting;
+    }
+
     public void setPeiSongAddr(View view) {
         String pscode = getPeiSongAddrSettingCode();
         if (pscode.equals("1")) {

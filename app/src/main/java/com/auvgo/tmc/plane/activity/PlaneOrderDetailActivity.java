@@ -121,8 +121,8 @@ public class PlaneOrderDetailActivity extends BaseActivity implements ViewManage
         cv.setEnd_date(rb.getArridate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname());
-        cv.setArriname(rb.getArriname());
+        cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
+        cv.setArriname(rb.getArriname() + rb.getArriterm());
 //        cv.setCangwei(rb.getCodeDes() + "/" + rb.getDisdes());
         cv.setCangwei(rb.getCodeDes());
         cv.setTuiStr(rb.getRefundrule());
@@ -161,7 +161,7 @@ public class PlaneOrderDetailActivity extends BaseActivity implements ViewManage
             //审批通过或者无需审批
             setCancleText();
             if (approvestatus == APPROVE_STATUS_SHENPITONGGUO || approvestatus == APPROVE_STATUS_WUXUSHENPI) {
-                button1_tv.setText("去支付");
+                button1_tv.setText(mBean.getPayType().equals("1") ? "确认出票" : "去支付");
                 button2_tv.setText("取消订单");
             }
             if (approvestatus == APPROVE_STATUS_SHENPIFOUJUE || approvestatus == APPROVE_STATUS_SHENPIZHONG) {

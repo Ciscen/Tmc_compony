@@ -305,7 +305,7 @@ public class PPlanSend extends BaseP {
         double piaojia = mBean.getTotalticketprice();
         //服务费
         double fuwufei = mBean.getRoutePass().get(0).getFuwufee();
-        //机建费、税费
+        //机建燃油
         PlaneOrderDetailBean.RoutesBean routesBean = mBean.getRoutes().get(0);
         double jijianfei = routesBean.getAirporttax() + routesBean.getFueltax();
         //保险费

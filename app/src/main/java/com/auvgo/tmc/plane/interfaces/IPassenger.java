@@ -10,5 +10,7 @@ public interface IPassenger {
     String getCernoI();
 
     String getNameI();
+
     String getBxName();
+
 }

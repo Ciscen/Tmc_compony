@@ -278,7 +278,7 @@ public class TrainOrderDetailActivity extends BaseActivity implements ViewManage
                     pTrainOrderDetail.setmOrderStatus(PTrainOrderDetail.STATUS_DAITIJIAO);
                 }
                 if (approveStatus == APPROVE_STATUS_SHENPITONGGUO || approveStatus == APPROVE_STATUS_WUXUSHENPI) {//审批通过或者不需要审批
-                    commit.setText(isMonthPay ? "确认出票" : "支付");
+                    commit.setText(isMonthPay ? "确认出票" : "去支付");
                     cancle.setText("取消订单");
                     state.setText("待支付");
 //                    if (approveStatus == APPROVE_STATUS_SHENPITONGGUO) {

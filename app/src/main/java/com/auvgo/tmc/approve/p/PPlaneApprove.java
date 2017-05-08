@@ -233,19 +233,4 @@ public class PPlaneApprove extends BaseP {
         return type.equals("airgq");
     }
 
-//    public String getTotalPrice() {
-//
-//        //乘客人数
-//        int psgNum = mBean.getPassengers().size();
-//        //票价
-//        double piaojia = mBean.getTotalticketprice() / psgNum;
-//        //服务费
-//        double fuwufei = mBean.getRoutePass().get(0).getFuwufee();
-//        //机建费、税费
-//        PlaneOrderDetailBean.RoutesBean routesBean = mBean.getRoutes().get(0);
-//        double jijianfei = routesBean.getAirporttax() + routesBean.getFueltax();
-//        //保险费
-//        double baoxian = mBean.getRoutePass().get(0).getBxPayMoney();
-//        return AppUtils.keepNSecimal((piaojia + fuwufei + jijianfei) * psgNum + "", 1);
-//    }
 }

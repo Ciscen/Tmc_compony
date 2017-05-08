@@ -159,7 +159,7 @@ public class DialogUtil {
         double piaojia = firstRouteBean.getCangweis().get(firstRoute.getCangwei()).getPrice();
         //服务费
         double fuwufei = MyApplication.mComSettingBean.getFuwufei().getGnapp();
-        //机建费、税费
+        //机建燃油
         int jijianfei = firstRouteBean.getAirporttax() + firstRouteBean.getFueltax();
         piaojia1.setText(piaojia + "x" + psgNum);
         jijianfei1.setText(jijianfei + "x" + psgNum);
@@ -185,7 +185,7 @@ public class DialogUtil {
             PlaneListBean secondRouteBean = secondRoute.getBean();
             //票价
             double pj2 = secondRouteBean.getCangweis().get(secondRoute.getCangwei()).getPrice();
-            //机建费、税费
+            //机建燃油费
             int jjf2 = secondRouteBean.getAirporttax() + secondRouteBean.getFueltax();
             piaojia2.setText(pj2 + "x" + psgNum);
             jijianfei2.setText(jjf2 + "x" + psgNum);
@@ -232,7 +232,7 @@ public class DialogUtil {
 
         List<PlaneOrderDetailBean.RoutePassBean> routePass = mBean.getRoutePass();
         double fuwufei = routePass.get(0).getFuwufee();
-        //机建费、税费
+        //机建燃油
         PlaneOrderDetailBean.RoutesBean routesBean = mBean.getRoutes().get(0);
         double jijianfei = routesBean.getAirporttax() + routesBean.getFueltax();
         //保险费
