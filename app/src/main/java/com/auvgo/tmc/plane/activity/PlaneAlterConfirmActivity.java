@@ -92,8 +92,8 @@ public class PlaneAlterConfirmActivity extends BaseActivity {
         PlaneOrderDetailBean.RoutesBean routesBean = routes.get(0);
         time_dept_tv.setText(routesBean.getDeptdate().substring(5) + " " + routesBean.getDepttime());
         time_arri_tv.setText(routesBean.getArridate().substring(5) + " " + routesBean.getArritime());
-        airport_dept_tv.setText(String.format("%s%s", routesBean.getOrgname(), routesBean.getDeptterm()));
-        airport_arri_tv.setText(String.format("%s%s", routesBean.getArriname(), routesBean.getArriterm()));
+        airport_dept_tv.setText(routesBean.getOrgname());
+        airport_arri_tv.setText(routesBean.getArriname());
         airline_tv.setText(routesBean.getCarriername() + routesBean.getAirline() + "|" + routesBean.getCodeDes());
 
         cv.setAirline("新航程");

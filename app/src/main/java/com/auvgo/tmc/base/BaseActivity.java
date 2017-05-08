@@ -55,7 +55,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
             @Override
             public void onKeyboardChange(boolean isShow, int keyboardHeight) {
-                View v = findViewById(R.id.bottom_views);
+                View v = findViewById(R.id.bottom_bts);
                 if (v != null)
                     v.setVisibility(isShow ? View.GONE : View.VISIBLE);
             }

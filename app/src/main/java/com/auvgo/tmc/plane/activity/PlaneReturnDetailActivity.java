@@ -76,7 +76,7 @@ public class PlaneReturnDetailActivity extends BaseActivity implements View.OnCl
 
     @Override
     protected void initView() {
-
+        lv_psgs.setFocusable(false);
     }
 
     @Override

@@ -813,7 +813,7 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
         }
 
         public String getOrgname() {
-            return orgname+deptterm;
+            return orgname + deptterm;
         }
 
         public void setOrgname(String orgname) {
@@ -829,7 +829,7 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
         }
 
         public String getArriname() {
-            return arriname+arriterm;
+            return arriname + arriterm;
         }
 
         public void setArriname(String arriname) {

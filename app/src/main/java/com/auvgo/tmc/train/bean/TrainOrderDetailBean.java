@@ -103,7 +103,7 @@ public class TrainOrderDetailBean implements Serializable {
     private long createtime;
     private Object backStatus;
     private String travelTime;
-    private Object lastPayTime;
+    private Long lastPayTime;
     private Object failReason;
     private Object refundAmount;
     private Object refundType;
@@ -471,11 +471,11 @@ public class TrainOrderDetailBean implements Serializable {
         this.travelTime = travelTime;
     }
 
-    public Object getLastPayTime() {
+    public Long getLastPayTime() {
         return lastPayTime;
     }
 
-    public void setLastPayTime(Object lastPayTime) {
+    public void setLastPayTime(Long lastPayTime) {
         this.lastPayTime = lastPayTime;
     }
 

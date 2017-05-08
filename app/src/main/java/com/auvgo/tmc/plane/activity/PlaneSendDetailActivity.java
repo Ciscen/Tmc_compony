@@ -71,8 +71,8 @@ public class PlaneSendDetailActivity extends AppCompatActivity {
         cv.setEnd_date(rb.getArridate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
-        cv.setArriname(rb.getArriname() + rb.getArriterm());
+        cv.setOrgname(rb.getOrgname());
+        cv.setArriname(rb.getArriname());
         cv.setBottom2(rb.getCodeDes());
         cv.setGaiStr(rb.getChangerule());
         cv.setTuiStr(rb.getRefundrule());

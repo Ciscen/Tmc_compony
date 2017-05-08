@@ -1,19 +1,15 @@
-package com.auvgo.tmc.debug.wxapi;
+package com.auvgo.tmc.wxapi;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.auvgo.tmc.R;
 import com.auvgo.tmc.base.BaseActivity;
 import com.auvgo.tmc.common.PayListActivity;
 import com.auvgo.tmc.constants.Constant;
-import com.auvgo.tmc.utils.ToastUtils;
 import com.tencent.mm.sdk.constants.ConstantsAPI;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;

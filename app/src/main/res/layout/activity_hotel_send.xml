@@ -178,7 +178,7 @@
 
 
     <LinearLayout
-        android:id="@+id/bottom_views"
+        android:id="@+id/bottom_bts"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:orientation="horizontal">

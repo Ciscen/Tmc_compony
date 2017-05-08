@@ -22,7 +22,7 @@ import com.auvgo.tmc.utils.RetrofitUtil;
 import com.auvgo.tmc.utils.SPUtils;
 import com.auvgo.tmc.utils.Url;
 import com.auvgo.tmc.views.MyPickerView;
-import com.auvgo.tmc.debug.wxapi.WXPayEntryActivity;
+import com.auvgo.tmc.wxapi.WXPayEntryActivity;
 
 import java.util.ArrayList;
 import java.util.List;

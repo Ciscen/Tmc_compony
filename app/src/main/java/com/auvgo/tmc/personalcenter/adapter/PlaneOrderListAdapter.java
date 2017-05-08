@@ -13,6 +13,8 @@ import com.auvgo.tmc.utils.MUtils;
 
 import java.util.List;
 
+import static com.auvgo.tmc.constants.Constant.AirAlterStatus.*;
+
 /**
  * Created by lc on 2016/12/1
  */
@@ -55,9 +57,10 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
         viewHolder.offTime.setText("起飞:" + listBean.getDeptdate() + " " + listBean.getDepttime());
         viewHolder.name.setText(listBean.getChencheRen());
         viewHolder.orderno.setText(String.format("订单号:%s", listBean.getOrderno()));
+        int status = listBean.getStatu();
         switch (ticketType) {
             case TrainOrderListFragment.NORMAL:
-                viewHolder.orderStatus.setText(MUtils.getOrgTicketStateByCode(listBean.getStatu()));
+                viewHolder.orderStatus.setText(MUtils.getOrgTicketStateByCode(status));
                 viewHolder.approveStatus.setText(MUtils.getApproveStateByCode(listBean.getApprovestatus()));
                 if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
                     viewHolder.approveStatus.setText("待支付");
@@ -65,19 +68,26 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
                 viewHolder.price.setText(String.format("￥%s", listBean.getTotalprice()));
                 break;
             case TrainOrderListFragment.RETURNL:
-                viewHolder.orderStatus.setText(MUtils.getReturnStateByCode(listBean.getStatu()));
+                viewHolder.orderStatus.setText(MUtils.getReturnStateByCode(status));
                 viewHolder.approveStatus.setVisibility(View.GONE);
                 double tpprice = listBean.getTotalprice();
                 viewHolder.price.setText(tpprice == 0 ? "- -" : "￥" + tpprice);
                 break;
             case TrainOrderListFragment.ALTER:
-                viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(listBean.getStatu()));
+                viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(status));
                 viewHolder.approveStatus.setText("");
                 if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
                     viewHolder.approveStatus.setText("待支付");
                 }
                 double gqprice = listBean.getTotalprice();
-                viewHolder.price.setText(gqprice == 0 ? "- -" : "￥" + listBean.getTotalprice());
+                String price;
+                if (gqprice == 0 || status == AIR_GQ_CANCELED || status == AIR_GQ_FAILED
+                        || status == AIR_GQ_COMMITTED || status == AIR_GQ_WEIGAIQIAN) {
+                    price = "- -";
+                } else {
+                    price = "￥" + listBean.getTotalprice();
+                }
+                viewHolder.price.setText(price);
                 break;
         }
     }

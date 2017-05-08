@@ -979,7 +979,7 @@ public class PlaneAlterDetailBean implements IPlaneApprove {
         }
 
         public String getOrgname() {
-            return orgname;
+            return orgname + deptterm;
         }
 
         public void setOrgname(String orgname) {
@@ -995,7 +995,7 @@ public class PlaneAlterDetailBean implements IPlaneApprove {
         }
 
         public String getArriname() {
-            return arriname;
+            return arriname + arriterm;
         }
 
         public void setArriname(String arriname) {

@@ -401,14 +401,14 @@
 
         <!-- WXPAY    BEGIN -->
         <activity
-            android:name=".debug.wxapi.WXPayEntryActivity"
+            android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <!-- WXPAY    END -->
         <!-- Umeng  BEGIN -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="58ef2ae49f06fd6931000efb" />
+            android:value="5910316075ca352281000c8f" />
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />

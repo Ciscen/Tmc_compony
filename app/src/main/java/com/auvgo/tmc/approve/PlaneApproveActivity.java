@@ -10,6 +10,7 @@ import com.auvgo.tmc.approve.interfaces.IPlaneApprove;
 import com.auvgo.tmc.approve.interfaces.IRouteBean;
 import com.auvgo.tmc.approve.p.PPlaneApprove;
 import com.auvgo.tmc.base.BaseActivity;
+import com.auvgo.tmc.plane.bean.PlaneOrderDetailBean;
 import com.auvgo.tmc.plane.interfaces.ViewManager_PlaneOrderDetail;
 import com.auvgo.tmc.utils.MUtils;
 import com.auvgo.tmc.utils.TimeUtils;
@@ -122,6 +123,12 @@ public class PlaneApproveActivity extends BaseActivity implements View.OnClickLi
             email_tv.setText(linkEmail);
         }
         String bxName = mBean.getPassengersI().get(0).getBxName();
+        if (TextUtils.isEmpty(bxName)) {
+            if (mBean instanceof PlaneOrderDetailBean) {
+                PlaneOrderDetailBean b = (PlaneOrderDetailBean) mBean;
+                bxName = b.getRoutePass().get(0).getBxName();
+            }
+        }
         insurance_iv.setContent(TextUtils.isEmpty(bxName) ? "- -" : bxName);
         psgs_lv.setAdapter(pPlaneApprove.getAdapter_psg());
         approve_lv.setAdapter(pPlaneApprove.getAdapter_approve_state());

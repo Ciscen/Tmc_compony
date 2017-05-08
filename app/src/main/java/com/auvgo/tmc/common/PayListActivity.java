@@ -23,7 +23,7 @@ import com.auvgo.tmc.train.activity.AlterOrderDetailActivity;
 import com.auvgo.tmc.train.activity.TrainOrderDetailActivity;
 import com.auvgo.tmc.utils.LogFactory;
 import com.auvgo.tmc.utils.ToastUtils;
-import com.auvgo.tmc.debug.wxapi.WXPayEntryActivity;
+import com.auvgo.tmc.wxapi.WXPayEntryActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -131,6 +131,7 @@ public class PayListActivity extends BaseActivity {
 
     @Override
     protected void setViews() {
+
     }
 
     @OnClick({R.id.pay_qiankuan, R.id.pay_alipay, R.id.pay_union, R.id.pay_wxpay})

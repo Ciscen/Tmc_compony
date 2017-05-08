@@ -289,8 +289,8 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
         cv.setEnd_date(TimeUtils.getMMdd(rb.getArridate()) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
-        cv.setArriname(rb.getArriname() + rb.getArriterm());
+        cv.setOrgname(rb.getOrgname() );
+        cv.setArriname(rb.getArriname());
         String text = String.valueOf(mBean.getPassengers().get(0).getKhYinshou() * mBean.getPassengers().size());
         price_tv.setText(/*价格确认以后才显示价格*/status == AIR_GQ_COMMITTED ? "--" : AppUtils.keepNSecimal(text, 2));
         if (mBean.getApproves() == null || mBean.getApproves().size() == 0) {

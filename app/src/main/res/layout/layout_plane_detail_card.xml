@@ -80,6 +80,8 @@
                 android:id="@+id/plane_detail_orgname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
                 android:textColor="@color/color_666"
                 android:textSize="11sp" />
         </LinearLayout>
@@ -144,6 +146,8 @@
                 android:id="@+id/plane_detail_arriname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
                 android:textColor="@color/color_666"
                 android:textSize="11sp" />
         </LinearLayout>
