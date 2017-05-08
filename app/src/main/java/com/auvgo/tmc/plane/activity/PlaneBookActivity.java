@@ -109,7 +109,7 @@ public class PlaneBookActivity extends BaseActivity implements ViewManager_plane
             cv2.setJijian("￥" + bean.getAirporttax());
             cv2.setRun_time(bean.getFlytime());
             PlaneListBean.CangweisBean cangweisBean = bean.getCangweis().get(secondRoute.getCangwei());
-            cv2.setFood(bean.isMeal() ? bean.getMealcode() : "无餐");
+            cv2.setFood(bean.isMeal() ? "有餐" : "无餐");
             cv2.setCangwei(cangweisBean.getDisdes() + cangweisBean.getCodeDes());
             cv2.setPrice(String.valueOf(cangweisBean.getPrice()));
             cv2.setGaiStr(cangweisBean.getChangerule());
