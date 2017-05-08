@@ -202,7 +202,7 @@ public class TrainOrderDetailActivity extends BaseActivity implements ViewManage
         reason.setText(b.getChailvitem());
         int approvestatus = b.getApprovestatus();
         int status = b.getStatus();
-        if (approvestatus != 0 || status != TICKET_STATUS_YIDINGZUO) {
+        if (approvestatus != APPROVE_STATUS_DAISONGSHEN || status != TICKET_STATUS_YIDINGZUO) {
             weiItem.setHint("");
             item.setHint("");
             weiReason.setHint("");

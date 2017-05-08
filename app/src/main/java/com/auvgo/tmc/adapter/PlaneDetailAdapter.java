@@ -56,7 +56,6 @@ public class PlaneDetailAdapter extends BaseAdapter {
         final PlaneListBean.CangweisBean cb = list.get(position);
         View view = inflater.inflate(R.layout.item_plane_detail, null);
         TextView cangwei = (TextView) view.findViewById(R.id.item_plane_detail_cangwei);
-        TextView tuigaiqian = (TextView) view.findViewById(R.id.item_plane_detail_tuigaiqian);
         TextView price = (TextView) view.findViewById(R.id.item_plane_detail_price);
         TextView seatnum = (TextView) view.findViewById(R.id.item_plane_detail_seatnum);
         TextView book = (TextView) view.findViewById(R.id.item_plane_detail_book);
@@ -72,9 +71,9 @@ public class PlaneDetailAdapter extends BaseAdapter {
             }
         });
         String codeDes = cb.getCodeDes();
-        if (codeDes == null) cangwei.setText(cb.getDisdes() + "");
-        else cangwei.setText(String.format("%s%s", cb.getDisdes(), codeDes.replace("全价", "")));
-        price.setText("￥" + cb.getPrice());
+        if (codeDes == null) cangwei.setText(cb.getDisdes());
+        else cangwei.setText(String.format("%s%s%s", cb.getCode(), "/", codeDes.replace("全价", "")));
+        price.setText(String.format("￥%s", cb.getPrice()));
         seatnum.setText(cb.getSeatNum().equals("A") ? "充足" : cb.getSeatNum() + "张");
         if ((!cb.getSeatNum().equals("A")) && Integer.parseInt(cb.getSeatNum()) < 10) {
             seatnum.setTextColor(context.getResources().getColor(R.color.appTheme2));

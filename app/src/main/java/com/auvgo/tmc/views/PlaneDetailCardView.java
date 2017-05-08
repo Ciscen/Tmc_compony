@@ -170,6 +170,7 @@ public class PlaneDetailCardView extends LinearLayout {
 
     public void setJijian(String jijian) {
         this.jijian.setText(jijian);
+        this.cangwei2.setText("机建/燃油：");
     }
 
     public void setTuigaiqian(String tuigaiqian) {

@@ -37,27 +37,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_CANCELED;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_COMMITTED;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_CONFIRMED;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_FAILED;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_ING;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_SUCCESS;
-import static com.auvgo.tmc.constants.Constant.AirAlterStatus.AIR_GQ_WEIGAIQIAN;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_QUERENZHONG;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_TUIPIAOSHIBAI;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_TUIPIAOZHONG;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_WEITUIPIAO;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_YIQUXIAO;
-import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_YITUIPIAO;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_CHUPIAOSHIBAI;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_CHUPIAOZHONG;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_DINGZUOSHIBAI;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_DINGZUOZHONG;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_WEIDINGZUO;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_YICHUPIAO;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_YIDINGZUO;
-import static com.auvgo.tmc.constants.Constant.AirTicketStatus.TICKET_STATUS_YIQUXIAO;
+import static com.auvgo.tmc.constants.Constant.AirAlterStatus.*;
+import static com.auvgo.tmc.constants.Constant.AirReturnStatus.*;
+import static com.auvgo.tmc.constants.Constant.AirTicketStatus.*;
+import static com.auvgo.tmc.constants.Constant.ApproveStatus.*;
 
 /**
  * Created by lc on 2016/12/6
@@ -321,17 +304,17 @@ public class MUtils {
      */
     public static String getApproveStateByCode(int approvestatus) {
         switch (approvestatus) {
-            case 0:
+            case APPROVE_STATUS_WEISONGSHEN:
                 return "未送审";
-            case 1:
+            case APPROVE_STATUS_SHENPITONGGUO:
                 return "已审批";
-            case 2:
+            case APPROVE_STATUS_SHENPIFOUJUE:
                 return "已拒绝";
-            case 3:
+            case APPROVE_STATUS_WUXUSHENPI:
                 return "无需审批";
-            case 4:
+            case APPROVE_STATUS_SHENPIZHONG:
                 return "审批中";
-            case 5:
+            case APPROVE_STATUS_DAISONGSHEN:
                 return "待送审";
         }
 

@@ -112,7 +112,7 @@ public class PPlaneApprove extends BaseP {
             int status = approvesBean.getStatus();
             //list排序是以审批级别排序的，如果当前的审批人id不是当前登陆人id，而且没有审批，说明还未轮到当前用户进行审批
             if (approvesBean.getEmployeeid() != MyApplication.mUserInfoBean.getId()) {//如果是上级
-                if (status == 0)//如果上级为审批
+                if (status == 0)//如果上级未审批
                     return -2;
             } else {//如果是当前用户
                 switch (status) {

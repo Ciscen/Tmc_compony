@@ -62,7 +62,7 @@ public class PlaneSendDetailActivity extends AppCompatActivity {
         } else {
             email.setText(linkEmail);
         }
-        ensurance.setContent(String.valueOf(mBean.getPassengers().get(0).getBxPayMoney()));
+        ensurance.setContent(String.valueOf(mBean.getPassengers().get(0).getBxName()));
         psgs_lv.setAdapter(adapter);
         PlaneOrderDetailBean.RoutesBean rb = mBean.getRoutes().get(0);
         cv.setAirline(rb.getCarriername() + rb.getAirline() + "|" + rb.getPlanestyle());
