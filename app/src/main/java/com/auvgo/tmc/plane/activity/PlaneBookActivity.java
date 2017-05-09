@@ -55,6 +55,7 @@ public class PlaneBookActivity extends BaseActivity implements ViewManager_plane
     protected void initData() {
         pPlaneBook = new PPlaneBook(this, this);
         pPlaneBook.init(getIntent());
+
     }
 
     @Override

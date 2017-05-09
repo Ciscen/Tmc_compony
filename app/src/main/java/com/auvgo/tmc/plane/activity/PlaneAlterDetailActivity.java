@@ -289,7 +289,7 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
         cv.setEnd_date(TimeUtils.getMMdd(rb.getArridate()) + " " + TimeUtils.getTomorrowWeekDay(rb.getArridate()));
         cv.setStart_time(rb.getDepttime());
         cv.setEnd_time(rb.getArritime());
-        cv.setOrgname(rb.getOrgname() );
+        cv.setOrgname(rb.getOrgname());
         cv.setArriname(rb.getArriname());
         String text = String.valueOf(mBean.getPassengers().get(0).getKhYinshou() * mBean.getPassengers().size());
         price_tv.setText(/*价格确认以后才显示价格*/status == AIR_GQ_COMMITTED ? "--" : AppUtils.keepNSecimal(text, 2));
@@ -385,7 +385,8 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
             });
 
         } else {
-            instance.gotoPaylist(this, orderNo, PayModule.ORDER_TYPE_AIR_GQ);
+            instance.gotoPaylist(this, orderNo, PayModule.ORDER_TYPE_AIR_GQ,
+                    AppUtils.keepNSecimal(String.valueOf(mBean.getGaiqianTotalPrice()), 2), 0L);
         }
     }
 

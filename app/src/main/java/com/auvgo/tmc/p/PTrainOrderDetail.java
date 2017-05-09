@@ -411,6 +411,7 @@ public class PTrainOrderDetail extends BaseP {
         }
         // TODO: 2016/11/22 出票
         PayModule.getInstance().pay(context, mOrderNo, PayModule.ORDER_TYPE_TRAIN, mBean.getPayType().equals("1"),
+                AppUtils.keepNSecimal(String.valueOf(mBean.getTotalprice()), 2), mBean.getLastPayTime(),
                 new PayModule.OnPayResultListener() {
                     @Override
                     public void onPaySuccess() {

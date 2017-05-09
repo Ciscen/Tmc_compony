@@ -76,7 +76,7 @@ public class AlterDetailBean {
     private String oldJkOrder;
     private Object jkOrder;
     private Object backStatus;
-    private Object lastConfirmTime;
+    private Long lastConfirmTime;
 
     private double oldTotalPrice;
     private double gaiqianTotalPrice;
@@ -327,11 +327,11 @@ public class AlterDetailBean {
         this.backStatus = backStatus;
     }
 
-    public Object getLastConfirmTime() {
+    public Long getLastConfirmTime() {
         return lastConfirmTime;
     }
 
-    public void setLastConfirmTime(Object lastConfirmTime) {
+    public void setLastConfirmTime(Long lastConfirmTime) {
         this.lastConfirmTime = lastConfirmTime;
     }
 

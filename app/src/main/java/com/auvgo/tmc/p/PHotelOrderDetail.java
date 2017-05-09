@@ -226,7 +226,8 @@ public class PHotelOrderDetail extends BaseP {
 
     public void pay() {
         // TODO: 2017/3/2 支付
-        PayModule.getInstance().pay(context, orderNo, PayModule.ORDER_TYPE_HOTEL, mBean.getPayType().equals("1"), null);
+        PayModule.getInstance().pay(context, orderNo, PayModule.ORDER_TYPE_HOTEL, mBean.getPayType().equals("1"),
+                AppUtils.keepNSecimal(String.valueOf(mBean.getTotalPrice()), 2), 0L, null);
     }
 
     public void guarantee() {

@@ -22,7 +22,7 @@
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
-        android:text="为保证正常出票，请您在00:00之前完成支付"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="13sp" />
 
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,7 +46,6 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
-            android:text="￥165"
             android:textColor="@color/appTheme2"
             android:textSize="20sp" />
 

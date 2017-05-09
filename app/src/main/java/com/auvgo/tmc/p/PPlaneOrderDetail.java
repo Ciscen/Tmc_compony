@@ -117,6 +117,7 @@ public class PPlaneOrderDetail extends BaseP {
     public void confirmOutTicket() {
         PayModule.getInstance().pay(context, orderNo == null ? mBean.getOrderNoI() : orderNo,
                 PayModule.ORDER_TYPE_AIR, mBean.getPayType().equals("1"),
+                AppUtils.keepNSecimal(String.valueOf(mBean.getTotalpriceI()), 2), 0L,
                 new PayModule.OnPayResultListener() {
                     @Override
                     public void onPaySuccess() {

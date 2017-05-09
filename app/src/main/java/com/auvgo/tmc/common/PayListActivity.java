@@ -22,6 +22,7 @@ import com.auvgo.tmc.plane.activity.PlaneOrderDetailActivity;
 import com.auvgo.tmc.train.activity.AlterOrderDetailActivity;
 import com.auvgo.tmc.train.activity.TrainOrderDetailActivity;
 import com.auvgo.tmc.utils.LogFactory;
+import com.auvgo.tmc.utils.TimeUtils;
 import com.auvgo.tmc.utils.ToastUtils;
 import com.auvgo.tmc.wxapi.WXPayEntryActivity;
 
@@ -38,9 +39,9 @@ import butterknife.OnClick;
 public class PayListActivity extends BaseActivity {
 
     @BindView(R.id.pay_notice)
-    TextView notice;
+    TextView notice_tv;
     @BindView(R.id.pay_price)
-    TextView price;
+    TextView price_tv;
     @BindView(R.id.pay_qiankuan)
     View qiankuan;
     @BindView(R.id.pay_alipay)
@@ -52,6 +53,8 @@ public class PayListActivity extends BaseActivity {
 
     private String orderNo;
     private String fromFlag;
+    private String price;
+    private Long lastPaytime;
 
     private Handler mHandler = new Handler() {
         @SuppressWarnings("unused")
@@ -114,12 +117,14 @@ public class PayListActivity extends BaseActivity {
         Intent intent = getIntent();
         orderNo = intent.getStringExtra("orderNo");
         fromFlag = intent.getStringExtra("fromFlag");
+        price = intent.getStringExtra("price");
+        lastPaytime = intent.getLongExtra("lastPaytime", 0);
     }
 
     @Override
     protected void findViews() {
-        notice = (TextView) findViewById(R.id.pay_notice);
-        price = (TextView) findViewById(R.id.pay_price);
+        notice_tv = (TextView) findViewById(R.id.pay_notice);
+        price_tv = (TextView) findViewById(R.id.pay_price);
         qiankuan = findViewById(R.id.pay_qiankuan);
         alipay = findViewById(R.id.pay_alipay);
         union = findViewById(R.id.pay_union);
@@ -131,7 +136,8 @@ public class PayListActivity extends BaseActivity {
 
     @Override
     protected void setViews() {
-
+        price_tv.setText(String.format("￥%s", price));
+        notice_tv.setText(String.format("为保证正常出票，请您在%s之前完成支付", TimeUtils.get_HH_mm(lastPaytime)));
     }
 
     @OnClick({R.id.pay_qiankuan, R.id.pay_alipay, R.id.pay_union, R.id.pay_wxpay})
@@ -253,7 +259,7 @@ public class PayListActivity extends BaseActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        String action =intent.getAction();
+        String action = intent.getAction();
         if (!TextUtils.isEmpty(action) && action.equals(WXPayEntryActivity.ACTION_WXPAY_RESULT)) {
             jump();
         }

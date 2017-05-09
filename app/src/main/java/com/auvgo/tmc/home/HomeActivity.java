@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.auvgo.tmc.MyApplication;
 import com.auvgo.tmc.R;
+import com.auvgo.tmc.TestActivity;
 import com.auvgo.tmc.approve.HotelApproveActivity;
 import com.auvgo.tmc.approve.PlaneApproveActivity;
 import com.auvgo.tmc.approve.TrainApproveActivity;
@@ -16,6 +17,7 @@ import com.auvgo.tmc.p.PHome;
 import com.auvgo.tmc.plane.activity.PlaneOrderDetailActivity;
 import com.auvgo.tmc.train.activity.TrainOrderDetailActivity;
 import com.auvgo.tmc.train.interfaces.ViewManager_home;
+import com.auvgo.tmc.utils.MUtils;
 import com.auvgo.tmc.utils.ToastUtils;
 
 import butterknife.ButterKnife;
@@ -49,7 +51,8 @@ public class HomeActivity extends BaseActivity implements ViewManager_home {
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.home_zhiji:
-                pHome.jumpActivity(Constant.ACTIVITY_CHECKONLINE_FLAG);
+                MUtils.jumpToPage(this, TestActivity.class, -1);
+//                pHome.jumpActivity(Constant.ACTIVITY_CHECKONLINE_FLAG);
                 break;
             case R.id.home_dongtai:
                 pHome.jumpActivity(Constant.ACTIVITY_FLIGHTDYNAMIC_FLAG);

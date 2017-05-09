@@ -131,7 +131,6 @@ public class AlterOrderDetailActivity extends BaseAlterReturnTrainOrderDetailAct
             showDialog("取消", "确定", "确定支付？", new MyDialog.OnButtonClickListener() {
                 @Override
                 public void onLeftClick() {
-
                 }
 
                 @Override
@@ -139,9 +138,9 @@ public class AlterOrderDetailActivity extends BaseAlterReturnTrainOrderDetailAct
                     instance.pay_train_gq(context, orderNoStr);
                 }
             });
-
         } else {
-            instance.gotoPaylist(this, orderNoStr, PayModule.ORDER_TYPE_TRAIN_GQ);
+            instance.gotoPaylist(this, orderNoStr, PayModule.ORDER_TYPE_TRAIN_GQ,
+                    AppUtils.keepNSecimal(String.valueOf(mBean.getGaiqianTotalPrice()), 2), mBean.getLastConfirmTime());
         }
     }
 

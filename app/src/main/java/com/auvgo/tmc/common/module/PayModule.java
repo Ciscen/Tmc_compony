@@ -72,7 +72,8 @@ public class PayModule {
      *
      * @param isMonthPay 是否是月结，如果不是，进入支付列表，如果是，直接出票
      */
-    public void pay(final Context context, final String orderNo, final String fromFlag, boolean isMonthPay,
+    public void pay(final Context context, final String orderNo, final String fromFlag,
+                    boolean isMonthPay, String price, Long lastPaytime,
                     OnPayResultListener mListener) {
         this.mListener = mListener;
         if (isMonthPay) {
@@ -89,14 +90,16 @@ public class PayModule {
                         }
                     });
         } else {
-            gotoPaylist(context, orderNo, fromFlag);
+            gotoPaylist(context, orderNo, fromFlag, price, lastPaytime);
         }
     }
 
-    public void gotoPaylist(Context context, String orderNo, String fromFlag) {
+    public void gotoPaylist(Context context, String orderNo, String fromFlag, String price, Long lastPaytime) {
         Intent intent = new Intent(context, PayListActivity.class);
         intent.putExtra("orderNo", orderNo);
         intent.putExtra("fromFlag", fromFlag);
+        intent.putExtra("price", price);
+        intent.putExtra("lastPaytime", lastPaytime);
         context.startActivity(intent);
     }
 
