@@ -14,6 +14,7 @@ import com.auvgo.tmc.utils.MUtils;
 import java.util.List;
 
 import static com.auvgo.tmc.constants.Constant.AirAlterStatus.*;
+import static com.auvgo.tmc.constants.Constant.AirReturnStatus.*;
 
 /**
  * Created by lc on 2016/12/1
@@ -71,7 +72,13 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
                 viewHolder.orderStatus.setText(MUtils.getReturnStateByCode(status));
                 viewHolder.approveStatus.setVisibility(View.GONE);
                 double tpprice = listBean.getTotalprice();
-                viewHolder.price.setText(tpprice == 0 ? "- -" : "￥" + tpprice);
+                String tppriceStr;
+                if (status == AIR_TP_YITUIPIAO) {
+                    tppriceStr = "￥" + listBean.getTotalprice();
+                } else {
+                    tppriceStr = "- -";
+                }
+                viewHolder.price.setText(tppriceStr);
                 break;
             case TrainOrderListFragment.ALTER:
                 viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(status));

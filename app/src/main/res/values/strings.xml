@@ -29,6 +29,6 @@
     <string name="pay_failed_msg">网络出现问题，支付失败</string>
     <string name="pay_result_callback_msg">微信支付结果：%s</string>
     <string name="error_msg">网络不给力，请重试！</string>
-    <string name="gqorderNotice">当前订单是改签单，如需再次操作请拨打客服电话400 606 0011</string>
+    <string name="gqorderNotice">当前订单是改签单，如需再次操作请拨打客服电话\n400 606 0011</string>
     <string name="noGqTpNotice">当前订单已操作过改签/退票，如需再次操作请拨打客服电话400 606 0011</string>
 </resources>

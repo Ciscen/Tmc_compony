@@ -14,6 +14,7 @@ import com.auvgo.tmc.train.bean.ResponseOuterBean;
 import com.auvgo.tmc.train.bean.UserBean;
 import com.auvgo.tmc.utils.AppUtils;
 import com.auvgo.tmc.utils.RetrofitUtil;
+import com.auvgo.tmc.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,10 @@ public class ApplyNoListActivity extends BaseActivity {
             @Override
             public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
                 if (status == CODE_SUCCESS) {
+                    if (bean.getData() == null) {
+                        ToastUtils.showTextToast("暂无数据");
+                        return true;
+                    }
                     ApplyNoBean anb = (ApplyNoBean) o;
                     list.addAll(anb.getList());
                     updateViews();

@@ -470,7 +470,7 @@ public class PlaneAlterDetailBean implements IPlaneApprove {
         private String arritime;
         private String mealcode;
         private String code;
-        private Object codeDes;
+        private String codeDes;
         private String stopnumber;
         private double price;
         private double rewardprice;
@@ -658,11 +658,11 @@ public class PlaneAlterDetailBean implements IPlaneApprove {
             this.code = code;
         }
 
-        public Object getCodeDes() {
+        public String getCodeDes() {
             return codeDes;
         }
 
-        public void setCodeDes(Object codeDes) {
+        public void setCodeDes(String codeDes) {
             this.codeDes = codeDes;
         }
 

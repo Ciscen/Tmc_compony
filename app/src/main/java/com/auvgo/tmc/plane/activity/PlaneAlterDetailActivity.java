@@ -1,5 +1,6 @@
 package com.auvgo.tmc.plane.activity;
 
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -249,6 +250,7 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
             bt1.setBackground(getResources().getDrawable(R.drawable.selector_button_red_noradius));
             bt1.setText("退票");
             bt2.setText("改签");
+            bt2.setTextColor(Color.WHITE);
             bt2.setVisibility(View.VISIBLE);
             bt2.setBackground(getResources().getDrawable(R.drawable.selector_button_blue_noradius));
         }
@@ -332,7 +334,18 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
     改签成功后再次改签
      */
     private void doGaiqian(Map<String, String> map) {
-        DialogUtil.showDialog(this, "提示", "确定", "", getString(R.string.gqorderNotice, "改签"), null);
+        DialogUtil.showDialog(this, "提示", "取消", "拨打", getString(R.string.gqorderNotice),
+                new MyDialog.OnButtonClickListener() {
+                    @Override
+                    public void onLeftClick() {
+
+                    }
+
+                    @Override
+                    public void onRightClick() {
+                        AppUtils.callPhone(context, "400 606 0011");
+                    }
+                });
 
     }
 
@@ -340,7 +353,18 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
      * 退票
      */
     private void doReturn(Map<String, String> map) {
-        DialogUtil.showDialog(this, "提示", "确定", "", getString(R.string.gqorderNotice, "退票"), null);
+        DialogUtil.showDialog(this, "提示", "取消", "拨打", getString(R.string.gqorderNotice),
+                new MyDialog.OnButtonClickListener() {
+                    @Override
+                    public void onLeftClick() {
+
+                    }
+
+                    @Override
+                    public void onRightClick() {
+                        AppUtils.callPhone(context, "400 606 0011");
+                    }
+                });
 
 //        map.put("gqorderno", mBean.getGqorderno());
 //        map.put("cid", String.valueOf(MyApplication.mUserInfoBean.getCompanyid()));
@@ -396,16 +420,17 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
     private void CancelAlterOrder(final Map<String, String> map) {
         // TODO: 2017/1/18 取消改签
         map.put("orderno", orderNo);
-        DialogUtil.showDialog(PlaneAlterDetailActivity.this, "提示", "取消", "确定", "确定取消吗？", new MyDialog.OnButtonClickListener() {
-            @Override
-            public void onLeftClick() {
-            }
+        DialogUtil.showDialog(PlaneAlterDetailActivity.this, "提示", "取消", "确定", "确定取消吗？",
+                new MyDialog.OnButtonClickListener() {
+                    @Override
+                    public void onLeftClick() {
+                    }
 
-            @Override
-            public void onRightClick() {
-                cancel(map);
-            }
-        });
+                    @Override
+                    public void onRightClick() {
+                        cancel(map);
+                    }
+                });
     }
 
     private void doApprove(Map<String, String> map) {
@@ -448,16 +473,17 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
             @Override
             public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
                 if (status == 200) {
-                    DialogUtil.showDialog(PlaneAlterDetailActivity.this, "提示", "确定", "", "取消成功", new MyDialog.OnButtonClickListener() {
-                        @Override
-                        public void onLeftClick() {
-                            finish();
-                        }
+                    DialogUtil.showDialog(PlaneAlterDetailActivity.this, "提示", "确定", "", "取消成功",
+                            new MyDialog.OnButtonClickListener() {
+                                @Override
+                                public void onLeftClick() {
+                                    finish();
+                                }
 
-                        @Override
-                        public void onRightClick() {
-                        }
-                    });
+                                @Override
+                                public void onRightClick() {
+                                }
+                            });
                 }
                 return false;
             }

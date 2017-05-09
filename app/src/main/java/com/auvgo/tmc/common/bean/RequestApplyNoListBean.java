@@ -9,9 +9,9 @@ import com.auvgo.tmc.train.bean.requestbean.BaseRequestBean;
 public class RequestApplyNoListBean extends BaseRequestBean {
     private String cid;
     private String userid;
-    private String keyword;
-    private String pagenum;
-    private String pagesize;
+    private String keyword = "";
+    private String pagenum = "1";
+    private String pagesize = "";
     private String fromdate;
     private String backdate;
 

@@ -168,7 +168,8 @@ public class MyPickerView {
                 mPosition = selectedItems.size() == 0 ? -1 : selectedItems.get(0);
                 if (listener != null) {
                     if (choiseMode == SINGLE_CHOICE) {
-                        listener.onSingleSureClick(mPosition);
+                        if (mPosition != -1)
+                            listener.onSingleSureClick(mPosition);
                     } else {
                         listener.onMultiSureClick(selectedItems);
                     }

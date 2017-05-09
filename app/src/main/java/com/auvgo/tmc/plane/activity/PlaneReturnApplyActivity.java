@@ -296,7 +296,8 @@ public class PlaneReturnApplyActivity extends BaseActivity {
                                     @Override
                                     public void onSingleSureClick(int p) {
                                         mCurrentPosition_tuiReason = p;
-                                        iv.setContent(mReasons.get(mCurrentPosition_tuiReason).getName());
+                                        if (p != -1)
+                                            iv.setContent(mReasons.get(mCurrentPosition_tuiReason).getName());
                                     }
 
                                     @Override

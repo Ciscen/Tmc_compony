@@ -308,7 +308,7 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="wy92xr5fadAF3LTefPYunXueq5A2XIYf" />
+            android:value="984A2dfrmtMnzS2TilPHnnML2SzvBxaD" />
 
         <activity
             android:name=".hotel.activity.HotelListActivity"
