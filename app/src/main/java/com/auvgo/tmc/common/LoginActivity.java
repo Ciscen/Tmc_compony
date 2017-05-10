@@ -31,7 +31,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
 
 
-    private boolean isTest = true;
+    private boolean isTest = false;
     private int[] a = {2, 12};
     private boolean[] b = {true, false, false, false, false};
     /////////控件/////////
