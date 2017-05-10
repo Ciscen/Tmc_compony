@@ -308,7 +308,7 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
     }
 
     private String getTicketStatus(int status, int paystatus) {
-        if (paystatus == PAY_STATUS_DAIZHIFU) return "待支付";
+//        if (paystatus == PAY_STATUS_DAIZHIFU) return "待支付";
         return MUtils.getAlterStateByCode(status);
     }
 
@@ -327,12 +327,10 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
                 } else if (mBean.getStatus() == AIR_GQ_SUCCESS) {
                     doReturn(map);
                 }
-
                 break;
             case R.id.plane_alter_detail_bt2:
                 if (mBean.getStatus() == AIR_GQ_SUCCESS) {
                     doGaiqian(map);
-
                 } else {
                     CancelAlterOrder(map);
                 }
@@ -376,27 +374,6 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
                     }
                 });
 
-//        map.put("gqorderno", mBean.getGqorderno());
-//        map.put("cid", String.valueOf(MyApplication.mUserInfoBean.getCompanyid()));
-//        map.put("empid", String.valueOf(MyApplication.mUserInfoBean.getId()));
-//        map.put("tpreason", "");
-//        map.put("passids", "");
-//        map.put("orderfrom", "3");
-//
-//        RetrofitUtil.tuipiaoInGaiqian(this, "", null, new RetrofitUtil.OnResponse() {
-//            @Override
-//            public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
-//                if (status == 200) {
-//
-//                }
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onFailed(Throwable e) {
-//                return false;
-//            }
-//        });
     }
 
     /**
