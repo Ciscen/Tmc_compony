@@ -38,12 +38,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private EditText et_cardNum, et_userName, et_psw;
     private RadioGroup rg;
     private RadioButton[] rbs;
+    private EditText ip_addr;
     private TextView tv_login;
     private CheckBox saveId, savePsw, autoLogin;
     ////////变量/////////
     private PLogin mPlogin;//处理当前activity的逻辑
     private List<TestCount> list;
     private int mPosition = -1;
+    private int onLineOrNot = 0;
 
     @Override
     protected int getLayoutId() {
@@ -77,6 +79,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         saveId = (CheckBox) findViewById(R.id.checkBox1);
         savePsw = (CheckBox) findViewById(R.id.checkBox2);
         autoLogin = (CheckBox) findViewById(R.id.checkBox3);
+        ip_addr = (EditText) findViewById(R.id.ip_addr);
         rbs = new RadioButton[2];
         for (int i = 0; i < rg.getChildCount(); i++) {
             rbs[i] = (RadioButton) rg.getChildAt(i);
@@ -89,7 +92,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         String userName = (String) SPUtils.get(this, Constant.KEY_USERNAME, "");
         String password = (String) SPUtils.get(this, Constant.KEY_PASSWORD, "");
         boolean isAuto = (boolean) SPUtils.get(this, Constant.KEY_AUTOLOGIN, false);
-        if (isTest) rg.setVisibility(View.VISIBLE);
+        if (isTest) {
+            setTestViews();
+        }
+
         rbs[0].setChecked(true);
         et_cardNum.setText(cardNum);
         et_userName.setText(userName);
@@ -109,6 +115,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         lp.alpha = 1.0f; // 0.0-1.0
 
         getWindow().setAttributes(lp);
+    }
+
+    private void setTestViews() {
+        findViewById(R.id.debug_tools).setVisibility(View.VISIBLE);
+        String text = Url.getUrl(Url.OFFLINE).split(":")[1];
+        ip_addr.setText(text.substring(text.length() - 3));
     }
 
     @Override
@@ -133,30 +145,50 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_login:
-                if (!isTest)
+                if (!isTest) {
                     RetrofitUtil.setUrl(Url.ONLINE);
+                } else {
+                    setDebugUrl();
+                }
+
                 mPlogin.doLogin();
                 String packageName = WXPayEntryActivity.class.getPackage().getName();
-                System.out.println("packageName---"+packageName);
+                System.out.println("packageName---" + packageName);
 //                MUtils.jumpToPage(this, PayListActivity.class, -1);
                 break;
             case R.id.imageView:
-                DialogUtil.showPickerPopWithSureHeight(context, "选择账号", mPosition, list, new MyPickerView.OnPickerViewSure() {
-                    @Override
-                    public void onSingleSureClick(int p) {
-                        mPosition = p;
-                        TestCount testCount = list.get(p);
-                        et_userName.setText(testCount.getCountNum());
-                        et_psw.setText(testCount.getCountPass());
-                        RetrofitUtil.setUrl(testCount.getOnLineOrNot());
-                    }
+                DialogUtil.showPickerPopWithSureHeight(context, "选择账号", mPosition, list,
+                        new MyPickerView.OnPickerViewSure() {
+                            @Override
+                            public void onSingleSureClick(int p) {
+                                mPosition = p;
+                                TestCount testCount = list.get(p);
+                                et_userName.setText(testCount.getCountNum());
+                                et_psw.setText(testCount.getCountPass());
+                                RetrofitUtil.setUrl(testCount.getOnLineOrNot());
+                                onLineOrNot = testCount.getOnLineOrNot();
+                                if (onLineOrNot == 0) {
+                                    ip_addr.setVisibility(View.VISIBLE);
+                                } else {
+                                    ip_addr.setText("");
+                                    ip_addr.setVisibility(View.GONE);
+                                }
+                            }
 
-                    @Override
-                    public void onMultiSureClick(List<Integer> s) {
-                    }
-                });
+                            @Override
+                            public void onMultiSureClick(List<Integer> s) {
+                            }
+                        });
                 break;
         }
+    }
+
+    private void setDebugUrl() {
+        String s = ip_addr.getText().toString();
+        if (!s.isEmpty()) {
+            Url.setUrl_off(String.format("http://192.168.1.%s:8080/", s));
+        }
+        RetrofitUtil.setUrl(onLineOrNot);
     }
 
     @Override
@@ -212,6 +244,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         for (int i = 0; i < rbs.length; i++) {
             if (rbs[i].getId() == checkedId) {
                 doUrlChose(i);
+                if (i == 0) {
+                    ip_addr.setVisibility(View.VISIBLE);
+                    onLineOrNot = 0;
+                } else {
+                    ip_addr.setText("");
+                    ip_addr.setVisibility(View.GONE);
+                    onLineOrNot = 1;
+                }
             }
         }
     }

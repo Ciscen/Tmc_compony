@@ -258,8 +258,9 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
         List<PlaneAlterDetailBean.PassengersBean> passengers = mBean.getPassengers();
 
         orderNo_tv.setText(String.format("订单号:%s", mBean.getGqorderno()));
-        status_tv.setText(MUtils.getAlterStateByCode(status) + "|"
+        status_tv.setText(getTicketStatus(status, paystatus) + "|"
                 + MUtils.getApproveStateByCode(approvestatus));
+
         PlaneAlterDetailBean.RoutesBean order = mBean.getRoutes().get(0);
         List<PlaneAlterDetailBean.PassengersBean> psgs = passengers;
         contact_tv.setText(mBean.getLinkName());
@@ -294,12 +295,21 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
         cv.setOrgname(rb.getOrgname());
         cv.setArriname(rb.getArriname());
         String text = String.valueOf(mBean.getPassengers().get(0).getKhYinshou() * mBean.getPassengers().size());
-        price_tv.setText(/*价格确认以后才显示价格*/status == AIR_GQ_COMMITTED ? "--" : AppUtils.keepNSecimal(text, 2));
+        if (status == AIR_GQ_CANCELED || status == AIR_GQ_FAILED
+                || status == AIR_GQ_COMMITTED || status == AIR_GQ_WEIGAIQIAN) {
+            text = "--";
+        }
+        price_tv.setText(/*价格确认以后才显示价格*/AppUtils.keepNSecimal(text, 2));
         if (mBean.getApproves() == null || mBean.getApproves().size() == 0) {
             approveStatus_vg.setVisibility(View.GONE);
         } else {
             lv_approve.setAdapter(new ApproveStateAdapter(this, mBean.getApproves()));
         }
+    }
+
+    private String getTicketStatus(int status, int paystatus) {
+        if (paystatus == PAY_STATUS_DAIZHIFU) return "待支付";
+        return MUtils.getAlterStateByCode(status);
     }
 
     @Override
@@ -395,11 +405,10 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
     private void doPay() {
         final PayModule instance = PayModule.getInstance();
         PlaneAlterDetailBean.OrderPaymentBean orderPayment = mBean.getOrderPayment();
-        if (orderPayment.getReceivprice() == 0 || orderPayment.getPaytype().equals("1")) {//价格是0元，或者是月结的话，走月结
+        if (orderPayment.getReceivprice() <= 0 || orderPayment.getPaytype().equals("1")) {//价格是0元，或者是月结的话，走月结
             showDialog("取消", "确定", "确定支付？", new MyDialog.OnButtonClickListener() {
                 @Override
                 public void onLeftClick() {
-
                 }
 
                 @Override

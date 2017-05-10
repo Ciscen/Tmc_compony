@@ -5,9 +5,9 @@ package com.auvgo.tmc.utils;
  */
 
 public class Url {
-//            private static final String url_off = "http://192.168.1.202:8080/";//老大
-    private static final String url_off = "http://192.168.1.203:8080/";//小四
-    private static final String url_online = "http://api.auvgo.com/";//正式
+    //            private static final String url_off = "http://192.168.1.202:8080/";//老大
+    private static String url_off = "http://192.168.1.201:8080/";//小四
+    private static String url_online = "http://api.auvgo.com/";//正式
 //    private static final String url_off = "http://192.168.1.204:8080/";//临时
 
     public static final int OFFLINE = 0;
@@ -15,6 +15,10 @@ public class Url {
 
     public static String getUrl(int flag) {
         return flag == OFFLINE ? url_off : url_online;
+    }
+
+    public static void setUrl_off(String url) {
+        url_off = url;
     }
 
 }

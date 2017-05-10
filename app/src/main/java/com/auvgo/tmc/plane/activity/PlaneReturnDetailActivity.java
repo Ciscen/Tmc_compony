@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.auvgo.tmc.constants.Constant.AirReturnStatus.AIR_TP_YITUIPIAO;
 import static com.auvgo.tmc.constants.Constant.ApproveStatus.*;
 
 
@@ -142,9 +143,15 @@ public class PlaneReturnDetailActivity extends BaseActivity implements View.OnCl
         String bxName = tuipiaoPassengers.get(0).getBxName();
         insurance_iv.setContent(TextUtils.isEmpty(bxName) ? "- -" : bxName);
         lv_psgs.setAdapter(new PlaneReturnOrderDetailPsgAdapter(this, mBean.getTuipiaoPassengers()));
-        price_tv.setText(AppUtils.keepNSecimal(
+
+        String tppriceStr = "￥" + AppUtils.keepNSecimal(
                 mBean.getTuipiaoPassengers().get(0).getTpprice() * mBean.getTuipiaoPassengers().size() + "",
-                2));
+                2);
+
+        if (status != AIR_TP_YITUIPIAO) {
+            tppriceStr = "- -";
+        }
+        price_tv.setText(tppriceStr);
         PlaneReturnDetailBean.RoutesBean rb = mBean.getRoutes().get(0);
         cv.setAirline(rb.getCarriername() + rb.getAirline() + "|" + rb.getPlanestyle());
         cv.setStart_date(rb.getDeptdate().substring(5) + " " + TimeUtils.getTomorrowWeekDay(rb.getDeptdate()));
@@ -154,18 +161,6 @@ public class PlaneReturnDetailActivity extends BaseActivity implements View.OnCl
         cv.setOrgname(rb.getOrgname() + rb.getDeptterm());
         cv.setArriname(rb.getArriname() + rb.getArriterm());
         cv.setCangwei2(rb.getCodeDes() + "/" + rb.getDisdes());
-//        applyNo_iv.setContent(order.getShenqingno());
-//        costCenter_iv.setContent(order.getCostname());
-//        project_iv.setContent(order.getProname());
-//        reason_iv.setContent(order.getChailvitem());
-//        weiItem_iv.setContent(order.getBookpolicy());
-//        weiReason_iv.setContent(order.getWbreason());
-//        price_tv.setText(String.valueOf(order.getTotalprice()));
-//        if (order.getApproves() == null || order.getApproves().size() == 0) {
-//            approveStatus_vg.setVisibility(View.GONE);
-//        } else {
-//            lv_approve.setAdapter(new ApproveStateAdapter(this, order.getApproves()));
-//        }
     }
 
     @Override

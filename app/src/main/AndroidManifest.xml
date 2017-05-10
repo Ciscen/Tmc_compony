@@ -204,12 +204,12 @@
         <meta-data
             android:name="JPUSH_CHANNEL"
             android:value="developer-default" />
-        <meta-data
-            android:name="JPUSH_APPKEY"
-            android:value="675f29a0d3a7f427b21cd006" /> <!-- </>debug的AppKey -->
-        <!-- <meta-data -->
-        <!-- android:name="JPUSH_APPKEY" -->
-        <!-- android:value="fe6e3a5400c768081451b67e" /> &lt;!&ndash; </>release版本的AppKey &ndash;&gt; -->
+        <!--<meta-data-->
+            <!--android:name="JPUSH_APPKEY"-->
+            <!--android:value="fe6e3a5400c768081451b67e" /> &lt;!&ndash; </>debug的AppKey &ndash;&gt;-->
+         <meta-data
+         android:name="JPUSH_APPKEY"
+         android:value="fe6e3a5400c768081451b67e" /> <!-- </>release版本的AppKey -->
 
         <activity
             android:name=".approve.ApproveOrderListActivity"
@@ -403,6 +403,7 @@
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
+            android:theme="@style/Animation.AppCompat.Dialog"
             android:launchMode="singleTop" />
         <!-- WXPAY    END -->
         <!-- Umeng  BEGIN -->
