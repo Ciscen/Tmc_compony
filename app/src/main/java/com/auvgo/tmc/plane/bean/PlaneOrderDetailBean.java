@@ -130,7 +130,7 @@ public class PlaneOrderDetailBean implements Parcelable, IPlaneApprove {
     private List<RoutePassBean> routePass;
 
     public String getPayType() {
-        return payType;
+        return payType == null ? "1" : payType;//
     }
 
     public void setPayType(String payType) {

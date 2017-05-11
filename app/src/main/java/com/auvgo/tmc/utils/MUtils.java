@@ -350,7 +350,7 @@ public class MUtils {
 
     public static String getHotelStateByCode(int status, int approvestatus, int paystatus) {
 
-        if (status == HotelStateCons.HOTEL_ORDER_STATUS_CANCEL) {
+        if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_CANCEL) {
             return "已取消";
         }
         /*
@@ -386,53 +386,53 @@ public class MUtils {
       /*
         现付，担保
          */
-        if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO) {//等待担保
+        if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DAIDANBAO) {//等待担保
             return "等待担保";
         /*
         现付不担保
         现付担保成功
         预付支付成功以后
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_ING) {
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DANBAOZHONG) {
             return "担保中";
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN) {//等待确认
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_DENGDAIQUEREN) {//等待确认
             return "等待确认";
         /*
         现付担保失败
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_FAIL) {//担保失败
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DANBAOSHIBAI) {//担保失败
             return "担保失败";
         /*
         确认中
         */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_ING) {
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_QUEREN_ING) {
             return "确认中";
         /*
         确认失败
         */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_FAIL) {
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_QUEREN_FAIL) {
             return "确认失败";
         /*
         确认成功
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_CANCEL) {
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_CANCEL) {
             return "已取消";
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
-            return "已确认";
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_COMMITTED) {
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
+            return "等待入住";
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_COMMITTED) {
             return checkPayStatus(paystatus);
         }
         return "";
     }
 
     private static String checkPayStatus(int paystatus) {
-        if (paystatus == HotelStateCons.HOTEL_PAY_STATUS) {//待支付
+        if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DAIZHIFU) {//待支付
             return "待支付";
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_FAIL) {//支付失败
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_ZHIFUSHIBAI) {//支付失败
             return "支付失败";
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_ING) {//支付中
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_ZHIFUZHONG) {//支付中
             return "支付中";
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_SUCCESS) {//支付成功
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_ZHIFUCHENGGONG) {//支付成功
             return "支付成功";
         }
         return "";
@@ -890,30 +890,6 @@ public class MUtils {
 
     public interface OnWeibeiListener {
         void onSureClick(MyPickerView.Selection selection, int pos);
-    }
-
-    public static String getHotelStateByCode(int code) {
-        switch (code) {
-            case HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_SUCCESS:
-                return "已确认";
-            case HotelStateCons.HOTEL_ORDER_STATUS_CANCEL:
-                return "已取消";
-            case HotelStateCons.HOTEL_ORDER_STATUS_DANBAO:
-                return "等待担保";
-            case HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_FAIL:
-                return "担保失败";
-            case HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_ING:
-                return "担保";
-            case HotelStateCons.HOTEL_ORDER_STATUS_QUEREN:
-                return "等待确认";
-            case HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_FAIL:
-                return "确认失败";
-            case HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_ING:
-                return "确认中";
-            case HotelStateCons.HOTEL_ORDER_STATUS_COMMITTED:
-                return "已提交";
-        }
-        return "";
     }
 
     public static String getHotelPicCategary(HotelDetailBean.HotelImageListBean hilb) {

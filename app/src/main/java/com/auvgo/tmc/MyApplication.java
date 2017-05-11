@@ -1,6 +1,5 @@
 package com.auvgo.tmc;
 
-import android.app.Application;
 import android.app.Notification;
 import android.app.Service;
 import android.content.Context;
@@ -18,7 +17,6 @@ import com.auvgo.tmc.train.bean.ComSettingBean;
 import com.auvgo.tmc.train.bean.TrainPolicyBean;
 import com.auvgo.tmc.train.bean.UserBean;
 import com.auvgo.tmc.utils.ActivityTaskManager;
-import com.auvgo.tmc.utils.CrashHandler;
 import com.auvgo.tmc.views.CustomProgressDialog;
 import com.baidu.mapapi.SDKInitializer;
 

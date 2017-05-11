@@ -63,9 +63,9 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
             case TrainOrderListFragment.NORMAL:
                 viewHolder.orderStatus.setText(MUtils.getOrgTicketStateByCode(status));
                 viewHolder.approveStatus.setText(MUtils.getApproveStateByCode(listBean.getApprovestatus()));
-                if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
-                    viewHolder.approveStatus.setText("待支付");
-                }
+//                if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
+//                    viewHolder.approveStatus.setText("待支付");
+//                }
                 viewHolder.price.setText(String.format("￥%s", listBean.getTotalprice()));
                 break;
             case TrainOrderListFragment.RETURNL:
@@ -83,9 +83,9 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
             case TrainOrderListFragment.ALTER:
                 viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(status));
                 viewHolder.approveStatus.setText("");
-                if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
-                    viewHolder.approveStatus.setText("待支付");
-                }
+//                if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
+//                    viewHolder.approveStatus.setText("待支付");
+//                }
                 double gqprice = listBean.getTotalprice();
                 String price;
                 if (gqprice == 0 || status == AIR_GQ_CANCELED || status == AIR_GQ_FAILED

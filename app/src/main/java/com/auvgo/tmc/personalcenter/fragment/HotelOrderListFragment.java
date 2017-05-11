@@ -27,7 +27,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import static com.auvgo.tmc.constants.Constant.ApproveStatus.*;
-import static com.auvgo.tmc.utils.HotelStateCons.HOTEL_ORDER_STATUS_CANCEL;
+import static com.auvgo.tmc.utils.HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_CANCEL;
 
 /**
  * {

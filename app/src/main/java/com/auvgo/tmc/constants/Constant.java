@@ -14,6 +14,7 @@ public class Constant {
      *appSecrit 固定值，用于加密的时候混淆使用
      */
     public static final String APPSECRIT = "8098615395fae44857ac080fc7c9b59e";
+
     /*
      * 用于公用模块调用时区分来源
      */

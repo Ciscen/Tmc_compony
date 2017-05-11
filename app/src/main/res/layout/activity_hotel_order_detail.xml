@@ -349,7 +349,6 @@
             android:layout_weight="1"
             android:background="@drawable/selector_button_red_noradius"
             android:gravity="center"
-            android:text="支付"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:visibility="visible" />

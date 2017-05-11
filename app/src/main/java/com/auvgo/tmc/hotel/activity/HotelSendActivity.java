@@ -230,7 +230,17 @@ public class HotelSendActivity extends BaseActivity {
                 prepareToSendApprove();
                 break;
             case R.id.hotel_send_detail_cancle:
-                cancel();
+                showDialog("取消", "确定", "确定取消订单？", new MyDialog.OnButtonClickListener() {
+                    @Override
+                    public void onLeftClick() {
+
+                    }
+
+                    @Override
+                    public void onRightClick() {
+                        cancel();
+                    }
+                });
                 break;
             case R.id.hotel_book_click_pricedetail://显示价格详情的弹窗
                 DialogUtil.showHotelPriceDialog(this, mBean);

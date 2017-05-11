@@ -4,22 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.auvgo.tmc.common.module.PayModule;
+import com.auvgo.tmc.constants.Constant;
 import com.auvgo.tmc.hotel.activity.HotelGuaranteeActivity;
 import com.auvgo.tmc.hotel.activity.HotelOrderDetailActivity;
 import com.auvgo.tmc.hotel.bean.HotelOrderDetailBean;
 import com.auvgo.tmc.hotel.interfaces.ViewManager_hotelOrderDetail;
 import com.auvgo.tmc.train.bean.ResponseOuterBean;
 import com.auvgo.tmc.utils.AppUtils;
-import com.auvgo.tmc.constants.Constant;
 import com.auvgo.tmc.utils.DialogUtil;
 import com.auvgo.tmc.utils.RetrofitUtil;
-import com.auvgo.tmc.utils.HotelStateCons;
 import com.auvgo.tmc.views.MyDialog;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.auvgo.tmc.constants.Constant.ApproveStatus.*;
+import static com.auvgo.tmc.utils.HotelStateCons.OrderStatus.*;
+import static com.auvgo.tmc.utils.HotelStateCons.PayStatus.*;
 
 /**
  * Created by lc on 2017/2/28
@@ -82,7 +83,7 @@ public class PHotelOrderDetail extends BaseP {
 
     private String getStateString(int status, int approvestatus, int paystatus, boolean selfPay) {
         status_str = "";
-        if (status == HotelStateCons.HOTEL_ORDER_STATUS_CANCEL) {
+        if (status == HOTEL_ORDER_STATUS_CANCEL) {
             status_str = "已取消";
             vm.setButtonState("", "", false, false);
         }
@@ -95,7 +96,7 @@ public class PHotelOrderDetail extends BaseP {
             审批步骤结束，进行订单状态的判断
              */
             if (selfPay) {//现付
-                checkOrderState(status);
+                checkOrderState(status, paystatus);
             } else {//预付
                 checkOrderState4PrePay(status, paystatus);
             }
@@ -124,11 +125,11 @@ public class PHotelOrderDetail extends BaseP {
     /**
      * 判断订单的状态、包括了担保状态
      */
-    private void checkOrderState(int status) {
+    private void checkOrderState(int status, int paystatus) {
       /*
         现付，担保
          */
-        if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO) {//等待担保
+        if (paystatus == HOTEL_PAY_STATUS_DAIDANBAO) {//等待担保
             status_str = "等待担保";
             vm.setButtonState("担保", "取消", true, true);
         /*
@@ -136,38 +137,35 @@ public class PHotelOrderDetail extends BaseP {
         现付担保成功
         预付支付成功以后
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_ING) {
+        } else if (paystatus == HOTEL_PAY_STATUS_DANBAOZHONG) {
             status_str = "担保中";
             vm.setButtonState("", "", false, true);
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN) {//等待确认
+        } else if (status == HOTEL_ORDER_STATUS_DENGDAIQUEREN) {//等待确认
             status_str = "等待确认";
             vm.setButtonState("", "取消", false, true);
         /*
         现付担保失败
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_DANBAO_FAIL) {//担保失败
+        } else if (paystatus == HOTEL_PAY_STATUS_DANBAOSHIBAI) {//担保失败
             status_str = "担保失败";
             vm.setButtonState("", "取消", false, true);
         /*
         确认中
         */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_ING) {
+        } else if (status == HOTEL_ORDER_STATUS_QUEREN_ING) {
             status_str = "确认中";
             vm.setButtonState("", "取消", false, true);
         /*
         确认失败
         */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_FAIL) {
+        } else if (status == HOTEL_ORDER_STATUS_QUEREN_FAIL) {
             status_str = "确认失败";
             vm.setButtonState("", "取消", false, true);
         /*
         确认成功
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_CANCEL) {
-            status_str = "已取消";
-            vm.setButtonState("", "", false, false);
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
-            status_str = "已确认";
+        } else if (status == HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
+            status_str = "等待入住";
             vm.setButtonState("", "取消", false, true);
         }
     }
@@ -179,28 +177,28 @@ public class PHotelOrderDetail extends BaseP {
         /*
         确认中
         */
-        if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_ING) {
+        if (status == HOTEL_ORDER_STATUS_QUEREN_ING) {
             status_str = "确认中";
             vm.setButtonState("", "取消", false, true);
         /*
         确认失败
         */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_FAIL) {
+        } else if (status == HOTEL_ORDER_STATUS_QUEREN_FAIL) {
             status_str = "确认失败";
             vm.setButtonState("", "取消", false, true);
         /*
         确认成功
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
-            status_str = "已确认";
+        } else if (status == HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
+            status_str = "等待入住";
             vm.setButtonState("", "取消", false, true);
         /*
         订单已提交、待支付
          */
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_CANCEL) {
+        } else if (status == HOTEL_ORDER_STATUS_CANCEL) {
             status_str = "已取消";
             vm.setButtonState("", "", false, false);
-        } else if (status == HotelStateCons.HOTEL_ORDER_STATUS_COMMITTED) {
+        } else if (status == HOTEL_ORDER_STATUS_COMMITTED) {
             checkPayStatus(paystatus);
         }
     }
@@ -209,16 +207,16 @@ public class PHotelOrderDetail extends BaseP {
      * 支付状态的判断
      */
     private void checkPayStatus(int paystatus) {
-        if (paystatus == HotelStateCons.HOTEL_PAY_STATUS) {//待支付
+        if (paystatus == HOTEL_PAY_STATUS_DAIZHIFU) {//待支付
             status_str = "待支付";
             vm.setButtonState("支付", "取消", true, true);
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_FAIL) {//支付失败
+        } else if (paystatus == HOTEL_PAY_STATUS_ZHIFUSHIBAI) {//支付失败
             status_str = "支付失败";
             vm.setButtonState("支付", "取消", true, true);
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_ING) {//支付中
+        } else if (paystatus == HOTEL_PAY_STATUS_ZHIFUZHONG) {//支付中
             status_str = "支付中";
             vm.setButtonState("", "取消", false, true);
-        } else if (paystatus == HotelStateCons.HOTEL_PAY_STATUS_SUCCESS) {//支付成功
+        } else if (paystatus == HOTEL_PAY_STATUS_ZHIFUCHENGGONG) {//支付成功
             status_str = "支付成功";
             vm.setButtonState("", "取消", false, true);
         }
