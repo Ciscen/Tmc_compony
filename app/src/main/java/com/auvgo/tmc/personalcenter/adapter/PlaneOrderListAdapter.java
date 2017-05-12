@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import com.auvgo.tmc.R;
 import com.auvgo.tmc.adapter.Baseadapter;
-import com.auvgo.tmc.constants.Constant;
 import com.auvgo.tmc.personalcenter.fragment.TrainOrderListFragment;
 import com.auvgo.tmc.plane.bean.PlaneOrderListBean;
 import com.auvgo.tmc.utils.MUtils;
@@ -81,7 +80,7 @@ public class PlaneOrderListAdapter extends Baseadapter<PlaneOrderListBean.ListBe
                 viewHolder.price.setText(tppriceStr);
                 break;
             case TrainOrderListFragment.ALTER:
-                viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(status));
+                viewHolder.orderStatus.setText(MUtils.getAirAlterStateByCode(status));
                 viewHolder.approveStatus.setText("");
 //                if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
 //                    viewHolder.approveStatus.setText("待支付");

@@ -111,7 +111,7 @@ public class PlaneApproveActivity extends BaseActivity implements View.OnClickLi
         priceAll_tv.setText(mBean.getTotalpriceI() + "");
         orderNo_tv.setText(String.format("订单号:%s", mBean.getOrderNoI()));
         ticketStatus_tv.setText(pPlaneApprove.isGQ() ?
-                MUtils.getAlterStateByCode(mBean.getStatusI())
+                MUtils.getAirAlterStateByCode(mBean.getStatusI())
                 : MUtils.getOrgTicketStateByCode(mBean.getStatusI()));
         approveStatus_tv.setText(MUtils.getApproveStateByCode(mBean.getApprovestatusI()));
         contact_tv.setText(mBean.getContactI());

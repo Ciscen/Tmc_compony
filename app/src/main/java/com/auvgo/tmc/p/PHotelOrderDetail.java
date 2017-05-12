@@ -12,6 +12,7 @@ import com.auvgo.tmc.hotel.interfaces.ViewManager_hotelOrderDetail;
 import com.auvgo.tmc.train.bean.ResponseOuterBean;
 import com.auvgo.tmc.utils.AppUtils;
 import com.auvgo.tmc.utils.DialogUtil;
+import com.auvgo.tmc.utils.HotelStateCons;
 import com.auvgo.tmc.utils.RetrofitUtil;
 import com.auvgo.tmc.views.MyDialog;
 
@@ -192,6 +193,15 @@ public class PHotelOrderDetail extends BaseP {
         } else if (status == HOTEL_ORDER_STATUS_QUEREN_SUCCESS) {
             status_str = "等待入住";
             vm.setButtonState("", "取消", false, true);
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DAITUIKUAN) {
+            status_str = "待退款";
+            vm.setButtonState("", "", false, false);
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_TUIKUANCHENGGONG) {
+            status_str = "退款成功";
+            vm.setButtonState("", "", false, false);
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_TUIKUANSHIBAI) {
+            status_str = "退款失败";
+            vm.setButtonState("", "", false, false);
         /*
         订单已提交、待支付
          */

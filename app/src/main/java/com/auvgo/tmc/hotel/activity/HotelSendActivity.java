@@ -73,6 +73,8 @@ public class HotelSendActivity extends BaseActivity {
     View item_project;
     @BindView(R.id.hotel_send_detail_item_costcenter)
     View item_costCenter;
+    @BindView(R.id.hotel_send_detail_item_weiReason)
+    View item_weiReason;
     private String orderNo;
     private HotelOrderDetailBean mBean;
     private int mCurrentPosition = -1;//当前选择的违背原因
@@ -174,7 +176,7 @@ public class HotelSendActivity extends BaseActivity {
         lv.setAdapter(adapter);
         if (mBean.getWeibeiflag() == 0) {
             weiItem.setVisibility(View.GONE);
-            weiReason.setVisibility(View.GONE);
+            item_weiReason.setVisibility(View.GONE);
         }
     }
 

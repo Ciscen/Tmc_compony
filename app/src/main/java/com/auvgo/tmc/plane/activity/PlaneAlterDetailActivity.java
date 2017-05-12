@@ -221,6 +221,12 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
             approve_chose_vg.setVisibility(View.GONE);
             approveStatus_vg.setVisibility(View.VISIBLE);
             bt1.setVisibility(View.GONE);
+            if (approvestatus == APPROVE_STATUS_SHENPIZHONG || approvestatus == APPROVE_STATUS_SHENPIFOUJUE) {
+                bt2.setVisibility(View.GONE);
+            } else {
+                bt2.setVisibility(View.VISIBLE);
+            }
+
             /*默认状态*/
         } else if (approvestatus == APPROVE_STATUS_WEISONGSHEN) {
             approveInfo_vg.setVisibility(View.GONE);
@@ -294,12 +300,13 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
         cv.setEnd_time(rb.getArritime());
         cv.setOrgname(rb.getOrgname());
         cv.setArriname(rb.getArriname());
-        String text = String.valueOf(mBean.getPassengers().get(0).getKhYinshou() * mBean.getPassengers().size());
+        String text = AppUtils.keepNSecimal(String.valueOf(mBean.getPassengers().get(0).getKhYinshou()
+                * mBean.getPassengers().size()), 2);
         if (status == AIR_GQ_CANCELED || status == AIR_GQ_FAILED
                 || status == AIR_GQ_COMMITTED || status == AIR_GQ_WEIGAIQIAN) {
             text = "--";
         }
-        price_tv.setText(/*价格确认以后才显示价格*/AppUtils.keepNSecimal(text, 2));
+        price_tv.setText(/*价格确认以后才显示价格*/text);
         if (mBean.getApproves() == null || mBean.getApproves().size() == 0) {
             approveStatus_vg.setVisibility(View.GONE);
         } else {
@@ -309,7 +316,7 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
 
     private String getTicketStatus(int status, int paystatus) {
 //        if (paystatus == PAY_STATUS_DAIZHIFU) return "待支付";
-        return MUtils.getAlterStateByCode(status);
+        return MUtils.getAirAlterStateByCode(status);
     }
 
     @Override
@@ -396,7 +403,9 @@ public class PlaneAlterDetailActivity extends BaseActivity implements View.OnCli
 
         } else {
             instance.gotoPaylist(this, orderNo, PayModule.ORDER_TYPE_AIR_GQ,
-                    AppUtils.keepNSecimal(String.valueOf(mBean.getGaiqianTotalPrice()), 2), 0L);
+                    AppUtils.keepNSecimal(
+                            String.valueOf(mBean.getPassengers().get(0).getKhYinshou() * mBean.getPassengers().size()),
+                            2), 0L);
         }
     }
 

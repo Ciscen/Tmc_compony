@@ -78,7 +78,7 @@ public class AlterOrderDetailActivity extends BaseAlterReturnTrainOrderDetailAct
         cv.setEnd_time(gqRoute.getArriveTime());
         cv.setSeatType(mBean.getUsers().get(0).getSeatType());
         orderNo.setText(String.format("订单号：%s", mBean.getGorderno()));
-        state.setText(MUtils.getAlterStateByCode(Integer.parseInt(mBean.getStatus())));
+        state.setText(MUtils.getAirAlterStateByCode(Integer.parseInt(mBean.getStatus())));
         AlterDetailBean.OldRouteBean oldRoute = mBean.getOldRoute();
         ticketNo.setText(String.format("取票单号：%s", mBean.getOldOutBillNo()));
         startStation.setText(oldRoute.getFromStation());
@@ -101,11 +101,14 @@ public class AlterOrderDetailActivity extends BaseAlterReturnTrainOrderDetailAct
 //        }
         pay_price.setText(AppUtils.keepNSecimal(String.valueOf(mBean.getOrderPayment().getReceivprice()), 2));
         /*底部价格，按钮的显示控制*/
-        pay_ll.setVisibility(mBean.getStatus().equals("4") ? View.VISIBLE : View.GONE);
+        pay_ll.setVisibility(mBean.getStatus().equals(TRAIN_GQ_WEIQUEREN + "") ? View.VISIBLE : View.GONE);
         if (mBean.getStatus().equals(TRAIN_GQ_GAIQIANCHENGGONG + "")) {/*如果改签成功，底部价格显示，按钮不显示*/
             pay_ll.setVisibility(View.VISIBLE);
             pay_bt.setVisibility(View.GONE);
             cancle_bt.setVisibility(View.GONE);
+        } else {
+            pay_bt.setVisibility(View.VISIBLE);
+            cancle_bt.setVisibility(View.VISIBLE);
         }
     }
 

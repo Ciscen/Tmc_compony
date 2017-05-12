@@ -4,29 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.auvgo.tmc.adapter.TimeAdapter;
 import com.auvgo.tmc.adapter.TrainDetailAdapter;
-import com.auvgo.tmc.train.bean.ResponseOuterBean;
 import com.auvgo.tmc.train.bean.TrainBean;
-import com.auvgo.tmc.train.bean.TrainTimeBean;
 import com.auvgo.tmc.train.interfaces.ViewManager_traindetail;
 import com.auvgo.tmc.train.activity.Login12306Activity;
 import com.auvgo.tmc.train.activity.NoticeActivity;
 import com.auvgo.tmc.train.activity.TrainBookActivity;
-import com.auvgo.tmc.utils.AppUtils;
-import com.auvgo.tmc.utils.DialogUtil;
 import com.auvgo.tmc.utils.MUtils;
-import com.auvgo.tmc.utils.RetrofitUtil;
 import com.auvgo.tmc.utils.TimeUtils;
-
-import java.util.LinkedHashMap;
 
 /**
  * Created by lc on 2016/11/16
  */
 public class PTrainDetail extends BaseP {
 
-    private TrainBean.DBean dBean;
+    private TrainBean.DBean mBean;
     private String fromCode, toCode;
     private TrainDetailAdapter adapter;
     private ViewManager_traindetail vm;
@@ -36,13 +28,13 @@ public class PTrainDetail extends BaseP {
         this.vm = vm;
     }
 
-    public TrainBean.DBean getdBean() {
-        return dBean;
+    public TrainBean.DBean getmBean() {
+        return mBean;
     }
 
-    public void setdBean(TrainBean.DBean dBean) {
-        this.dBean = dBean;
-        adapter = new TrainDetailAdapter(dBean.getCanBook(), context, dBean.getTrain_code());
+    public void setmBean(TrainBean.DBean mBean) {
+        this.mBean = mBean;
+        adapter = new TrainDetailAdapter(mBean.getCanBook(), context, mBean.getTrain_code());
     }
 
     public String getFromCode() {
@@ -67,16 +59,16 @@ public class PTrainDetail extends BaseP {
 
     public void getTrainTime() {
         MUtils.showTimePop(context,
-                TimeUtils.changePattern(dBean.getTrain_start_date()),
-                dBean.getFrom_station_code(),
-                dBean.getTo_station_code(),
-                dBean.getTrain_no(), dBean.getFrom_station_name(), dBean.getTo_station_name());
+                TimeUtils.changePattern(mBean.getTrain_start_date()),
+                mBean.getFrom_station_code(),
+                mBean.getTo_station_code(),
+                mBean.getTrain_no(), mBean.getFrom_station_name(), mBean.getTo_station_name());
     }
 
     public void jumpActivity(int groupPosition, int childPosition) {
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("bean", dBean);//当前车次的实体类
+        bundle.putSerializable("bean", mBean);//当前车次的实体类
         bundle.putInt("seattypeposition", groupPosition);//所选中的席别
         bundle.putInt("booktypeposition", childPosition);//预订方式
         bundle.putString("from", fromCode);//出发城市的编码

@@ -65,7 +65,7 @@ public class TrainOrderListAdapter extends Baseadapter<OrderListBean.ListBean, T
                 viewHolder.price.setText(String.format("￥%s", listBean.getTotalprice()));
                 break;
             case TrainOrderListFragment.ALTER:
-                viewHolder.orderStatus.setText(MUtils.getAlterStateByCode(listBean.getStatu()));
+                viewHolder.orderStatus.setText(MUtils.getTrainAlterStateByCode(listBean.getStatu()));
                 viewHolder.approveStatus.setText("");
                 if (listBean.getPaystatus() == Constant.PayStatus.PAY_STATUS_DAIZHIFU) {
                     viewHolder.approveStatus.setText("待支付");

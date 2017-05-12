@@ -291,6 +291,7 @@
                     android:background="@color/white"
                     android:orientation="horizontal"
                     android:paddingBottom="15dp"
+                    android:visibility="gone"
                     android:paddingTop="15dp">
 
                     <TextView
@@ -390,7 +391,8 @@
                 android:gravity="center"
                 android:text="支付"
                 android:textColor="@color/white"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/train_order_detail_button2"
@@ -401,7 +403,8 @@
                 android:gravity="center"
                 android:text="取消改签"
                 android:textColor="@color/color_333"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:visibility="gone" />
 
         </LinearLayout>
 

@@ -303,6 +303,8 @@ public class TrainOrderDetailActivity extends BaseActivity implements ViewManage
                 commit.setText("退票");
                 cancle.setText("改签");
                 state.setText("已出票");
+                cancle.setTextColor(Color.WHITE);
+                cancle.setBackgroundDrawable(getResources().getDrawable(R.drawable.selector_button_blue_noradius));
                 pTrainOrderDetail.setmOrderStatus(PTrainOrderDetail.STATUS_YICHUPIAO);
                 break;
             case TICKET_STATUS_YIQUXIAO:

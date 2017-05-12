@@ -349,7 +349,8 @@
             android:background="@drawable/selector_button_red_noradius"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/plane_alter_detail_bt2"
@@ -359,7 +360,8 @@
             android:background="@drawable/selector_e1click"
             android:gravity="center"
             android:textColor="@color/color_666"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>
 

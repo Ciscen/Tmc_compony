@@ -179,7 +179,7 @@ public class MUtils {
      * @param statu
      * @return
      */
-    public static String getAlterStateByCode(int statu) {
+    public static String getAirAlterStateByCode(int statu) {
         switch (statu) {
             case AIR_GQ_WEIGAIQIAN:
                 return "未改签";
@@ -195,6 +195,32 @@ public class MUtils {
                 return "已确认";
             case AIR_GQ_COMMITTED://已提交，显示待确认
                 return "确认中";
+        }
+        return "未匹配";
+    }
+
+    /**
+     * 匹配改签状态
+     *
+     * @param statu
+     * @return
+     */
+    public static String getTrainAlterStateByCode(int statu) {
+        switch (statu) {
+            case Constant.TrainAlterStatus.TRAIN_GQ_WEIGAIQIAN://未改签:
+                return "未改签";
+            case Constant.TrainAlterStatus.TRAIN_GQ_GAIQIANZHONG: //改签中:
+                return "改签中";
+            case Constant.TrainAlterStatus.TRAIN_GQ_GAIQIANCHENGGONG:  //改签成功:
+                return "已改签";
+            case Constant.TrainAlterStatus.TRAIN_GQ_GAIQIANSHIBAI:  //改签失败:
+                return "改签失败";
+            case Constant.TrainAlterStatus.TRAIN_GQ_WEIQUEREN://未确认，待支付:
+                return "待支付";
+            case Constant.TrainAlterStatus.TRAIN_GQ_YIQUXIAO://已取消:
+                return "已取消";
+            case Constant.TrainAlterStatus.TRAIN_GQ_YIQUEREN://已确认://已提交，显示待确认
+                return "已确认";
         }
         return "未匹配";
     }
@@ -388,20 +414,21 @@ public class MUtils {
          */
         if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DAIDANBAO) {//等待担保
             return "等待担保";
-        /*
-        现付不担保
-        现付担保成功
-        预付支付成功以后
-         */
         } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DANBAOZHONG) {
             return "担保中";
-        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_DENGDAIQUEREN) {//等待确认
-            return "等待确认";
         /*
         现付担保失败
          */
         } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DANBAOSHIBAI) {//担保失败
             return "担保失败";
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_DAITUIKUAN) {
+            return "待退款";
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_TUIKUANCHENGGONG) {
+            return "退款成功";
+        } else if (paystatus == HotelStateCons.PayStatus.HOTEL_PAY_STATUS_TUIKUANSHIBAI) {
+            return "退款失败";
+        } else if (status == HotelStateCons.OrderStatus.HOTEL_ORDER_STATUS_DENGDAIQUEREN) {//等待确认
+            return "等待确认";
         /*
         确认中
         */
@@ -890,6 +917,7 @@ public class MUtils {
 
     public interface OnWeibeiListener {
         void onSureClick(MyPickerView.Selection selection, int pos);
+
     }
 
     public static String getHotelPicCategary(HotelDetailBean.HotelImageListBean hilb) {

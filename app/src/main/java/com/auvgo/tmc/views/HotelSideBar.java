@@ -20,7 +20,7 @@ public class HotelSideBar extends View {
     //监听面板是否点击接口
     OnTouchingLetterChangedListener onTouchingLetterChangedListener;
     // 26个字母
-    public static String[] b = {"热门", "A", "B", "C", "D", "E", "F", "G", "H",
+    private String[] b = {"热门", "A", "B", "C", "D", "E", "F", "G", "H",
             "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
             "V", "W", "X", "Y", "Z"};
     //选择的值
@@ -47,8 +47,9 @@ public class HotelSideBar extends View {
     }
 
     /**
-     * 重写这个方法
+     * 绘制
      */
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //如果面板处于点击状态就将面板的背景色绘制为灰色

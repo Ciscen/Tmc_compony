@@ -67,6 +67,20 @@ public class TrainAlterDetailActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initListener() {
+        cv.setTimeOrSeattypeClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MUtils.showTimePop(context,
+                        TimeUtils.changePattern(mBean.getTrain_start_date()),
+                        mBean.getFrom_station_code(),
+                        mBean.getTo_station_code(),
+                        mBean.getTrain_no(), mBean.getFrom_station_name(), mBean.getTo_station_name());
+            }
+        });
+    }
+
     @OnItemClick(R.id.alter_train_detail_lv)
     public void onItemClick(final int position) {
         String seatType = mBean.getCanBook().get(position).get(3);

@@ -59,7 +59,7 @@ public class TrainDetailActivity extends BaseActivity implements ViewManager_tra
         Intent intent = getIntent();
         if (intent != null) {
             Bundle bundle = intent.getBundleExtra("bundle");
-            pTrainDetail.setdBean((TrainBean.DBean) bundle.getSerializable("bean"));
+            pTrainDetail.setmBean((TrainBean.DBean) bundle.getSerializable("bean"));
             pTrainDetail.setFromCode(bundle.getString("from"));
             pTrainDetail.setToCode(bundle.getString("to"));
         }
@@ -68,7 +68,7 @@ public class TrainDetailActivity extends BaseActivity implements ViewManager_tra
 
     @Override
     protected void initView() {
-        TrainBean.DBean dBean = pTrainDetail.getdBean();
+        TrainBean.DBean dBean = pTrainDetail.getmBean();
         traincode.setText(dBean.getTrain_code());
         start_station.setText(dBean.getFrom_station_name());
         start_time.setText(dBean.getStart_time());
@@ -113,12 +113,12 @@ public class TrainDetailActivity extends BaseActivity implements ViewManager_tra
     @Override
     public boolean onChildClick(ExpandableListView parent, View v, final int groupPosition, final int childPosition, long id) {
 
-        boolean b = MUtils.isCanbook(pTrainDetail.getdBean().getCanBook().get(groupPosition).get(3),
-                pTrainDetail.getdBean().getTrain_code());
+        boolean b = MUtils.isCanbook(pTrainDetail.getmBean().getCanBook().get(groupPosition).get(3),
+                pTrainDetail.getmBean().getTrain_code());
         if (b) {
-            if (MUtils.isSeatWei(pTrainDetail.getdBean().getCanBook().get(groupPosition).get(3))) {
+            if (MUtils.isSeatWei(pTrainDetail.getmBean().getCanBook().get(groupPosition).get(3))) {
                 DialogUtil.showDialog(this, "违背提示", "取消", "继续", "您违背了" +
-                        MUtils.getWeibeiItemByTrainCode(pTrainDetail.getdBean().getTrain_code().substring(0, 1))
+                        MUtils.getWeibeiItemByTrainCode(pTrainDetail.getmBean().getTrain_code().substring(0, 1))
                         + "的标准，请问继续预订吗", new MyDialog.OnButtonClickListener() {
                     @Override
                     public void onLeftClick() {
@@ -136,8 +136,6 @@ public class TrainDetailActivity extends BaseActivity implements ViewManager_tra
         } else {
             DialogUtil.showDialog(this, "违背提示", "取消", "", "不允许预订该违背车次", null);
         }
-
-
         return false;
     }
 }

@@ -11,7 +11,7 @@ import com.auvgo.tmc.R;
 
 
 /**
- * Created by chenjx on 2016/3/18.
+ * Created by lc on 2016/3/18
  */
 /*
  *ListView右侧导航面板
@@ -45,20 +45,21 @@ public class SideBar extends View {
         super(context);
     }
 
-    public void setDialog(View dialog){
+    public void setDialog(View dialog) {
         mDialog = dialog;
     }
 
     /**
-     * 重写这个方法
+     * 绘制
      */
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //如果面板处于点击状态就将面板的背景色绘制为灰色
         if (showBkg) {
 //            canvas.drawColor(bkgColor);
             this.setBackgroundResource(R.drawable.side_bar_bg);
-        }else {
+        } else {
             this.setBackgroundResource(R.drawable.transparent);
         }
         //获得Ｖｉｅｗ的高
@@ -66,16 +67,16 @@ public class SideBar extends View {
         //获得Ｖｉｅｗ的宽
         int width = getWidth();
         //计算得出每一个字体大概的高度
-        int singleHeight = (height) / (b.length+1);
+        int singleHeight = (height) / (b.length + 1);
 
         //为了上下空白可以均分,作计算
-        int topEmpty = singleHeight/2+height%(b.length+1)/2;
+        int topEmpty = singleHeight / 2 + height % (b.length + 1) / 2;
 
         for (int i = 0; i < b.length; i++) {
             //设置锯齿
             paint.setAntiAlias(true);
             //设置字体大小
-            paint.setTextSize(singleHeight*3/4);
+            paint.setTextSize(singleHeight * 3 / 4);
             //点击的字体和26个字母中的任意一个相等就
             paint.setColor(textColor);
             if (i == choose) {
@@ -86,7 +87,7 @@ public class SideBar extends View {
             //得到字体的X坐标
             float xPos = width / 2 - paint.measureText(b[i]) / 2;
             //得到字体的Y坐标
-            float yPos = singleHeight * i + singleHeight+topEmpty;
+            float yPos = singleHeight * i + singleHeight + topEmpty;
             //将字体绘制到面板上
             canvas.drawText(b[i], xPos, yPos, paint);
             //还原画布
@@ -118,7 +119,8 @@ public class SideBar extends View {
                 showBkg = true;
                 if (oldChoose != c && listener != null) {
                     if (c >= 0 && c < b.length) {
-                        //当当前点击的值绑定监听  这个监听在本页面中做的是接口。实际调用是在MainActiv中。也就是说我们调用这个接口会执行MainActivtiy的方法
+                        //当当前点击的值绑定监听  这个监听在本页面中做的是接口。实际调用是在MainActiv中。
+                        // 也就是说我们调用这个接口会执行MainActivtiy的方法
                         listener.onTouchingLetterChanged(b[c]);
                         choose = c;
                         //刷新界面

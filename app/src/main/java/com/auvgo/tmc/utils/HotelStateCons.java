@@ -38,6 +38,9 @@ public class HotelStateCons {
         public static final int HOTEL_PAY_STATUS_DANBAOCHENGGONG = 5;// 担保成功
         public static final int HOTEL_PAY_STATUS_DANBAOSHIBAI = 7;// 担保失败
         public static final int HOTEL_PAY_STATUS_DANBAOZHONG = 6;// 担保中
+        public static final int HOTEL_PAY_STATUS_DAITUIKUAN = 8;// 退款中
+        public static final int HOTEL_PAY_STATUS_TUIKUANCHENGGONG = 9;//退款成功
+        public static final int HOTEL_PAY_STATUS_TUIKUANSHIBAI = 10;// 退款失败
     }
 
 }

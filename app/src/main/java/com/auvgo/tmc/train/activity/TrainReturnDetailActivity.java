@@ -70,10 +70,10 @@ public class TrainReturnDetailActivity extends BaseAlterReturnTrainOrderDetailAc
 
         psg_name.setText(mBean.getTuipiaoUser().getUserName() + "   " + mBean.getTuipiaoUser().getUserId());
         psg_ticketNo.setText("票号：" + "  " + mBean.getTuipiaoUser().getPiaohao());
-        orderNo.setText("单号:" + mBean.getTorderno());
+        orderNo.setText(String.format("单号:%s", mBean.getTorderno()));
         state.setText(MUtils.getReturnStateByCode(mBean.getStatus()));
-        ticketNo.setText("出票号:" + mBean.getTuipiaoUser().getOutTicketNo());
-        price.setText("￥" + mBean.getTuipiaoUser().getKhTuikuan());
+        ticketNo.setText(String.format("出票号:%s", mBean.getTuipiaoUser().getOutTicketNo()));
+        price.setText(String.format("￥%s", mBean.getTuipiaoUser().getKhTuikuan()));
     }
 
     private void setViewVisibility() {
