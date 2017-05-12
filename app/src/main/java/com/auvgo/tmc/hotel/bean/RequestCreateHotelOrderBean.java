@@ -65,7 +65,7 @@ public class RequestCreateHotelOrderBean extends BaseRequestBean {
         private String currencyCode;// 货币类型
         private double totalPrice;// RatePlan的TotalPrice * 房间数
         private String latestArrivalTime;// 最晚入住时间 格式：yyyy-MM-dd hh:mm
-        private boolean isNeedGuarantee;// 是否担保
+        private String isNeedGuarantee;// 是否担保
         private Double guaranteeAmount;// 担保金额
         private int intervalDay;
         private String shenqingno;// 企业审批号
@@ -94,11 +94,11 @@ public class RequestCreateHotelOrderBean extends BaseRequestBean {
             this.intervalDay = intervalDay;
         }
 
-        public boolean isNeedGuarantee() {
+        public String isNeedGuarantee() {
             return isNeedGuarantee;
         }
 
-        public void setNeedGuarantee(boolean needGuarantee) {
+        public void setNeedGuarantee(String needGuarantee) {
             isNeedGuarantee = needGuarantee;
         }
 

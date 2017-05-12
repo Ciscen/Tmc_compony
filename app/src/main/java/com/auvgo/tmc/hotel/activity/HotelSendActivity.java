@@ -168,11 +168,11 @@ public class HotelSendActivity extends BaseActivity {
     private void updateViews() {
         state.setText(MUtils.getApproveStateByCode(mBean.getApprovestatus()));
 //        order_tv.setText("订单号：" + mBean.getApprovalno());
-        weiItem.setContent(mBean.getWbreason() + "");
-        price_pay.setText("￥" + String.valueOf(mBean.getTotalPrice()));
-        price_guarantee.setText("￥" + String.valueOf(mBean.getGuaranteeAmount()));
+        price_pay.setText(String.format("￥%s", String.valueOf(mBean.getTotalPrice())));
+        price_guarantee.setText(String.format("￥%s", String.valueOf(mBean.getGuaranteeAmount())));
         price_name.setText(mBean.getPaymentType().equals("SelfPay") ? "到店付款" : "在线预付");
         guarantee_ll.setVisibility(mBean.getIsNeedGuarantee().equals("false") ? View.GONE : View.VISIBLE);
+        weiItem.setContent(mBean.getBookpolicy());
         lv.setAdapter(adapter);
         if (mBean.getWeibeiflag() == 0) {
             weiItem.setVisibility(View.GONE);

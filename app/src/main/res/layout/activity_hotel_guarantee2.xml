@@ -17,7 +17,6 @@
         android:id="@+id/guarantee2_card_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:content="3568891139699623"
         app:hint="请输入银行卡号"
         app:inputable="false"
         app:itemTitle="信用卡"

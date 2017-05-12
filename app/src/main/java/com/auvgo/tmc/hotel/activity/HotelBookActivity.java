@@ -602,7 +602,7 @@ public class HotelBookActivity extends BaseActivity implements HotelBookPsgAdapt
         ob.setHoteltype(0);
         ob.setIntervalDay(nights);
         ob.setNumberOfRooms(mRoomNum);
-        ob.setNeedGuarantee(isGuarantee);
+        ob.setNeedGuarantee(isGuarantee ? "1" : "0");
         ob.setGuaranteeAmount(getGuaranteeAmout());
         ob.setPayType(payType);
         return ob;
