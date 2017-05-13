@@ -183,7 +183,6 @@
         android:layout_height="49dp"
         android:orientation="horizontal">
 
-
         <LinearLayout
             android:id="@+id/hotel_book_click_pricedetail"
             android:layout_width="0dp"
