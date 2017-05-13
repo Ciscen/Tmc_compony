@@ -48,7 +48,7 @@ public class HotelListActivity extends BaseActivity implements ViewManager_hotel
     View empty_view;
 
     private PHotelList pHotelList;
-    private int MAX_NOTICE_VALUE = 50;
+    private int MAX_NOTICE_VALUE = 5;
 
     @Override
     protected int getLayoutId() {
@@ -185,6 +185,8 @@ public class HotelListActivity extends BaseActivity implements ViewManager_hotel
                         hideNotice();
                     }
                 }, 1000);
+            } else {
+                pHotelList.setLoading(false);
             }
         }
     }
@@ -205,6 +207,8 @@ public class HotelListActivity extends BaseActivity implements ViewManager_hotel
 //                lv.setY(DeviceUtils.getStatusHeight(context) + findViewById(R.id.hotel_list_title).getMeasuredHeight() );
                 lv.setY(DeviceUtils.getScreenHeight(context) -
                         bottom_ll.getMeasuredHeight() - lv.getMeasuredHeight() - DeviceUtils.getStatusHeight(context));
+                pHotelList.setLoading(false);
+
             }
 
             @Override
@@ -279,6 +283,10 @@ public class HotelListActivity extends BaseActivity implements ViewManager_hotel
 
     @Override
     public void onRefresh() {
+        if (pHotelList.isLoading()) {
+            lv.onRefreshComplete(true);
+            return;
+        }
         pHotelList.onRefresh();
     }
 

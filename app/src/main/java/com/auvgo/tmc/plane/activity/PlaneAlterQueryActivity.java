@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.auvgo.tmc.MyApplication;
 import com.auvgo.tmc.R;
 import com.auvgo.tmc.base.BaseActivity;
+import com.auvgo.tmc.common.CldActivity;
 import com.auvgo.tmc.plane.bean.PlaneOrderDetailBean;
 import com.auvgo.tmc.train.bean.SelectionBean;
 import com.auvgo.tmc.utils.AppUtils;
@@ -95,11 +96,14 @@ public class PlaneAlterQueryActivity extends BaseActivity {
 
     @OnClick(R.id.alter_plane_query_click_date)
     public void onDateItemClick() {
-        Intent intent = new Intent();
-        Bundle bundle = new Bundle();
-        bundle.putString("checkInDate", startdate);
-        intent.putExtra("bundle", bundle);
-        intent.setClass(this, CalendarActivity.class);
+//        Intent intent = new Intent();
+//        Bundle bundle = new Bundle();
+//        bundle.putString("checkInDate", startdate);
+//        intent.putExtra("bundle", bundle);
+//        intent.setClass(this, CalendarActivity.class);
+//        startActivityForResult(intent, Constant.ACTIVITY_PLANE_ALTER_QUERY_FLAG);
+        Intent intent = new Intent(context, CldActivity.class);
+        intent.putExtra(CldActivity.KEY_SELECTED_DATE_1, startdate);
         startActivityForResult(intent, Constant.ACTIVITY_PLANE_ALTER_QUERY_FLAG);
     }
 

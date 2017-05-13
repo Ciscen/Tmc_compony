@@ -232,6 +232,16 @@ public class RequestCreatePlaneOrder extends BaseRequestBean {
         // -------------行程信息 routes ---------------------//
         private String dstcode;//SHA
         private String code;// 舱位代码
+
+        private int worktime;// 政策有效作用时间范围
+        private int tpbeforefee;// 起飞前退票费
+        private int tpafterfee;// 起飞后退票费
+        private int gqbeforefee;// 起飞前改期费
+        private int gqafterfee;// 起飞后改期费
+        private String includeflage;// 退改签前面包含还是后面时间包含 be/af
+
+
+        private String codeDes;// 舱位描述
         private double price;// 销售价
         private String xuhao;//行程序号：单程 默认为0   往返去程0，回程为1
         private String airline;//航班号
@@ -256,6 +266,62 @@ public class RequestCreatePlaneOrder extends BaseRequestBean {
 
         public String getPricefrom() {
             return pricefrom;
+        }
+
+        public String getCodeDes() {
+            return codeDes;
+        }
+
+        public void setCodeDes(String codeDes) {
+            this.codeDes = codeDes;
+        }
+
+        public int getWorktime() {
+            return worktime;
+        }
+
+        public void setWorktime(int worktime) {
+            this.worktime = worktime;
+        }
+
+        public int getTpbeforefee() {
+            return tpbeforefee;
+        }
+
+        public void setTpbeforefee(int tpbeforefee) {
+            this.tpbeforefee = tpbeforefee;
+        }
+
+        public int getTpafterfee() {
+            return tpafterfee;
+        }
+
+        public void setTpafterfee(int tpafterfee) {
+            this.tpafterfee = tpafterfee;
+        }
+
+        public int getGqbeforefee() {
+            return gqbeforefee;
+        }
+
+        public void setGqbeforefee(int gqbeforefee) {
+            this.gqbeforefee = gqbeforefee;
+        }
+
+        public int getGqafterfee() {
+            return gqafterfee;
+        }
+
+        public void setGqafterfee(int gqafterfee) {
+            this.gqafterfee = gqafterfee;
+        }
+
+        public String getIncludeflage() {
+            return includeflage;
+        }
+
+        public void setIncludeflage(String includeflage) {
+            this.includeflage = includeflage;
         }
 
         public void setPricefrom(String pricefrom) {

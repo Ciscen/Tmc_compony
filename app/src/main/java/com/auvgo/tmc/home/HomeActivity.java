@@ -51,8 +51,9 @@ public class HomeActivity extends BaseActivity implements ViewManager_home {
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.home_zhiji:
-                MUtils.jumpToPage(this, TestActivity.class, -1);
-//                pHome.jumpActivity(Constant.ACTIVITY_CHECKONLINE_FLAG);
+//                MUtils.jumpToPage(this, TestActivity.class, -1);
+//                System.gc();
+                pHome.jumpActivity(Constant.ACTIVITY_CHECKONLINE_FLAG);
                 break;
             case R.id.home_dongtai:
                 pHome.jumpActivity(Constant.ACTIVITY_FLIGHTDYNAMIC_FLAG);

@@ -270,9 +270,7 @@ public class CalendarActivity extends FragmentActivity implements MyCalendar3.On
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-//            if (convertView == null) {
             convertView = new MyCalendar3(CalendarActivity.this);
-//            }
             Date currentMonthItem = null;
             try {
                 currentMonthItem = simpleDateFormat.parse(list.get(position));
@@ -293,8 +291,6 @@ public class CalendarActivity extends FragmentActivity implements MyCalendar3.On
                     }
                 }
                 monthCalendarList = getMonthPriceList(position, dayOfFirstMonty, TimeUtils.getDayOfYear(System.currentTimeMillis()), currentMonthItem, calendarList);
-                LogFactory.i("calendarList====" + calendarList);
-                LogFactory.i("monthCalendarList====" + monthCalendarList);
             }
             ((MyCalendar3) convertView).setTheDay(CalendarActivity.this, currentMonthItem, /*canNotRentsList,*/ userChooseInDate,/*, theNearestCannotInDate, theLastCanInDate*/monthCalendarList);
             ((MyCalendar3) convertView).setOnDaySelectListener(CalendarActivity.this);

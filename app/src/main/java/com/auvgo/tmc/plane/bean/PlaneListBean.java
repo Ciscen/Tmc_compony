@@ -484,6 +484,14 @@ public class PlaneListBean implements Serializable {
          */
         private String farebase;
         private String code;
+
+        private int worktime;// 政策有效作用时间范围
+        private int tpbeforefee;// 起飞前退票费
+        private int tpafterfee;// 起飞后退票费
+        private int gqbeforefee;// 起飞前改期费
+        private int gqafterfee;// 起飞后改期费
+        private String includeflage;// 退改签前面包含还是后面时间包含 be/af
+
         private Object extcode;
         private String codeDes;
         private double price;
@@ -497,6 +505,54 @@ public class PlaneListBean implements Serializable {
         private String pfrom;
         private boolean isWei;
         private boolean isLowestInThisFlight;//是否是最低舱位
+
+        public int getWorktime() {
+            return worktime;
+        }
+
+        public void setWorktime(int worktime) {
+            this.worktime = worktime;
+        }
+
+        public int getTpbeforefee() {
+            return tpbeforefee;
+        }
+
+        public void setTpbeforefee(int tpbeforefee) {
+            this.tpbeforefee = tpbeforefee;
+        }
+
+        public int getTpafterfee() {
+            return tpafterfee;
+        }
+
+        public void setTpafterfee(int tpafterfee) {
+            this.tpafterfee = tpafterfee;
+        }
+
+        public int getGqbeforefee() {
+            return gqbeforefee;
+        }
+
+        public void setGqbeforefee(int gqbeforefee) {
+            this.gqbeforefee = gqbeforefee;
+        }
+
+        public int getGqafterfee() {
+            return gqafterfee;
+        }
+
+        public void setGqafterfee(int gqafterfee) {
+            this.gqafterfee = gqafterfee;
+        }
+
+        public String getIncludeflage() {
+            return includeflage;
+        }
+
+        public void setIncludeflage(String includeflage) {
+            this.includeflage = includeflage;
+        }
 
         public boolean isLowestInThisFlight() {
             return isLowestInThisFlight;

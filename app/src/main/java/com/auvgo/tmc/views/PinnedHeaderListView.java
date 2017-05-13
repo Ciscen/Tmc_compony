@@ -89,7 +89,6 @@ public class PinnedHeaderListView extends ListView {
 		
 		if (null != mHeaderView) {
 			mHeaderView.layout(0, 0, mMeasuredWidth, mMeasuredHeight);
-//			controlPinnedHeader(getFirstVisiblePosition());
 			Log.d("", ": ===onLayout==");
 		}
 	}

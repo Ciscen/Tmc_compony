@@ -123,7 +123,6 @@ public class PlaneOrderDetailActivity extends BaseActivity implements ViewManage
         cv.setEnd_time(rb.getArritime());
         cv.setOrgname(rb.getOrgname());
         cv.setArriname(rb.getArriname());
-//        cv.setCangwei(rb.getCodeDes() + "/" + rb.getDisdes());
         cv.setCangwei(rb.getCodeDes());
         cv.setTuiStr(rb.getRefundrule());
         cv.setGaiStr(rb.getChangerule());

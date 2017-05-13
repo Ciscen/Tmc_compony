@@ -76,7 +76,6 @@ public class CldActivity extends Activity {
         initIntent();
         initData();
         initListener();
-        Log.d(TAG, "onCreate: 0000");
     }
 
     private void initIntent() {

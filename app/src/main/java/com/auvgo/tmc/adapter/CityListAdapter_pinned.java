@@ -98,11 +98,7 @@ public class CityListAdapter_pinned extends BaseAdapter implements AbsListView.O
         }
 
         // 当前item分类名和上一个item分类名不同，则表示两item属于不同分类
-        if (currentTitle.equals(previousTitle)) {
-            return false;
-        }
-
-        return true;
+        return !currentTitle.equals(previousTitle);
     }
 
 

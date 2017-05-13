@@ -54,6 +54,7 @@ public class PHotelList extends BaseP {
     private List<HotelListBean.ListBean> list;
     private boolean isLoadMore;
     private boolean isFirst = true;
+    private boolean isLoading;
 
     public PHotelList(Context context, ViewManager_hotellist vm) {
         super(context);
@@ -161,6 +162,7 @@ public class PHotelList extends BaseP {
     }
 
     public void getHotelList() {
+        isLoading = true;
         RetrofitUtil.getHotelList(context, AppUtils.getJson(bean), isFirst, HotelListBean.class,
                 new RetrofitUtil.OnResponse() {
                     @Override
@@ -172,17 +174,20 @@ public class PHotelList extends BaseP {
                             }
                             list.addAll(mBean.getList());
                             vm.onLoadFinished();
-                            isLoadMore = false;
                             isFirst = false;
                             adapter.notifyDataSetChanged();
                         }
+                        isLoadMore = false;
                         vm.setEmptyView();
                         vm.onLoadFinished();
+
                         return false;
                     }
 
                     @Override
                     public boolean onFailed(Throwable e) {
+                        isLoading = false;
+                        isLoadMore = false;
                         vm.setEmptyView();
                         return false;
                     }
@@ -242,7 +247,7 @@ public class PHotelList extends BaseP {
     }
 
     public void onRefresh() {
-        list.clear();
+
         bean.setPageIndex("1");
         getHotelList();
     }
@@ -251,8 +256,8 @@ public class PHotelList extends BaseP {
         if (mBean.isIsHaveNextPage()) {
             bean.setPageIndex(Integer.parseInt(bean.getPageIndex() == null ?
                     "1" : bean.getPageIndex()) + 1 + "");
-            getHotelList();
             isLoadMore = true;
+            getHotelList();
         } else {
             vm.onLoadFinished();
         }
@@ -364,6 +369,14 @@ public class PHotelList extends BaseP {
 
     public void setmBean(HotelListBean mBean) {
         this.mBean = mBean;
+    }
+
+    public boolean isLoading() {
+        return isLoading;
+    }
+
+    public void setLoading(boolean loading) {
+        isLoading = loading;
     }
 
     public void setBean(RequestHotelQueryBean bean) {

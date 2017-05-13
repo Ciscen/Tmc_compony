@@ -269,6 +269,15 @@ public class PlaneAlterConfirmActivity extends BaseActivity {
 
         route.setAirline(mBean.getAirline());
         route.setCode(cangweisBean1.getCode());
+        route.setCodeDes(cangweisBean1.getCodeDes());
+        route.setWorktime(cangweisBean1.getWorktime());
+        route.setTpafterfee(cangweisBean1.getTpafterfee());
+        route.setTpbeforefee(cangweisBean1.getTpbeforefee());
+        route.setGqbeforefee(cangweisBean1.getGqbeforefee());
+        route.setGqafterfee(cangweisBean1.getGqafterfee());
+        route.setIncludeflage(cangweisBean1.getIncludeflage());
+
+
         route.setDstcode(mBean.getArricode());
         route.setOrgcode(mBean.getOrgcode());
         route.setOrgname(mBean.getOrgname());
