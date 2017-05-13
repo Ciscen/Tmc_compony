@@ -28,7 +28,6 @@
             android:id="@+id/hotel_send_detail_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:text="待送审"
             android:textColor="@color/white"
             android:textSize="18sp" />
@@ -37,7 +36,6 @@
             android:id="@+id/hotel_send_detail_waitingtosend"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_weight="1"
             android:paddingLeft="15dp"
             android:text="等待提交送审"
