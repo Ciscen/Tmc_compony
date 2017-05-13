@@ -145,7 +145,7 @@ public class PlaneAlterQueryActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constant.ACTIVITY_PLANE_ALTER_QUERY_FLAG
                 && resultCode == Constant.ACTIVITY_CALENDAR_FLAG) {
-            String a = data.getStringExtra("date");
+            String a = data.getStringExtra(CldActivity.KEY_RESULT_FIRST);
             date.setText(a.substring(5) + " " + TimeUtils.getTomorrowWeekDay(a));
             startdate = a;
         }

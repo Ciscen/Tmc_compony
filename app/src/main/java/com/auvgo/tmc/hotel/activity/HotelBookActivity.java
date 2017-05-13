@@ -674,7 +674,16 @@ public class HotelBookActivity extends BaseActivity implements HotelBookPsgAdapt
             for (int i = 0; i < mRoomNum - size; i++) {
                 psgs.add(null);
             }
+        } else if (mRoomNum < psgs.size()) {
+            int size = psgs.size();
+            for (int i = 0; i < size; i++) {
+                if (i >= mRoomNum) {
+                    psgs.remove(psgs.size() - 1);
+                }
+            }
         }
+
+
         adapter.notifyDataSetChanged();
     }
 

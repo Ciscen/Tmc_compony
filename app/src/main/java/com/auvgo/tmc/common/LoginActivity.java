@@ -31,7 +31,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
 
 
-    private boolean isTest = true;//测试的时候  true   正式发布false。该flag控制的是测试快捷账号输入
+    private boolean isTest = false;//测试的时候  true   正式发布false。该flag控制的是测试快捷账号输入
     private int[] a = {2, 12};
     private boolean[] b = {true, false, false, false, false};
     /////////控件/////////

@@ -21,6 +21,7 @@ import com.auvgo.tmc.adapter.AnimatorListenerAdapter;
 import com.auvgo.tmc.base.BaseActivity;
 import com.auvgo.tmc.common.LoginActivity;
 import com.auvgo.tmc.common.adapter.GuideFragmentAdapter;
+import com.auvgo.tmc.common.bean.PayTypeResultBean;
 import com.auvgo.tmc.common.fragment.GuideFragment;
 import com.auvgo.tmc.home.HomeActivity;
 import com.auvgo.tmc.train.bean.ResponseOuterBean;
@@ -34,7 +35,9 @@ import com.auvgo.tmc.utils.SPUtils;
 import com.auvgo.tmc.utils.ToastUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import cn.jpush.android.api.JPushInterface;
@@ -161,7 +164,7 @@ public class MainActivity extends BaseActivity implements GuideFragment.OnGuideF
                         MyApplication.mUserInfoBean = (UserBean) o;
                         ToastUtils.showTextToast("登录成功");
                         setAlias();
-                        jumpActivity(Constant.ACTIVITY_HOME_FLAG);
+                        getPayment();
                     } else {
                         ToastUtils.showTextToast("登录失败");
                         jumpActivity(Constant.ACTIVITY_LOGIN_FLAG);
@@ -178,6 +181,30 @@ public class MainActivity extends BaseActivity implements GuideFragment.OnGuideF
         } else {
             jumpActivity(Constant.ACTIVITY_LOGIN_FLAG);
         }
+    }
+
+    /*请求支付方式*/
+    private void getPayment() {
+        Map<String, String> map = new HashMap<>();
+        map.put("cid", String.valueOf(MyApplication.mUserInfoBean.getCompanyid()));
+        RetrofitUtil.getPayType(context, AppUtils.getJson(map), PayTypeResultBean.class, new RetrofitUtil.OnResponse() {
+            @Override
+            public boolean onSuccess(ResponseOuterBean bean, int status, String msg, Object o) {
+                if (status == 200) {
+                    MyApplication.getApplication().setmPayType((PayTypeResultBean) o);
+                    jumpActivity(Constant.ACTIVITY_HOME_FLAG);
+                } else {
+                    ToastUtils.showTextToast("获取支付配置失败");
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onFailed(Throwable e) {
+                ToastUtils.showTextToast("获取支付配置失败");
+                return false;
+            }
+        });
     }
 
     private void setAlias() {
