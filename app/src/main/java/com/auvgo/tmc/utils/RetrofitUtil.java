@@ -88,7 +88,6 @@ public class RetrofitUtil {
                             DialogUtil.showDialog(context, "提示", "确定", "", context.getString(R.string.error_msg), new MyDialog.OnButtonClickListener() {
                                 @Override
                                 public void onLeftClick() {
-
                                 }
 
                                 @Override
