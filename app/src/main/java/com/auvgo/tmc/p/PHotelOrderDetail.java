@@ -2,6 +2,7 @@ package com.auvgo.tmc.p;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 
 import com.auvgo.tmc.common.module.PayModule;
 import com.auvgo.tmc.constants.Constant;
@@ -219,10 +220,10 @@ public class PHotelOrderDetail extends BaseP {
     private void checkPayStatus(int paystatus) {
         if (paystatus == HOTEL_PAY_STATUS_DAIZHIFU) {//待支付
             status_str = "待支付";
-            vm.setButtonState("支付", "取消", true, true);
+            vm.setButtonState(getPayStr(), "取消", true, true);
         } else if (paystatus == HOTEL_PAY_STATUS_ZHIFUSHIBAI) {//支付失败
             status_str = "支付失败";
-            vm.setButtonState("支付", "取消", true, true);
+            vm.setButtonState(getPayStr(), "取消", true, true);
         } else if (paystatus == HOTEL_PAY_STATUS_ZHIFUZHONG) {//支付中
             status_str = "支付中";
             vm.setButtonState("", "取消", false, true);
@@ -230,6 +231,11 @@ public class PHotelOrderDetail extends BaseP {
             status_str = "支付成功";
             vm.setButtonState("", "取消", false, true);
         }
+    }
+
+    @NonNull
+    private String getPayStr() {
+        return mBean.getPayType().equals("1") ? "确认支付" : "去支付";
     }
 
     public void pay() {

@@ -100,7 +100,7 @@ public class HotelQueryActivity extends BaseActivity implements ViewManager_hote
         pHotelQuery.getPolicy(new PHotelQuery.OnPolicyGotListener() {
             @Override
             public void onPolicyGot() {
-                DialogUtil.showHotelPolicyDialog(HotelQueryActivity.this, MUtils.getHotelPolicyStr());
+                DialogUtil.showHotelPolicyDialog(HotelQueryActivity.this, MUtils.getHotelPolicyStr(null));
             }
         });
     }

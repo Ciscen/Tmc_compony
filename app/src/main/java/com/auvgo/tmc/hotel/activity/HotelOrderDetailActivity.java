@@ -172,7 +172,7 @@ public class HotelOrderDetailActivity extends BaseActivity implements ViewManage
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.hotel_order_detail_button1:
-                if (button1_tv.getText().equals("支付")) {
+                if (button1_tv.getText().toString().contains("支付")) {
                     pHotelOrderDetail.pay();
                 } else if (button1_tv.getText().equals("担保")) {
                     pHotelOrderDetail.guarantee();

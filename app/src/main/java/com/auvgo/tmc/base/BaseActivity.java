@@ -129,18 +129,31 @@ public abstract class BaseActivity extends FragmentActivity {
      * @param clazz 订单类别，Constant下的
      */
     public void jumpToOrderList(String clazz) {
+        /*class ,区分火车票机票酒店的字段，来自于Constant.PLANE,Constant.HOTEL，Constant.TRAIN*/
         MUtils.jumpToPage(this, HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         Intent intent = new Intent(this, OrderListActivity.class);
         intent.putExtra("class", clazz);
         startActivity(intent);
     }
 
+    /**
+     * 跳轉到訂單詳情的方法
+     *
+     * @param context
+     * @param orderNo
+     * @param clazz
+     */
     public void jumpToOrderDetail(Context context, String orderNo, Class clazz) {
         Intent intent = new Intent(context, clazz);
         intent.putExtra("orderNo", orderNo);
         context.startActivity(intent);
     }
 
+    /**
+     * 刷新订单详情
+     *
+     * @param orderNo
+     */
     public void freshOrderDetail(String orderNo) {
         finish();
         Intent intent = new Intent(this, this.getClass());
@@ -152,10 +165,15 @@ public abstract class BaseActivity extends FragmentActivity {
         DialogUtil.showDialog(this, "提示", left, right, contnet, listener);
     }
 
+    /**
+     * 設置成本中心和项目中心的显示状态。
+     * 根据配置，完成显示状态控制
+     */
     public void setCostCenterAndProjectVisibility(View costCenterView, View projectView) {
         MyList<ComSettingBean.ProductSetBean.ProconfvalueBean> settings = MyApplication.mComSettingBean.
                 getProductSet().getProconfValue();
         String costcenter = settings.get("costcenter");
+        //2不显示
         if (costcenter == null || costcenter.equals("2") && costCenterView != null)
             costCenterView.setVisibility(View.GONE);
         String projectinfo = settings.get("projectinfo");
@@ -163,6 +181,9 @@ public abstract class BaseActivity extends FragmentActivity {
             projectView.setVisibility(View.GONE);
     }
 
+    /**
+     * 申请单号的显示状态控制
+     */
     public void setApplyNoVisibility(View applyNoView) {
         MyList<ComSettingBean.ProductSetBean.ProconfvalueBean> settings = MyApplication.mComSettingBean.
                 getProductSet().getProconfValue();
@@ -201,11 +222,13 @@ public abstract class BaseActivity extends FragmentActivity {
                 getProductSet().getProconfValue().get("jpinsurance");
         return bxsetting == null ? "0" : bxsetting;
     }
+
     public String getJDBxSetting() {
         String bxsetting = MyApplication.mComSettingBean.
                 getProductSet().getProconfValue().get("jdinsurance");
         return bxsetting == null ? "0" : bxsetting;
     }
+
     public String getHCPBxSetting() {
         String bxsetting = MyApplication.mComSettingBean.
                 getProductSet().getProconfValue().get("hcpinsurance");
@@ -223,8 +246,6 @@ public abstract class BaseActivity extends FragmentActivity {
 
     /**
      * 设置添加临时乘客的显示状态
-     *
-     * @param view
      */
     public void setAddLsPsgVisibility(View view) {
         if (MyApplication.mUserInfoBean.getAddcustflage().equals("0")) {

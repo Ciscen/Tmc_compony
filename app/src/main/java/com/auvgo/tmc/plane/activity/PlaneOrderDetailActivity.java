@@ -147,8 +147,9 @@ public class PlaneOrderDetailActivity extends BaseActivity implements ViewManage
         /*
         审批信息的显示隐藏
          */
-        int approvestatus = mBean.getApprovestatus();
-        int status = mBean.getStatus();
+        int approvestatus = mBean.getApprovestatus();//审批状态
+        int status = mBean.getStatus();//票的状态
+        int paystatus = mBean.getPaystatus();//支付状态
         if (approvestatus == APPROVE_STATUS_WUXUSHENPI) {
             approveInfo_vg.setVisibility(View.GONE);
             approveStatus_vg.setVisibility(View.GONE);
@@ -160,7 +161,7 @@ public class PlaneOrderDetailActivity extends BaseActivity implements ViewManage
             //审批通过或者无需审批
             setCancleText();
             if (approvestatus == APPROVE_STATUS_SHENPITONGGUO || approvestatus == APPROVE_STATUS_WUXUSHENPI) {
-                button1_tv.setText(mBean.getPayType().equals("1") ? "确认出票" : "去支付");
+                button1_tv.setText(mBean.getPayType().equals("1") ? "确认出票" : "去支付");//1月结，直接出票。2在线支付，需要个人用支付宝微信银联支付
                 button2_tv.setText("取消订单");
             }
             if (approvestatus == APPROVE_STATUS_SHENPIFOUJUE || approvestatus == APPROVE_STATUS_SHENPIZHONG) {

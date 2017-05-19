@@ -46,14 +46,17 @@ public class PPlaneList extends BaseP {
     private boolean isPriceOrder;
     private boolean isStartTimeOrder = true;
     private int orderType = 1;//表示正序、倒叙
-    private ArrayList<PlaneListBean> list_all;
-    private List<PlaneListBean> list_filted;
+    private ArrayList<PlaneListBean> list_all;//所有数据
+    private List<PlaneListBean> list_filted;//筛选后的数据，就是显示数据
     private int mActivityFrom = 0;
     private PlaneListAdapter adapter;
-    private List<SelectionBean> sa, sb, sc;
+    private List<SelectionBean> sa, sb, sc;//sa存储的是时间筛选内容，sb存储舱位类型筛选内容，sc存储航空公司筛选内容
     private List<Integer> a, c;
     private int b;
     private boolean isAlter;//是否是改签来的
+    private boolean isSelectedZhifei;//标记只看直飞筛选是否选中
+    private boolean isSelectedHideShare;//标记是否选中了隐藏共享航班的标识
+
 
     public PPlaneList(Context context, ViewManager_PlaneList vm) {
         super(context);
@@ -247,11 +250,12 @@ public class PPlaneList extends BaseP {
     public void filtList() {
         list_filted.clear();
         for (int i = 0; i < list_all.size(); i++) {
-            if (matchSeat(i) && matchTime(i) && matchAirCarrier(i)) {//加入到要显示list的条件
+            if (matchSeat(i) && matchTime(i) && matchAirCarrier(i) && matchZhifei(i) && matchShare(i)) {//加入到要显示list的条件
                 list_filted.add(list_all.get(i));
             }
         }
-        if (isPriceOrder) {
+
+        if (isPriceOrder) {//如果是价格排序
             Collections.sort(list_filted, new Comparator<PlaneListBean>() {
                 @Override
                 public int compare(PlaneListBean lhs, PlaneListBean rhs) {
@@ -261,7 +265,7 @@ public class PPlaneList extends BaseP {
                 }
             });
         }
-        if (isStartTimeOrder) {
+        if (isStartTimeOrder) {//如果是起飞时间排序
             Collections.sort(list_filted, new Comparator<PlaneListBean>() {
                 @Override
                 public int compare(PlaneListBean lhs, PlaneListBean rhs) {
@@ -276,6 +280,28 @@ public class PPlaneList extends BaseP {
         }
         adapter.notifyDataSetChanged();
         vm.freshTitle();
+    }
+
+    private boolean matchZhifei(int i) {
+        if (isSelectedZhifei) {
+            if (list_all.get(i).getAirline().equals("1")) {//是否是直飞的判断
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean matchShare(int i) {
+//        if (isSelectedHideShare) {
+//            if (list_all.get(i).getSharecarrier().equals("1")) {//r如果是共享航班的话
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        }
+        return true;
     }
 
     private boolean matchSeat(int i) {
@@ -347,7 +373,7 @@ public class PPlaneList extends BaseP {
 
 
     private void initComponies() {
-        double lowestPrice = 100000;
+        double lowestPrice = 1000000;
         sc.add(new SelectionBean("不限", true));
         Map<String, String> map = new HashMap<>();
         for (int i = 0; i < list_all.size(); i++) {

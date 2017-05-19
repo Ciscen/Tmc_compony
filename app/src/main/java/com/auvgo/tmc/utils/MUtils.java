@@ -778,8 +778,8 @@ public class MUtils {
                 .placeholder(defaultImg).into(imageView);
     }
 
-    public static String getHotelPolicyStr() {
-        HotelPolicyBean mHotelPolicy = MyApplication.mHotelPolicy;
+    public static String getHotelPolicyStr(HotelPolicyBean hpb) {
+        HotelPolicyBean mHotelPolicy = hpb == null ? MyApplication.mHotelPolicy : hpb;
         if (mHotelPolicy == null) return "未配置差旅政策";
         HotelPolicyBean.PolicyBean policy = mHotelPolicy.getPolicy();
         String[] cities = policy == null ? null : policy.getCitylevelname().split("/");

@@ -61,7 +61,7 @@ public class PayModule {
     public static final int UNIONPAY_SDK_AUTH_FLAG = 3;//银联支付标识
     /*unionPay模拟获取订单信息的地址*****/
     private static final String TN_URL_01 = "http://101.231.204.84:8091/sim/getacptn";
-    public static final String mMode = "01";//测试01，正式00
+    public static final String mMode = "00";//测试01，正式00
     private IWXAPI api;
 
     private PayModule() {

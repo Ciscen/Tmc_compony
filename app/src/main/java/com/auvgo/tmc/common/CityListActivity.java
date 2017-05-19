@@ -28,7 +28,13 @@ import com.auvgo.tmc.train.bean.CitiesBean;
 import com.auvgo.tmc.train.bean.ResponseOuterBean;
 import com.auvgo.tmc.utils.AppUtils;
 import com.auvgo.tmc.utils.DbHelper;
+import com.auvgo.tmc.utils.DensityUtils;
+import com.auvgo.tmc.utils.DeviceUtils;
 import com.auvgo.tmc.utils.DialogUtil;
+import com.auvgo.tmc.utils.KeyBoardUtils;
+import com.auvgo.tmc.utils.KeyboardChangeListener;
+import com.auvgo.tmc.utils.LogFactory;
+import com.auvgo.tmc.utils.MUtils;
 import com.auvgo.tmc.utils.RetrofitUtil;
 import com.auvgo.tmc.utils.ToastUtils;
 import com.auvgo.tmc.views.HotelSideBar;
@@ -57,7 +63,7 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
     private MyGridView gv_hot;//显示热门城市
     private MyGridView gv_history;//显示历史城市
     private EditText et;//搜索框
-    private View back, delete;//回退按钮，删除按钮
+    private View back, delete, cancel;//回退按钮，删除按钮,取消按钮
 
     //    private CityListAdapter adapter;
     private CityListAdapter_pinned adapter;
@@ -238,6 +244,10 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
 
     private void initView() {
         findViews();//对View进行FindViewById
+        lv.addHeaderView(headerView);
+        lv.setAdapter(adapter);
+        gv_hot.setAdapter(hotAdapter);
+        gv_history.setAdapter(historyAdapter);
         lv.setEmptyView(findViewById(R.id.empty_view));
         lv.setPinnedHeader(getLayoutInflater().inflate(R.layout.city_list_fixed_header, lv, false));
         lv.setOnScrollListener(adapter);
@@ -262,7 +272,7 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
                     lv.setSelection(0);
                     return;
                 }
-                lv.setSelection(adapter.getPositionForSection(s.toUpperCase().charAt(0))+1);
+                lv.setSelection(adapter.getPositionForSection(s.toUpperCase().charAt(0)) + 1);
             }
         });
 
@@ -356,27 +366,39 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
                     lv.setAdapter(adapter);
                     isSearchMode = false;
                     sb.setVisibility(View.VISIBLE);
-                    return;
-                }
-                Log.d(TAG, "showFiltedList: " + s.trim().toUpperCase(Locale.CHINA));
-                searchList.clear();
-                for (int i = 0; i < cities.size(); i++) {
-                    CitiesBean.CityBean cityBean = cities.get(i);
-                    String trim = s.trim();
-                    if (cityBean.getName().contains(trim) || cityBean.getJianp().toLowerCase().startsWith(trim.toLowerCase())
-                            || cityBean.getFullp().toLowerCase().startsWith(s.trim())) {
-                        searchList.add(cityBean);
+                    delete.setVisibility(View.GONE);
+                } else {
+                    delete.setVisibility(View.VISIBLE);
+                    searchList.clear();
+                    for (int i = 0; i < cities.size(); i++) {
+                        CitiesBean.CityBean cityBean = cities.get(i);
+                        String trim = s.trim();
+                        if (cityBean.getName().contains(trim) || cityBean.getJianp().toLowerCase().startsWith(trim.toLowerCase())
+                                || cityBean.getFullp().toLowerCase().startsWith(s.trim())) {
+                            searchList.add(cityBean);
+                        }
                     }
+                    adapter.refresh(searchList);
+                    lv.removeHeaderView(headerView);
+                    lv.setAdapter(adapter);
+                    isSearchMode = true;
+                    sb.setVisibility(View.GONE);
                 }
-                adapter.refresh(searchList);
-                lv.removeHeaderView(headerView);
-                lv.setAdapter(adapter);
-                isSearchMode = true;
-                sb.setVisibility(View.GONE);
+            }
+        });
+        new KeyboardChangeListener(this).setKeyBoardListener(new KeyboardChangeListener.KeyBoardListener() {
+
+            @Override
+            public void onKeyboardChange(boolean isShow, int keyboardHeight) {
+                LogFactory.d("onKeyboardChange----" + isShow);
+                cancel.setVisibility(isShow ? View.VISIBLE : View.GONE);
+                back.setVisibility(isShow ? View.GONE : View.VISIBLE);
+                sb.setVisibility(isShow ? View.GONE : View.VISIBLE);
             }
         });
         back.setOnClickListener(this);
         delete.setOnClickListener(this);
+        cancel.setOnClickListener(this);
     }
 
     private void findViews() {
@@ -387,14 +409,12 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
         et = (EditText) findViewById(R.id.et_cityList_search);
         back = findViewById(R.id.city_list_back);
         delete = findViewById(R.id.city_list_delete);
+        cancel = findViewById(R.id.city_list_cancel);
         headerView = View.inflate(this, R.layout.layout_city_list_header, null);
-        lv.addHeaderView(headerView);
-        lv.setAdapter(adapter);
         history_tv = (TextView) headerView.findViewById(R.id.city_list_header_history_tv);
         gv_hot = (MyGridView) headerView.findViewById(R.id.gv_city_hot);
         gv_history = (MyGridView) headerView.findViewById(R.id.gv_city_history);
-        gv_hot.setAdapter(hotAdapter);
-        gv_history.setAdapter(historyAdapter);
+
     }
 
     @Override
@@ -419,6 +439,12 @@ public class CityListActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.city_list_delete:
                 et.setText("");
+                break;
+            case R.id.city_list_cancel:
+                et.setText("");
+                AppUtils.closeSoftInput(this);
+                cancel.setVisibility(View.GONE);
+                back.setVisibility(View.VISIBLE);
                 break;
         }
     }

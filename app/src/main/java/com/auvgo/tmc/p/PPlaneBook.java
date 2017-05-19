@@ -435,6 +435,15 @@ public class PPlaneBook extends BaseP {
 
         route1.setAirline(firstRouteBean.getAirline());
         route1.setCode(cangweisBean1.getCode());
+
+        route1.setCodeDes(cangweisBean1.getCodeDes());
+        route1.setWorktime(cangweisBean1.getWorktime());
+        route1.setTpafterfee(cangweisBean1.getTpafterfee());
+        route1.setTpbeforefee(cangweisBean1.getTpbeforefee());
+        route1.setGqbeforefee(cangweisBean1.getGqbeforefee());
+        route1.setGqafterfee(cangweisBean1.getGqafterfee());
+        route1.setIncludeflage(cangweisBean1.getIncludeflage());
+
         route1.setDstcode(firstRouteBean.getArricode());
         route1.setOrgcode(firstRouteBean.getOrgcode());
         route1.setOrgname(firstRouteBean.getOrgname());
@@ -505,6 +514,15 @@ public class PPlaneBook extends BaseP {
             route2.setPlanestyle(secondRouteBean.getPlanestyle());
             route2.setArriname(secondRouteBean.getArriname());
             route2.setArricode(secondRouteBean.getArricode());
+
+            route2.setCodeDes(cangweisBean2.getCodeDes());
+            route2.setWorktime(cangweisBean2.getWorktime());
+            route2.setTpafterfee(cangweisBean2.getTpafterfee());
+            route2.setTpbeforefee(cangweisBean2.getTpbeforefee());
+            route2.setGqbeforefee(cangweisBean2.getGqbeforefee());
+            route2.setGqafterfee(cangweisBean2.getGqafterfee());
+            route2.setIncludeflage(cangweisBean2.getIncludeflage());
+
             route2.setArriterm(secondRouteBean.getArriterm());
             route2.setDeptterm(secondRouteBean.getDeptterm());
             route2.setDepttime(secondRouteBean.getDepttime());

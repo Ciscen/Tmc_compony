@@ -138,7 +138,7 @@ public class MonthView extends FrameLayout {
             }
             MonthBean monthBean = days.get(position);
             String date = monthBean.getDate();
-            vh.date.setText(date.isEmpty() ? date : date.substring(8));
+            vh.date.setText(date.isEmpty() ? "" : date.substring(8));
             if (!TextUtils.isEmpty(monthBean.desc)) {
                 vh.desc.setVisibility(VISIBLE);
                 vh.desc.setText(monthBean.desc);

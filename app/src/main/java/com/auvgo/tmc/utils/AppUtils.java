@@ -492,10 +492,10 @@ public class AppUtils {
     }
 
     public static void initSoftInput(Activity context) {
+//        //设置SideBar不被弹出的软键盘挤压
+        context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         //默认禁止弹出软键盘
         context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-//        //设置SideBar不被弹出的软键盘挤压
-        context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
     }
 
     @TargetApi(19)

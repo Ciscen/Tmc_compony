@@ -119,7 +119,7 @@ public class MyTravalInfoActivity extends BaseActivity {
             TravalInfoPlanePolicyAdapter tippadapter = new TravalInfoPlanePolicyAdapter(this, airPolicy);
             gv.setAdapter(tippadapter);
         }
-        hotel.setText(MUtils.getHotelPolicyStr());
+        hotel.setText(MUtils.getHotelPolicyStr(hpb));
         train_gt.setText(MUtils.getTrainStrFromField(tpb == null ? "" : tpb.getGaotie()).replace("、", ","));
         train_dc.setText(MUtils.getTrainStrFromField(tpb == null ? "" : tpb.getDonche().replace("、", ",")));
         train_pt.setText(MUtils.getTrainStrFromField(tpb == null ? "" : tpb.getPukuai().replace("、", ",")));
